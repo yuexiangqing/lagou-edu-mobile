@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 基础选择器 */
+        /* p{
+            color: green;
+        }
+        *{
+            color: red;
+        }
+       
+        .demo{
+            color: yellow;
+        }
+        #ps{
+            color:blue ;
+        } */
+        /* 高级选择器 */
+        /* body p{
+            color: red;
+        }
+        .demo{
+          color: green;  
+        }
+        #ps.demo{
+            color: blue;
+        } */
+        /* 并集选择器 */
+        /* 应该分开看 比如现在就是120 210 130 */
+        /* #box1 .box2 .demo,.box1 #box2 #ps{
+            color: red;
+        }
+        .box1 .box2 #box3 .demo{
+            color: yellow;
+        } */
+        /* 权重相同 则书写的顺序 后面的就会层叠掉前面的 */
+        .box1 .box3 #box2 .demo{
+            color: blue;
+        } 
+        .box1 .box2 #box3 .demo{
+            color: yellow;
+        } 
+        
+
+
+    </style>
+</head>
+<body>
+     <!-- <p class="demo" id="ps">看一看文字颜色是什么</p> --> 
+    <div class="box1" id="box1">
+        <div class="box2" id="box2">
+            <div class="box3" id="box3">
+                <p class="demo" id="ps">看一看文字颜色是什么</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
