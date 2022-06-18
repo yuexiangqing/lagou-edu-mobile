@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 如果遇到important,在判断权重过程中，会将某条属性的权重提升到最大 */
+        /* #box3{
+            color: yellow !important;
+        }
+        #box2 .box3{
+            color: blue;
+        } */
+        /* 行内样式的权重最高，但是低于important*/
+        #box1 .box2 .demo,.box1 #box2 #ps{
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="box1">
+        <div class="box2" id="box2">
+            <div class="box3" id="box3">
+                <p class="demo" id="ps" style="color: blue;">看一看文字颜色是什么</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
