@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .lunbo{
+            width: 880px;
+            height: 550px;
+            border: 1px solid #333;
+            margin: 20px auto;
+        }
+        .lunbo .pic li{
+            width: 880px;
+            height: 550px;
+            display: none;
+        }
+        .lunbo .pic .current{
+            display: block;
+        }
+
+
+</style>
+</head>
+<body>
+    <!-- 轮播图大结构 -->
+    <div class="lunbo">
+        <!-- 图片部分 -->
+        <ul class="pic">
+            <li class="current"><img src="images/lunbo/c1.jpg" alt=""></li>
+            <li><img src="images/lunbo/c2.jpg" alt=""></li>
+            <li><img src="images/lunbo/c3.jpg" alt=""></li>
+            <li><img src="images/lunbo/c4.jpg" alt=""></li>
+            <li><img src="images/lunbo/c5.jpg" alt=""></li>
+            <li><img src="images/lunbo/c6.jpg" alt=""></li>
+        </ul>
+        <!-- 按钮 -->
+        <div class="btn">
+            <a href="javascript" class="leftbtn">&lt;</a>
+            <a href="javascript" class="righttbtn">&gt;</a>
+        </div>
+        <!-- 小圆点 -->
+        <ol class="sub">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ol>
+    </div>
+</body>
+</html>
