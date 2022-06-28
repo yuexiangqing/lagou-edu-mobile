@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .carousel{
+            position: relative;
+            width: 590px;
+            height: 470px;
+            margin: 10px auto 0;
+            background-color: pink;
+        }
+        .carousel ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 590px;
+            height: 470px;
+            display: none;
+        }
+        .carousel ul .q{
+            display: block;
+        }
+        .carousel .btn a{
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            font:18px/40px "微软雅黑";
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.3);
+        }
+        .carousel .btn .leftbtn{
+            left:5px;
+        }
+        .carousel .btn .rightbtn{
+            right:5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html">首页</a></li>
+    </ul>
+    <!-- 轮播图 -->
+    <div class="carousel">
+        <ul>
+            <li class="q"><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="q.jpg" alt=""></a></li>
+        </ul>
+        <div class="btn">
+            <a href="javascript:;" class="leftbtn">&lt;</a>
+            <a href="javascript:;" class="rightbtn">&gt;</a>
+        </div>
+        <!-- 下标用有序列表 -->
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ol>
+    </div>
+</body>
+</html>
