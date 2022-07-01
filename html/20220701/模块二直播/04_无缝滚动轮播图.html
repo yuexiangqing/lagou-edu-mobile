@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css3：没有一些js的逻辑，优点：过渡动画比较漂亮 缺点：兼容问题 */
+        /* js轮播图 ：js逻辑很多，可以做的很复杂  缺点：过渡效果不好看 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .carousel{
+            position: relative;
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .carousel input{
+            display: none;
+        }
+        .carousel .pic{
+            position: absolute;
+            left: 0;
+            width: 5000px;
+            height: 500px;
+            transition: 2s ease;
+            animation:move 10s ease infinite;
+        }
+        .carousel #page1:checked~.pic{
+            left: 0;
+        }
+        .carousel #page2:checked~.pic{
+            left: -800px;
+        }
+        .carousel #pages3:checked~.pic{
+            left: -1600px;
+        }
+        .carousel .pic img{
+            float: left;
+            width: 800px;
+            height: 500px;
+        }
+        .carousel .page{
+            position: absolute;
+            left: 100px;
+            bottom: 50px;
+            width: 200px;
+            height: 20px;
+        }
+        .carousel .page label{
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        @keyframes move{
+            0%{
+                left: 0;
+            }
+            33.33%{
+                left:-800px;
+            }
+            66.66%{
+                left: -1600px;;
+            }
+            100%{
+                left: -2400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <input type="radio" name="slider" id="page1" checked="checked">
+        <input type="radio" name="slider" id="page2">
+        <input type="radio" name="slider" id="page3">
+        <div class="pic">
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <!-- <img src="images/1.jpg" alt=""> -->
+        </div>
+        <div class="page">
+            <label for="page1"></label>
+            <label for="page2"></label>
+            <label for="page3"></label>
+        </div>
+    </div>
+</body>
+
+</html>
