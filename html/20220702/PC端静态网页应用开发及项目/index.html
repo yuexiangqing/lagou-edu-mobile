@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/loginBanner.css">
+    <link rel="stylesheet" href="css/search.css">
 
 </head>
 
@@ -66,7 +67,34 @@
             <div class="login-form">
                 <!-- 电话号码 -->
                 <div class="tel">
-                    <div class="area-code"></div>
+                    <div class="area-code">
+                        <!-- 当前显示的编码 -->
+                        <span class="area-code-now">0086</span>
+                        <!-- 下拉菜单 -->
+                        <div class="area-code-list">
+                            <dl>
+                                <dt>常用</dt>
+                                <dd>中国<span>0086</span></dd>
+                                <dd>中国香港<span>00852</span></dd>
+                                <dd>中国台湾<span>00886</span></dd>
+                                <dd>中国澳门<span>00853</span></dd>
+                                <dd>美国<span>001</span></dd>
+                                <dt>A</dt>
+                                <dd>澳大利亚<span>0086</span></dd>
+                                <dd>爱尔兰<span>00852</span></dd>
+                                <dd>中国澳门<span>00886</span></dd>
+                                <dd>中国澳门<span>00853</span></dd>
+                                <dd>美国<span>001</span></dd>
+                                <dt>B</dt>
+                                <dd>澳大利亚<span>0086</span></dd>
+                                <dd>爱尔兰<span>00852</span></dd>
+                                <dd>中国澳门<span>00886</span></dd>
+                                <dd>中国澳门<span>00853</span></dd>
+                                <dd>美国<span>001</span></dd>
+                            </dl>
+                            <p>如果没有找到您的所在归属地,请拨打客服电话4006282835解决。</p>
+                        </div>
+                    </div>
                     <input type="text" class="user-tel" placeholder="请输入手机号">
                 </div>
                 <!-- 验证码 -->
@@ -82,6 +110,17 @@
     </div>
 
     <!-- login-banner区域结束 -->
+    <!-- search区域开始 -->
+    <div class="search">
+        <!-- 中心的容器 -->
+        <div class="search-wrapper">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="搜索职位、公司或地点">
+                <input type="submit" value="搜索" class="btn" >
+            </form>
+        </div>
+    </div>
+    <!-- search区域结束 -->
 </body>
 
 </html>

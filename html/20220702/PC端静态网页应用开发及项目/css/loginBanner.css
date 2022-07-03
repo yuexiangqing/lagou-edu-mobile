@@ -41,11 +41,62 @@
 }
 .login-banner-c .login-form .tel .area-code{
     float: left;
+    position: relative;
     width: 66px;
     height: 35px;
 
 }
+.login-banner-c .login-form .tel .area-code:hover .area-code-list{
+    display: block;
+}
+.login-banner-c .login-form .tel .area-code .area-code-now{
+    display: block;
+    width: 56px;
+    height: 35px;
+    padding-left: 10px;
+    background: url(../images/arrow_down_small.png) no-repeat right center;
+    color: #999;
+    line-height: 35px;
+    cursor: pointer;
+}
+.login-banner-c .login-form .tel .area-code .area-code-list{
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 214px; ;
+    height: 288px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: auto;
+    cursor: default;
+    display: none;
+}
+.login-banner-c .login-form .tel .area-code .area-code-list dl dt{
+    height: 36px;
+    padding-left:12px;
+    background-color: #fbfbfb;
+    line-height: 36px;
+    color: #555;
+}
+.login-banner-c .login-form .tel .area-code .area-code-list dl dd{
+    height: 36px;
+    padding:0 12px;
+    line-height: 36px;
+    color: #999;
+}
+.login-banner-c .login-form .tel .area-code .area-code-list dl dd:hover{
+    color: #66b48b;
+    background-color: #f4f4f4;
+}
 
+.login-banner-c .login-form .tel .area-code .area-code-list dl dd span{
+    float: right;
+}
+.login-banner-c .login-form .tel .area-code .area-code-list p{
+    padding: 40px 12px;
+    line-height: 22px;
+    color: #b5b5b5;
+}
 .login-banner-c .login-form .tel .user-tel{
     float: left;
     width: 136px;
