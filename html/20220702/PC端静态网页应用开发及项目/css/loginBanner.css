@@ -39,6 +39,21 @@
     margin-right: 8px;
     background-color: #fff;
 }
+.login-banner-c .login-form .tel .area-code{
+    float: left;
+    width: 66px;
+    height: 35px;
+
+}
+
+.login-banner-c .login-form .tel .user-tel{
+    float: left;
+    width: 136px;
+    height: 35px;
+    padding-left: 10px;
+
+}
+/* 验证码 */
 .login-banner-c .login-form .yzm{
     float: left;
     width: 146px;
@@ -46,12 +61,47 @@
     margin-right: 8px;
     background-color: #fff;
 }
+.login-banner-c .login-form .yzm .yzm-txt{
+    float: left;
+    width: 80px;
+    height: 35px;
+    padding-left: 10px;
+}
+.login-banner-c .login-form .yzm i{
+    float: left;
+    width: 8px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color:#D5DADF ;
+}
+.login-banner-c .login-form .yzm span{
+    float: left;
+    width: 42px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #00B38A;
+    cursor: pointer;
+}
+
 .login-banner-c .login-form .login-or-register{
     float: left;
     width: 105px;
     height: 33px;
     border: 1px solid #fff;
     margin-right: 4px;
-    background-color: #fff;
+    background-color: #00B38A;
+    line-height: 33px;
+    text-align: center;
+    color: #CCEFE7;
+    cursor: pointer;
 }
-.
+.login-banner-c .login-form .login-or-register:hover{
+    background-color: #85c3a2;
+    color: #e0f0e8;
+
+}
+
+
+
