@@ -57,6 +57,10 @@
 .content .module-tabs .detail ul{
     width:1220px ;
     overflow: hidden;
+    display: none;
+}
+.content .module-tabs .detail ul.current{
+    display: block;
 }
 .content .module-tabs .detail ul li{
     float: left;
