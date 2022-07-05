@@ -15,6 +15,43 @@
     height: 138px;
     border-right: 1px solid #E8E8E8;
 }
+.footer .login-method .login-method-btn{
+    display: block;
+    width: 180px;
+    height: 40px;
+    border: 1px solid #00B38A;
+    margin-bottom: 16px;
+    color: #00B38A;
+    line-height: 40px;
+    text-align: center;
+}
+.footer .login-method .login-method-btn i{
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    margin-right: 7px;
+    background: url(../images/sprite_02.png) no-repeat -150px -220px;
+    vertical-align: middle;
+}
+.footer .login-method .login-method-btn:hover{
+    background-color: #00B38A;
+    color: #fff;
+}
+.footer .login-method .login-method-btn:hover i{
+     background: url(../images/sprite_02.png) no-repeat -182px -220px;
+}
+.footer .login-method .login-method-btn span{
+    vertical-align: middle;
+}
+/* 层叠前面的公共样式 */
+.footer .login-method .mini-pro i{
+    width: 16px;
+    height: 14px;
+    background-position: -215px -54px;
+}
+.footer .login-method .mini-pro:hover i{
+    background-position: -172px -54px;
+}
 .footer .service{
     float: left;
     width: 757px;
