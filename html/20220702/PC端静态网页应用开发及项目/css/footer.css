@@ -71,10 +71,28 @@
 }
 
 
-
+/* 企业服务部分 */
 .footer .service{
     float: left;
     width: 757px;
     padding-left: 130px;
     height: 138px;
 }
+.footer .service dl{
+    float: left;
+    width: 252px;
+}
+.footer .service dl dt{
+    height: 23px;
+    margin-bottom: 27px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 23px;
+    color: #555;
+}
+.footer .service dl dd a{
+    display: block;
+    height: 32px;
+    line-height: 32px;
+}
+
