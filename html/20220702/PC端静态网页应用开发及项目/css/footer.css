@@ -52,6 +52,26 @@
 .footer .login-method .mini-pro:hover i{
     background-position: -172px -54px;
 }
+/*  */
+/* 定位子元素 */
+.footer .login-method .mini-pro{
+    position: relative;
+}
+.footer .login-method .mini-pro img{
+    position: absolute;
+    left: 191px;
+    top: 0;
+    width: 140px;
+    height: 140px;
+    box-shadow: 1px 1px 4px #ccc;
+    display: none;
+}
+.footer .login-method .mini-pro:hover img{
+    display: block;
+}
+
+
+
 .footer .service{
     float: left;
     width: 757px;
