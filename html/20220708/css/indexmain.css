@@ -1,0 +1,111 @@
+/* 主要内容区域中的分类和焦点图 */
+.connent .main{
+    width: 100%;
+    height: 376px;
+    padding-top: 33px;
+}
+/* 侧边栏 */
+.connent .main .aside{
+    float: left;
+    width: 306px;
+    height:376px;
+}
+.connent .main .aside .classify{
+    width: 306px;
+    height: 376px;
+}
+.connent .main .aside .classify li{
+    position: relative;
+    /* width: ; */
+    height: 47px;
+    line-height: 47px;
+}
+.connent .main .aside .classify li h2{
+    float: left;
+    font-size: 18px;
+    margin-right: 12px;
+}
+.connent .main .aside .classify li p{
+    float: left;
+
+}
+.connent .main .aside .classify li p a{
+    float: left;
+    margin-right: 24px;
+}
+.connent .main .aside .classify li p a:hover{
+    text-decoration: underline;
+}  
+.connent .main .aside .classify li b{
+    position: absolute;
+    right: 8px;
+    top: 19px;
+    width: 6px;
+    height: 11px;
+    background: url(../images/main_list_arrow.png) no-repeat 0 0;
+}
+    
+
+
+/* 焦点图部分 */
+
+.connent .main .banner{
+    float: right;
+    width: 840px;
+    height: 346px;
+    margin-top: 13px;
+    position: relative;
+    overflow: hidden;
+}
+.connent .main .banner ul{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5000px;
+    height: 346px;
+}
+.connent .main .banner ul li{
+    float: left;
+    width: 840px;
+    height: 346px;
+} 
+.connent .main .banner .btn span{
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
+    background: url(../images/banner_arrow_left.png) no-repeat center center;
+    cursor: pointer;
+}
+.connent .main .banner .btn .right-btn{
+    right: 0;
+    background: url(../images/banner_arrow_right.png) no-repeat center center;
+}
+.connent .main .banner .btn .right-btn:hover{
+    background-image: url(../images/banner_arrow_right_highlight.png);
+}
+.connent .main .banner .btn .left-btn:hover{
+    background-image: url(../images/banner_arrow_left_highlight.png);
+}
+.connent .main .banner ol{
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    width: 75px;
+    height: 6px;
+    margin-left: -37.5px;
+}
+.connent .main .banner ol li{
+    float: left;
+    width: 7px;
+    height: 6px;
+    margin: 0 4px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.4);
+}
+.connent .main .banner ol li.current{
+    width: 13px;
+    margin: 0 1px;
+    background-color: #fff;
+}
