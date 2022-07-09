@@ -1,0 +1,37 @@
+.connent .hot-links .title span{
+    margin-right: 26px;
+}
+.connent .hot-links .title{
+    margin-bottom: 22px;
+}
+/* detail 区域 */
+.connent .hot-links .detail-list{
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+}
+.connent .hot-links .detail-list ul {
+    float: left;
+    width: 1130px;
+}
+.connent .hot-links .detail-list ul li{
+    width: 1130px;
+    overflow: hidden;
+}
+.connent .hot-links .detail-list ul li a{
+    float: left;
+    margin-right: 18px;
+}.connent .hot-links .detail-list ul li a.more-list{
+    text-decoration: underline;
+}
+.connent .hot-links .detail-list ul li a:hover{
+    text-decoration: underline;
+}
+.connent .hot-links .detail-list .show-or-close{
+    float: right;
+    color: #999999;
+    padding-right: 17px;
+    margin-right: 3px;
+    background: url(../images/arrow_down.png) no-repeat right center;
+}
