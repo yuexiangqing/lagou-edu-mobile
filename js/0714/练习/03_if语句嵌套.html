@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var sex = prompt("请输入你的性别");
+        var age = prompt("请输入您的年龄");
+        // 根据输入的数据,判断是否退休
+        /* if(sex=="男" && age >= 60){
+            alert("恭喜您，可以享受人生了！");
+        } else if(sex=="男" && age < 60) {
+            alert("你还是再忍忍吧！");
+        } else if(sex=="女" && age >= 55){
+            alert("可以好好的享受生活啦！");
+        }else {
+            alert("还需要再辛苦一下啊！");
+        } */
+
+
+        //化简条件
+        // if(sex=="男" && age >= 60){
+        //     alert("恭喜您，可以享受人生了！");
+        // } else if(sex=="男") {
+        //     alert("你还是再忍忍吧！");
+        // } else if(age >= 55){
+        //     alert("可以好好的享受生活啦！");
+        // }else {
+        //     alert("还需要再辛苦一下啊！");
+        // } 
+
+
+        if (sex==="男"){
+            //男性年龄需要大于60岁
+            if(age>=60){
+                alert("恭喜您，可以享受人生了！");
+            }else{
+                alert("你还是再忍忍吧！");
+            }
+        } else{
+            // 女性年龄需要大于55岁
+            if(age>=55){
+                alert("可以好好的享受生活啦！");
+            }else{
+                alert("还需要再辛苦一下啊！");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
