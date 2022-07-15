@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 穷举思想 列举所有的三位数
+        for ( var i = 100;i <= 999;i++){
+            var ge = i % 10 ,
+            shi = parseInt(i / 10) % 10,
+            bai =parseInt (i / 100) ;
+            var sum =ge *ge *ge +shi * shi *shi +bai * bai *bai;
+            if(sum == i){
+                console.log(i);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
