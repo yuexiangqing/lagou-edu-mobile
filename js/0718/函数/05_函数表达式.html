@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 定义一个函数表达式
+        var foo = function fun() {
+            console.log(1);
+        };
+        var foo2 = function () {
+            console.log();
+        };
+        // 调用函数时，只能用变量名调用，函数名调用不成功
+        // fun ();  不能成功调用
+        foo ();
+        foo2 ();
+
+        // 在真正使用的时候一般不用再写函数名 可以直接写成foo2 那种
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
