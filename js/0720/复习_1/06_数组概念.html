@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个空数组
+        var arr = [];
+        // 创建包涵多个数据的数组，数据类型是不受限制的
+        var arr2 = [1,true,false,null,undefined,"哈哈",[7,8],9];
+        console.log(arr2);
+
+        // 获取arr2中下标为 0 的项
+        // console.log(arr2[0]);
+        // console.log(arr2[1]);
+        // console.log(arr2[2]);
+
+        //超过最大项，内部存储就会变成undefined
+        // console.log(arr2[9]);
+
+        // 更改数组中某一项的值
+        // arr2 [1] = 5;
+        // console.log(arr2);
+
+        // 获取数组的长度
+        // console.log(arr2.length);
+        // 获取数组的最后一项
+        // console.log(arr2[arr2.length-1]);
+
+        // 更改数组的长度
+        // 第一种
+        arr2.length = 12;
+        console.log(arr2);
+
+        // 第二种
+        arr2[11] = 22;
+        console.log(arr2.length);
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
