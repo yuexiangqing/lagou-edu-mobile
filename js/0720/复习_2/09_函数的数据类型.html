@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 定义一个函数
+        function fun(){
+            console.log(1);
+        }
+        // 定义一个表达式
+        var foo = function (){
+            console.log(2);
+        };
+        // 检查函数的数据类型
+        console.log(typeof(fun));
+        console.log(typeof(foo));
+
+        // 函数时一种数据类型，可以当成其他函数的参数
+        setInterval(function(){
+            console.log(1);
+        },100);
+
+        // 将函数当成另外一个函数的返回值
+        function fun(){
+            var a = 10;
+            return function(){
+                alert(a + b);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -16,13 +16,46 @@
         // console.log(sum(1,3,2));
         // console.log(sum(1,2,3,4));
 
+        
         // 函数内部有一个arguments对象，会接收所有的实参
-        function fun (){
+        function fun() {
+            console.log(arguments);
             console.log(arguments.length);
+            // 使用数组的遍历方法，可以获取每一项实参
+            for (var i = 0; i <= arguments.length - 1; i++){
+                console.log(arguments[i]);
+            }
+        }
+        调用函数
+        fun(1,2,3,4,5,6,7);
 
+        
+       /*  定义一个求和函数，如果传入 1 个参数，返回它自己，如果传入两个参数，返回他们的和
+        ，如果传入三个参数，先比较前两个的大小，大的与第三个参数求和返回，如果传入 4 个
+        及以上，输出错误提示。 */
+        function sum (a,b,c){
+            // 条件分支语句，根据实参传入的个数走不同的分支
+            switch (arguments.length){
+                case 1 :
+                    return a ;
+                    break;
+                case 2 :
+                    return a + b;
+                    break;
+                case 3 :
+                    return a > b? a + c : b + c;
+                    break;
+                default:
+                // 提醒用户，实参个数传递错误
+                // 模拟控制台报错
+                throw new Error("参数个数不能超过3个");
+            }
         }
         // 调用函数
-        fun(1,2,3,4,5,6,7);
+        console.log(sum(1));
+        console.log(sum(1,2));
+        console.log(sum(1,2,3));
+        console.log(sum(1,2,3,4,5));
     </script>
 </head>
 <body>
