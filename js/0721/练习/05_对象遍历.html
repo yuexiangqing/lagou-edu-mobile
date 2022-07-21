@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person1 = {
+            name : "zs",
+            age : 18,
+            sex :"male",
+            sayHi:function (){
+                console.log("你好");
+            }
+        };
+        for (var k in person1){
+            // k 存储的是 每一条数据的属性名或方法名
+            console.log(person1[k]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

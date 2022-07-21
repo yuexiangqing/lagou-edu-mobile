@@ -20,7 +20,9 @@
         // 遍历对象
         for (var k in person1){
             // k存储的是每一条数据的属性名，或者方法名
-            console.log(k + "属性的属性值为"+ person1[k]);
+            // 不能用打点的方式 要不然就变成它的属性了
+            console.log(person1[k]);
+            // console.log(k + "属性的属性值为"+ person1[k]);
         }
     </script>
 </head>
