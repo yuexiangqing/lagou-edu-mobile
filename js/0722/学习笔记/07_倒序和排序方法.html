@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  var arr = [1,2,3,4,5,6,7,8,9,10];
+        //  倒序排列
+        // arr.reverse();
+        // console.log(arr);
+
+        var arr = [1,2,3,4,5,6,7,8,9,10,20,30];
+        //进行排序，默认按照字符编码顺序从小到大排列
+        // arr.sort();
+        // console.log(arr);
+
+        // 添加一个比较函数的参数  从大到小
+        arr.sort(function(a,b){
+            if(a > b){
+                return -1;  //表示两个参数中 a 要排在b前面
+            } else if (a < b){
+                return 1;   //表示a 要排在 b 后面
+            } else{
+                return 0;  //表示a 和 b 保持原样，不换位置
+            }
+        });
+
+
+        // 从小到大
+        // arr.sort(function(a,b){
+        //     if(a < b){
+        //         return -1;  //表示两个参数中 a 要排在b前面
+        //     } else if (a > b){
+        //         return 1;   //表示a 要排在 b 后面
+        //     } else{
+        //         return 0;  //表示a 和 b 保持原样，不换位置
+        //     }
+        // });
+        console.log(arr);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
