@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // 转字符串方法，如果不传参数，就默认以 ， 为连接符，生成一个字符串
+        // console.log(arr.join());
+
+        //如果用别的符号就会以别的符号连接
+        // var str = arr.join("*");
+        // console.log(str);
+
+        // 清空数组方法 
+        // 1
+        // arr.length = 0;
+
+        // 2
+        // arr = [];
+
+        // 3
+        arr.splice(0, arr.length);
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
