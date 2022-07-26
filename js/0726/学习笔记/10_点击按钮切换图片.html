@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击" id="btn"><br>
+    <img src="images/a.jpg" alt="" id="pic">
+
+
+    <script>
+        // 获取元素
+        var btn = document.getElementById("btn");
+        var pic = document.getElementById("pic");
+        // 通过一个变量作为条件，变量值为1，认为加载的是a图片 如果是2 认为加载的是b图片
+        var num = 1;
+
+        //给按钮添加点击事件
+
+        btn.onclick = function () {
+            // 给图片换src的属性值
+            // 通过if语句判断 如果是a图片就换成b图片 反之 换成a 图片
+
+            if (num === 1) {
+                pic.src = "images/b.jpg";
+                // 数字对应发生变化
+                num = 2;
+            } else {
+                pic.src = "images/a.jpg";
+                num = 1;
+            }
+
+        };
+    </script>
+
+
+</body>
+
+</html>

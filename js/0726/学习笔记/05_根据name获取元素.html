@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="radio" name="age"> 0~10<br>
+        <input type="radio" name="age"> 11~20<br>
+        <input type="radio" name="age"> 21~30<br>
+    </form>
+    <div id="age">年龄</div>
+    <script>
+    // 通过标签的Name属性获取元素
+    var ages = document.getElementsByName("age");
+    // Nodelist 节点列表集合 类数组 伪数组  
+    console.log(ages);
+    // 兼容问题：在IE 和 Opera中 有兼容问题 ，会多选中id属性值相同的部分
+    //方法：选中的元素也是动态变化的
+
+
+    </script>
+</body>
+
+</html>
