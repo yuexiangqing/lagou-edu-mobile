@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: pink;
+        }
+    </style>
+    <script src="common.js"></script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="box" style="width:100px;" class="bg">文字</div>
+    <script>
+        // 获取元素
+        // 定义一个获取元素的函数
+        // function my$(id){
+        //  return document.getElementById(id);
+        // }
+        var btn = my$("btn");
+        var box = my$("box");
+        console.log(btn);
+        // 1.更改类名的方式更改样式
+        // var btn = document.getElementById("btn");
+        // btn.className = "bg";
+        //2.根据对象的style属性去操作样式
+        console.log(btn.style);
+        // 元素对象的style属性的值是一个行内样式组成的对象，对象内部封装了所有的行内的样式属性以及属性值
+        // 元素的样式属性对象可以继续打点调用，获取或设置相关的行内样式属性
+        console.log(box.style);
+        console.log(box.style.width);
+        //注意： 如果使用的css 属性名 是符合属性的单一属性，需要更改为驼峰命名法
+        console.log(box.style.backgroundColor); //只能获取行内 不能获取外联的
+        box.style.width = "200px";
+        
+    </script>
+</body>
+</html>

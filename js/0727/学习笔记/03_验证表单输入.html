@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="name"><br>
+    <input type="text" id="pw"><br>
+    <input type="button" id="btn" value="提交">
+
+    <script>
+        // 检测用户名是否是3-6 位，密码是否是6-8 位，如果不满足要求高亮显示文本框
+        // 获取元素
+        var btn = document.getElementById("btn");
+        var username = document.getElementById("name");
+        var pw = document.getElementById("pw");
+        // console.log(name);
+        // console.log(btn);
+        // 2.给按钮添加点击事件，然后判断位数是否足够
+        btn.onclick = function () {
+            // 用户名的位数是否在3- 6 位 ，不满足高亮显示
+            if (username.value.length < 3 || username.value.length > 6) {
+                username.className = "bg";
+                return;
+            } else {
+                username.className = "";
+            }
+            //密码的位数是否在6-8位 如果不满足 也要高亮显示文本框
+            if (pw.value.length < 6 || pw.value.length > 8) {
+                pw.className = "bg";
+                return; //如果错误就不提交数据
+            } else {
+                pw.className = "";
+            }
+            //模拟一下数据提交
+            console.log("提交数据");
+        };
+    </script>
+</body>
+
+</html>
