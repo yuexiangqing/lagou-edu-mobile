@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn"><br>
+    <input type="text" id="txt" disabled="disabled"><br>
+    <select id="list">
+        <option value="biejing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+
+    <script>
+        // 获取元素
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById("txt");
+        var list = document.getElementById("list");
+        var opts = document.getElementsByTagName("option");
+
+        // value 属性
+        console.log(btn.value);
+        console.log(txt.value);
+        // option是双标签 ，不用value
+        console.log(opts[1].innerText);
+
+        // 更改input标签的value
+        btn.value = "点击";
+        txt.value = "请输入内容";
+
+        // 表单元素特有的属性，属性名和属性值是一致的
+        // console.log(txt.disabled);
+        btn.disabled = "true";
+    </script>
+</body>
+</html>

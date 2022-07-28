@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name"><br>
+    <input type="text" id="pw"><br>
+    <input type="button" id="btn" value="提交">
+
+    <script>
+        // 检测用户名是否是3-6位，密码是否是6-8位，如果不满足要求高亮显示文本框
+        var usename = document.getElementById("name");
+        var pw = document.getElementById("pw");
+        var btn = document.getElementById("btn");
+        
+        btn.onclick = function(){
+            if(usename.value.length < 3 || usename.value.length > 6){
+                usename.className = "bg";
+                return;
+            } else {
+                usename.className = '';
+            }
+            if (pw.value.length < 6 || pw.value.length > 8) {
+                pw.className = "bg";
+                return; //如果错误就不提交数据
+            } else {
+                pw.className = "";
+            }
+        };
+
+    </script>
+</body>
+</html>
