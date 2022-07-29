@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>段落</p> 
+        <span>span小盒子</span>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        // 获取子节点
+        console.log(box.childNodes); //会获取所有类型的子节点  里面会包含换行等
+        console.log(box.children); //会获取所有类型的元素子节点 *
+        console.log(box.firstChild);  //获取所有类型的子节点的第一个
+        console.log(box.lastChild); //获取所有类型的子节点的最后一个
+        console.log(box.firstElementChild); //获取所有类型的子元素节点的第一个
+        console.log(box.lastElementChild); //获取所有类型的子元素节点的最后一个
+
+        // 获取父级
+        console.log(box.parentNode); //*
+        console.log(box.parentElement);
+
+        //* 比较常用
+        
+    </script>
+</body>
+</html>
