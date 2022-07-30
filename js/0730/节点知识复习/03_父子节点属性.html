@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>段落</p>
+        <span>span小盒子</span>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        // 获取子节点
+        console.log(box.childNodes);
+        console.log(box.children);
+        console.log(box.firstChild);
+        console.log(box.lastChild);
+        console.log(box.firstElementChild);
+        console.log(box.lastElementChild);
+
+        // 获取父级
+        console.log(box.parentNode);
+        console.log(box.parentElement);
+    </script>
+</body>
+</html>

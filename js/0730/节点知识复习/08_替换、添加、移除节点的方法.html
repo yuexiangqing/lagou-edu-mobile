@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>这是段落1</p>
+        <p id="p2">这是段落2</p>
+        <p>这是段落3</p>
+        <p>这是段落4</p>
+    </div>
+    <script src="../0728/common.js"></script>
+    <script>
+        // 创建新的节点
+        var div = document.createElement("div");
+        console.dir(div);
+
+        var cls = document.createAttribute("class");
+        console.dir(cls);
+
+        var text = document.createTextNode("hello");  //value 就为hello
+        console.dir(text);
+
+        // 创建的新的节点，是存储在内存中，但是并没有添加到dom树上
+        // 获取box元素
+        var box = my$("box");
+        var p2 = my$("p2");
+        
+        // 替换节点
+        // box.replaceChild(div,p2);
+
+        // 在某个指定子节点之前添加一个新的节点
+        // box.insertBefore(div,p2);
+        // box.insertBefore(div,null);
+
+        // 移除节点：
+        box.removeChild(p2);
+        
+    </script>
+    
+</body>
+</html>

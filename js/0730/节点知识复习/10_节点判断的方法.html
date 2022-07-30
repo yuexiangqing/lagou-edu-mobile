@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>这是段落1</p>
+        <div>
+            <p id="p2">这是段落2</p>
+        </div>
+        <p>这是段落3</p>
+        <p>这是段落4</p>
+    </div>
+    <div id="demo"></div>
+    <script src="../0728/common.js"></script>
+    <script>
+        var box = my$("box");
+        var p2 = my$("p2");
+        var demo = my$("demo");
+        // console.log(box.hasChildNodes());
+        // console.log(box.contains(p2)); //判断节点内部是否有某个后代节点，不局限于子节点
+
+        // 判断内部有子节点的方法：
+        // 1.判断有没有子节点，不区分节点类型
+        // console.log(box.hasChildNodes());
+        // console.log(demo.hasChildNodes());
+
+        // 2.判断节点内部第一个子节点是否为不为空
+        // console.log(box.firstChild !== null);
+
+        // 3.判断子节点的数组对象的长度是否为0
+        console.log(box.children.length > 0);
+
+
+
+
+    </script>
+</body>
+
+</html>

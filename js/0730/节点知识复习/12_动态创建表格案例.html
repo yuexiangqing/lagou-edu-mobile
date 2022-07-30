@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        th,
+        td {
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>动态创建表格</h1>
+    <table id="wrap" border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+    <script src="../0728/common.js"></script>
+    <script>
+        // 获取元素
+        var tb = my$("tb");
+        // 模拟后台传输数据
+        var datas = [
+            { name: "zs", subject: "语文", score: 80 },
+            { name: "ls", subject: "数学", score: 78 },
+            { name: "ww", subject: "英语", score: 90 },
+            { name: "lb", subject: "物理", score: 89 },
+            { name: "cc", subject: "生物", score: 100 },
+            { name: "sq", subject: "化学", score: 83 }
+        ];
+        // 根据数组中的数据个数生成对应个数的tr 
+        // 将生成的tr添加到tbody中
+        // 数组遍历
+
+        for (var i = 0; i < datas.length; i++) {
+            // 每一个数据中都要生成一个tr
+            var tr = document.createElement("tr");
+            // 添加到tbody 中
+            tb.appendChild(tr);
+            // 每一个tr中还需要添加对应的td
+            // 每一行内部的td中的数据来源于数组中的每一项
+            var data = datas[i];
+            // 遍历data对象，根据它的项数来确定我们添加的td的个数
+            for (var k in data) {
+                // 生成一个td
+                var td = document.createElement("td");
+                // 添加到tr中去
+                tr.appendChild(td);
+                // 添加给每一个td数据
+                td.innerText = data[k];
+            }
+            // 除了前面动态获取的数据td之外，还要添加一个删除的td
+            td = document.createElement("td");
+            tr.appendChild(td);
+            var a = document.createElement("a");
+            a.innerText = "删除";
+
+            a.href = "javascript:void(0)";
+            td.appendChild(a);
+            a.onclick = function () {
+                tb.removeChild(this.parentNode.parentNode);
+            };
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
