@@ -84,7 +84,19 @@
             }
 
         };
-        
+        btn4.onclick = function () {
+            var opts = choose.children;
+            var arr2 = [];
+            for (var i = 0; i < opts.length; i++) {
+                if (opts[i].selected === true) {
+                    arr2.push(opts[i]);
+                }
+            }
+            for (var j = 0; j < arr2.length; j++) {
+                all.appendChild(arr2[j]);
+                arr2[j].selected = false;
+            }
+        };
 
 
 
