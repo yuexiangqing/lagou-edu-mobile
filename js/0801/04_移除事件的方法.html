@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击" id="btn">
+    <script>
+        var btn = document.getElementById("btn");
+        // DOM 0级事件的绑定事件 以及解除方法
+        // btn.onclick = function(){
+        //     alert(1);
+        // };
+        // 解除绑定方法
+        // btn.onclick = null;
+
+
+        //DOM 2级事件 事件绑定
+        // btn.addEventListener("click",fun);
+        // function fun(){
+        //     alert(2);
+        // }
+        // btn.addEventListener("click",fun2);
+        // function fun2(){
+        //     alert(3);
+        // }
+        
+        // // 解除绑定  要注意书写顺序 ，解除一定要在后面
+        // btn.removeEventListener("click",fun);
+        // btn.removeEventListener("click",fun2);
+        
+
+
+        // 绑定事件：
+        btn.attachEvent("onclick",fun);
+        function fun(){
+            alert(2);
+        }
+        btn.attachEvent("onclick",fun2);
+        function fun2(){
+            alert(3);
+        }
+        btn.detachEvent("onclick",fun);
+        btn.detachEvent("onclick",fun2);
+
+
+
+    </script>
+</body>
+
+</html>

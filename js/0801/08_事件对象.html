@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岳小🐶</title>
+    <style>
+        #box1{
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <script>
+        //获取元素
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+        // 添加事件
+        box1.onclick = function(e){
+            // e指的就是存储事件对象的参数，只要事件被触发，e就会自动接收数据
+            // 兼容问题
+            e = e || window.event ;
+            // 判断出事件执行时，处于哪个阶段
+            // 1.捕获阶段 
+            // 2.目标阶段（点击的是自己）
+            // 3.冒泡阶段
+            // console.log(e.eventPhase);
+
+            // 获取真正触发事件的元素
+            var target = e.target || e.srcElement;
+            console.log(target);
+
+            // 获得绑定事件的事件源元素 绑定的是谁，是不会变化的
+            console.log(e.currentTarget);
+            // this指向
+            console.log(this); //this 就是e.currentTarget
+        };
+
+        
+    </script>
+</body>
+</html>
