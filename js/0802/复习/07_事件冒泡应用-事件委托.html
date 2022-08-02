@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 300px;
+            border: 1px dashed #f0f;
+            margin: 50px auto;
+            font-size: 24px;
+            line-height: 48px;
+            list-style: none;
+        }
+
+        li {
+            padding-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="list">
+        <li>刘亦菲</li>
+        <li>杨幂</li>
+        <li>唐嫣</li>
+        <li>赵丽颖</li>
+        <li>刘诗诗</li>
+    </ul>
+
+    <script>
+        var list = document.getElementById("list");
+        var lis = list.getElementsByTagName("li");
+
+        // for(var i = 0;i <lis.length;i++){
+        //     lis[i].onclick = function(){
+        //         for(var j = 0; j<lis.length;j++){
+        //             lis[j].style.backgroundColor = "";
+        //         }
+        //         this.style.backgroundColor = "pink";
+        //     };
+        // }
+
+        list.onclick = function (e) {
+            for(var i = 0;i < lis.length;i++){
+                lis[i].style.backgroundColor = "";
+            }
+            e.target.style.backgroundColor = "pink";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

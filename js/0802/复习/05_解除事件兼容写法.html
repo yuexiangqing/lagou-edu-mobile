@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击" id="btn">
+
+    <script>
+        var btn = document.getElementById("btn");
+        function addEvent(ele, type, fn) {
+            if (ele.addEventListener) {
+                ele.addEventListener(type, fn);
+            } else if (ele.attachEvent) {
+                ele.attachEvent("on" + type, fn);
+            }
+        }
+        addEvent(btn,"click",fun);
+        function fun(){
+            alert(2);
+        }
+        
+
+        function removeEvent (ele,type,fn){
+            if(ele.removeEventListener){
+                ele.removeEventListener(type,fn);
+            } else if (ele.detachEvent){
+                ele.detachEvent("on" + type,fn);
+            }
+        }
+        removeEvent(btn,"click",fun);
+        
+
+    </script>
+</body>
+
+</html>

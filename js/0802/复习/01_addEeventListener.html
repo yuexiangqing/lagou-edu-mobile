@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击" id="btn">
+    <script>
+        var btn = document.getElementById("btn");
+        // btn.onclick = function(){
+        //     alert(1);
+        // };
+
+        // DOM2级事件绑定方式
+        // btn.addEventListener("click",function(){
+        //     alert(1);
+        // });
+        // btn.addEventListener("click",function(){
+        //     alert(2);
+        // });
+
+        // 也可以用函数
+        btn.addEventListener("click",fn);
+        btn.addEventListener("click",fn2);
+        function fn (){
+            alert(1);
+        }
+        function fn2 (){
+            alert(2);
+        }
+
+    </script>
+</body>
+</html>

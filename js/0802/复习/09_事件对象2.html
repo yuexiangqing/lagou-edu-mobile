@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+
+    <script>
+        var box1 = document.getElementById("box1");
+        // box1.onclick = function(e){
+        //     e = e || window.event;
+        //     console.log(e.type);
+        // }
+
+        // 使用场景：更多的时候可能给同一个元素添加不同的事假类型，对应执行事件函数内部代码 不同
+        // box1.onmouseover = function(){
+        //     box1.style.backgroundColor = "skyblue";
+        // };
+        // box1.onmouseout = function(){
+        //     box1.style.backgroundColor = "yellowgreen";
+        // };
+
+        // 可以将所有的一个元素绑定的事件的事件函数写在一个函数中，通过函数内部e.type判断走不同的分支
+        // 避免添加更多的函数，占用更多的内存
+        box1.onmouseover = fn;
+        box1.onmouseout = fn;
+        function fn(e){
+            switch (e.type){
+                case "mouseover":
+                    box1.style.backgroundColor = "skyblue";
+                    break;
+                case "mouseout":
+                    box1.style.backgroundColor = "yellowgreen";
+                    break;
+
+            }
+        }
+        
+
+
+    </script>
+</body>
+</html>
