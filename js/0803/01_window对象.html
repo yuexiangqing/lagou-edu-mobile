@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // windodw对象是BOM中的一个顶层对象，其他的对象都是Window的子对象
+        // document对象就是 window的一个子对象
+        // console.dir(window.document);
+        // 输出window对象
+        // console.dir(window);
+
+        // window对象在调用属性和方法时，可以省略Window不写
+        //alert(1);
+        // window.alert(1);
+
+        // 在全局作用域定义的全局变量，都是window的一个属性
+        // var age = 18;
+        // console.log(window.age);
+
+
+        // window中的特殊属性： name 如果去定义新的变量，只会在原来的name属性上进行赋值，并且只能是字符串格式的值
+        // var name = 123;
+        // console.log(window.name); //字符串 因为它本来就有一个name属性 
+
+        // top 属性 在window中，属性值指向的就是顶层对象window  这个对象是只读的 不能更改
+        // 即使赋值 也会指向window 但是在局部作用域中还是可以使用的
+        
+        var top = 23;
+        console.dir(window.top);
+
+
+    </script>
+</body>
+</html>
