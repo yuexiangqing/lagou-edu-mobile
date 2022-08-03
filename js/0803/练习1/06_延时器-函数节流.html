@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="点击按钮">
+    <script>
+        var btn = document.getElementById("btn");
+        // 绑定事件
+        // 函数节流操作
+        // 定义一个开关，给函数上一把锁，true表示锁住状态，不能执行后面的代码，false表示打卡状态，可以指向后面的代码
+        // 初始状态是打开的
+
+        var lock = false;
+        // btn.onclick = function(){
+        //     if(lock){
+        //         return;
+        //     }
+        //     console.log(Math.random());
+        // 执行以后锁应该被锁住
+        //     lock = true;
+        // 隔2秒后，锁再次被打开
+        //     setTimeout(function(){
+        //         lock = false;
+        //     },2000);
+        // };
+
+        btn.onclick = function () {
+            if (lock) {
+                return;
+            }
+            console.log(Math.random());
+            lock = true;
+            setTimeout(function () {
+                lock = false;
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

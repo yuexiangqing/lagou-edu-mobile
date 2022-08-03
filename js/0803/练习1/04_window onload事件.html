@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 440px;
+            border: 10px solid #f00;
+        }
+
+        #box img {
+            display: block;
+            width: 440px;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var box = document.getElementById("box");
+            var pics = box.getElementsByTagName("img");
+            console.log(box.clientHeight);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <img src="../images/lunbo/01.jpg" alt="">
+        <img src="../images/lunbo/02.jpg" alt="">
+        <img src="../images/lunbo/03.jpg" alt="">
+        <img src="../images/lunbo/04.jpg" alt="">
+        <img src="../images/lunbo/05.jpg" alt="">
+    </div>
+
+
+</body>
+
+</html>

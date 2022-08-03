@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window对象是BOM中的一个顶层对象，其他的对象都是window的子对象
+        // document 对象就是windo的一个子对象 
+        // console.dir(window.document);
+        // 输出window对象
+        // console.log(dir.window);
+
+        // window中的特殊属性：name如果去定义新的变量，只会在原来的name属性上进行赋值，并且只能是字符串格式的值
+        // var name = 123;
+        // console.log(window.name);
+
+        // top属性在window中，属性值指向的就是顶层对象window这个对象 这个对象只读，不能改变
+        // 即使赋值，也会指向window 但是在局部作用域中还是可以使用的
+        var top = 123;
+        console.dir(window.top);
+    </script>
+</body>
+</html>

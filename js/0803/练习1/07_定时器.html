@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 1;
+        // 开启定时器：每隔0.5秒，输出一次i并且i 自加
+        // 注意：程序执行到定时器代码部分，就相当于开启了一个定时器，不需要进行其他的打开操作
+        // 第一次执行函数时是在第一个时间间隔之后
+        // window.setInterval(function(){
+        //     console.log(i++);
+        // },500);
+
+        // 要想清除定时器，在定义的时候必须要存到一个变量中
+        var timer = setInterval(function(){
+            console.log(i++);
+        },500);
+
+        // 清除定时器
+        window.clearInterval(timer);
+    </script>
+</body>
+</html>
