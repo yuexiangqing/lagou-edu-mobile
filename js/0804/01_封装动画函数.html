@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+            /* 透明度 */
+            background-color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="开始" id="start">
+    <div class="box" id="box"></div>
+    <script src="animate.js"></script>
+
+    <script>
+        var start = document.getElementById("start");
+        var box = document.getElementById("box");
+
+        
+        // 补充 获取某个元素计算后的样式的方法： 会得到一个对象，可以使用点语法的方式调用某个属性  
+        // 注意：本身得到的值是一个字符串
+
+        // console.dir(window.getComputedStyle(box));
+        // console.log(window.getComputedStyle(box).width);
+        // console.log(window.getComputedStyle(box).height);
+        // console.log(window.getComputedStyle(box).backgroundColor);
+        // console.log(window.getComputedStyle(box)["opacity"]);
+
+
+
+
+        // box是需要运动的元素
+        // 多属性运动
+        // 共同点：总时间、时间间隔是相同的（自定义）
+        // 不同点：起始位置（通过程序方法自动获取当前页面最终显示效果）和结束位置（自定义指定的）
+
+
+        // 函数参数 （所有需要自定义的都可以作为参数）
+        // 参数1:元素对象，它要进行运动
+        // 参数2：结束位置 ，以对象数据方式传递
+        // 参数3：总时间
+
+
+        // 调用函数
+        // animate(box, { left: 400, width: 300, height: 200, opacity: 1 }, 2000);
+        start.onclick = function () {
+            animate(box, { left: 400, width: 300, height: 200, opacity: 1 }, 2000);
+        };
+
+        // 自定义动画函数
+        // function animate(ele, end, time) {
+        //     // 已知结束位置，总时间，时间间隔50，缺少起始位置
+        //     // 起始位置要根据结束位置提供的属性进行获取
+        //     // 起始位置的对象，需要先定义一个空对象
+        //     var now = {};
+        //     // start.left = 100;
+        //     // 对象遍历：获取属性名
+        //     for (var k in end) {
+        //         now[k] = parseFloat(window.getComputedStyle(ele)[k]);
+        //     }
+        //     // console.log(now);
+        //     //自定义时间间隔
+        //     var interval = 50;
+        //     // 计算总次数
+        //     var maxcount = time / interval;
+        //     // 次数累加器
+        //     var count = 0;
+        //     // 对象中的每个属性都有自己的步长，也可以放到一个步长对象中
+        //     var step = {};
+        //     // 遍历结束对象，计算每个属性的步长
+        //     for (var k in end) {
+        //         step[k] = (end[k] - now[k]) / maxcount;
+        //     }
+        //     // console.log(step);
+        //     // =====================准备工作结束，开启定时器=============================
+        //     var timer;
+        //     timer = setInterval(function () {
+        //         // 让每个属性发生变化，赋值个now对象中的每一项
+        //         for (var k in end) {
+        //             now[k] += step[k];
+        //         }
+        //         // 累计运动次数
+        //         count++;
+        //         // 判断定时器是否结束
+        //         if (count > maxcount) {
+        //             // 拉终停表
+        //             for (var k in end) {
+        //                 now[k] = end[k];
+        //             }
+        //             clearInterval(timer);
+        //         }
+        //         // 赋值给对应元素对象
+        //         for (var k in end) {
+        //             // 判断：如果是不透明属性 ，不要加px单位
+        //             if (k === "opacity") {
+        //                 ele.style[k] = now[k];
+        //             } else {
+        //                 ele.style[k] = now[k] + "px";
+        //             }
+        //         }
+        //     }, interval);
+
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>
