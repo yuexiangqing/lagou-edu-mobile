@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="跳转" id="btn">
+
+    <script>
+         var btn = document.getElementById("btn");
+         btn.onclick = function(){
+            // 输出url地址
+            // console.log(location.href);
+            // 重新赋值，可以跳转到新页面，并且记录之前的访问历史
+            // location.href = "http://www.lagou.com";
+
+
+            // assign 委派
+            // assign()方法的作用与href属性一样，可以设置页面跳转的地址
+            // location.assign("http://www.lagou.com");
+
+            // replace 替换
+            // 功能：替换到地址栏中当前的网址，但是不记录历史
+            // location.replace("http://www.lagou.com");
+
+            // reload重新加载
+            // 类似键盘中f5功能，类似于false效果，ctrl + 5，从服务器获取页面，相当于true的效果
+            // 参数：true强制从服务器获取页面，false如果浏览器之前没有缓存过这个网页，会直接从缓存中获取页面
+
+            location.reload(true);
+
+
+
+         }
+    </script>
+</body>
+</html>

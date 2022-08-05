@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="开始" id="start">
+    <div class="box" id="box"></div>
+
+    <script>
+        var start = document.getElementById("start");
+        var box = document.getElementById("box");
+
+        // 已知：开始位置 ，结束位置，总时长，时间间隔
+        // 总距离 = 步长 * 总次数
+        // 总距离 = 结束位置 - 起始位置,已知可以求出来
+        // 总次数 = 总时长 /  间隔时间，已知可以求出来
+        // 步长 = （结束位置 - 起始位置） /  （总时长 /  时间间隔）
+        // 信号量，也相当于初始值
+
+
+        var nowLeft = box.offsetLeft;
+        var endleft = 500;
+        var time = 2000;
+        var intervial = 50;
+        var maxcount = time / intervial;
+        var step = (endleft - nowLeft) / (time / intervial);
+        var count = 0;
+
+
+        var timer ;
+        start.onclick = function(){
+            timer = setInterval(function(){
+                nowLeft+= step;
+                count++;
+                if(count >= maxcount){
+                    nowLeft = endleft;
+                    clearInterval(timer);
+                }
+                box.style.left = nowLeft + "px";
+            },intervial);
+        }
+    </script>
+</body>
+</html>
