@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<br>
+    <h2>标题</h2>
+    <input type="button" value="按钮" id="btn"><br>
+    <div id="box"></div>
+
+    <script>
+        // 1.document.write()
+        // document.write("新的内容<p>新的段落</p>");
+
+        // 如果书写在事件内部，会导致整个页面被覆盖
+        // var btn = document.getElementById("btn");
+        // btn.onclick = function(){
+        //     document.write("新的内容<p>新的段落</p>");
+        // }
+
+
+        // 2.element.innerHTML  如果遇见标签字符，会把它当做一个标签去加载
+        // var box = document.getElementById("box");
+        // box.innerHTML = "新的内容<p>新的段落</p>";
+
+
+        // 3.document.creatElement()
+        var box = document.getElementById("box");
+        var ele = document.createElement("div");
+        ele.innerText = "新的div盒子";
+        ele.onclick = function(){
+            console.log(1111);
+        }
+        box.appendChild(ele);
+
+
+
+    </script>
+
+</body>
+</html>

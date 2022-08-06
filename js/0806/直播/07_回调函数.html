@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一个函数作为参数传给主函数，它就是一个回调函数
+        // 在主函数执行完后，再执行回调函数
+        function callback (someone){
+            console.log(someone + "go home");
+        }
+        // 主函数
+        function sing(callback,someone){
+            console.log("sing");
+            callback(someone);
+        }
+        //执行主函数
+        sing(callback,"Tom");
+    </script>
+</body>
+</html>

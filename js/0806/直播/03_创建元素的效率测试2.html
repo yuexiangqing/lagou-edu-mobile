@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        // 1.element.innerHTML 直接使用
+        var box = document.getElementById("box");
+
+        // 记录一下循环添加开始的时间
+        var d1 = +new Date();
+        var s = "";
+        // 添加1000个p 标签到ul 中
+        for(var i = 0;i <1000;i++){
+            // 减少直接拼接innerHTML的赋值
+            // 先将所有字符串拼接结束
+            s += "<p style ='width:100px;height:2px;border:1px solid #00f;'></p>";
+            // 问题：大量字符串拼接消耗内存
+
+        }
+        // 最后一次执行innerHTML
+        box.innerHTML = s;
+        // 记录循环添加结束时间
+        var d2 = +new Date();
+        // 计算时间差
+        console.log(d2 - d1);
+        
+    </script>
+</body>
+</html>
