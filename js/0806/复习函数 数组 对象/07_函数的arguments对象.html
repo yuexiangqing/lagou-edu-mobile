@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个函数
+        // function sum (a,b){
+        //     return a + b;
+        // }
+        // 调用函数的时候，实参的个数可以与形参不同
+        // console.log(sum(1,2));
+        // console.log(sum(1));
+        // console.log(sum(1,2,3,4));
+
+        // 函数的内部有一个arguments对象，会接收所有的实参
+        // function fun(){
+        //     console.log(arguments);
+        //     console.log(arguments.length);
+        //     for(var i = 0; i < arguments.length;i++){
+        //         console.log(arguments[i]);
+        //     }
+        // }
+        // fun(1,2,3,4,5,6,7);
+
+        // 定义一个求和函数，如果传入一个函数，返回他自己，如果传入两个参数，返回他们的和，如果传入三个参数，先比较前两个的大小，大的与第三个参数求和返回，如果
+        // 传入4个及以上，根据实参传入的个数走不同的分支
+        function sum (a,b,c){
+            switch(arguments.length){
+                case 1 :
+                    return a;
+                    break;
+                case 2:
+                    return a + b;
+                    break;
+                case 3 :
+                    return a > b ?a + c:b +c;
+                    break;
+                default:
+                    throw new Error("参数的个数不能超过3个");
+            }
+        }
+        // 调用函数
+        console.log(sum(1));
+        console.log(sum(1,2));
+        console.log(sum(1,2,3));
+        console.log(sum(1,2,3,4));
+
+
+    </script>
+</body>
+</html>

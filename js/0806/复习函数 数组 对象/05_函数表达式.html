@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个函数表达式，结尾要加分号
+        var foo = function fun(){
+            console.log(1);
+        };
+        var foo2 = function(){
+            console.log(2);
+        };
+
+        // 调用函数时，只能用变量名调用，函数名调用不成功
+        // fun();
+        foo();
+        foo2();
+        // 在真正使用的时候一般不用写函数名，可以直接写成foo2那种
+        
+    </script>
+</body>
+</html>
