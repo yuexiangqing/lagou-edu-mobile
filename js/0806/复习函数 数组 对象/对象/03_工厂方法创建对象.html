@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 工厂方法就是相当于对 new Object()方法的一个封装
+        function creatPerson(name,age,sex){
+            // 创建一个空对象
+            var person1 = new Object();
+            // 添加属性和方法，属性可以接受参数的值
+            person1.name = name;
+            person1.age = age;
+            person1.sex = sex;
+            person1.sayHi = function(){
+                console.log("hello");
+            }
+            return person1;
+        }
+        var p1 = creatPerson("zs",18,"male");
+        var p2 = creatPerson("ls",19,"famale");
+        console.log(p1);
+        console.log(p2);
+    </script>
+</body>
+</html>

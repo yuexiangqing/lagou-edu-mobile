@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 通过字面量方式创建一个对象
+        var person1 = {
+            name:"zs",
+            age:18,
+            sex:"male",
+            sayHi:function (){
+                console.log(this.name +"向你说：你是一个🐖");
+            }
+        };
+        // 打点调用对象的属性和方法
+        // console.log(person1.name);
+        // console.log(person1.age);
+        // console.log(person1.sex);
+        // person1.sayHi();
+
+        // 中括号调用方法  
+        // console.log(person1["name"]);
+        // person1["sayHi"]();
+        
+
+        // 更改数据
+        // person1.age = 19;
+        // console.log(person1);
+
+        // 添加新数据
+        // person1.weight = 140;
+        // person1["weight"]= 140;
+        // console.log(person1);
+
+        // 删除数据
+        delete person1.name ;
+        console.log(person1);
+
+
+        
+    </script>
+</body>
+</html>
