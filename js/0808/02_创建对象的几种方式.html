@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简单方式
+        // new Object()
+        // var person = new Object();
+        // person.name = "Bob";
+        // person.age = 18;
+        // person.sayName = function (){
+        //     console.log(this.name);
+        // };
+        // console.log(person.age);
+        // person.sayName();
+
+
+        // 对象字面量
+        //     var person = {
+        //         name: "BOB", 
+        //         age: 18, 
+        //         sayName: function () {
+        //             console.log(this.name);
+        //         }
+        //     }
+        //    console.log(person.age);
+        //    person.sayName();
+
+
+        // 函数工厂
+        // function fun(name, age) {
+        //     // 添加一个空对象
+        //     var person = new Object();
+        //     person.name = name;
+        //     person.age = age;
+        //     person.sayName = function () {
+        //         console.log(this.name);
+        //     }
+        //     // 必须有返回值
+        //     return person;
+        // }
+
+        function fun(name,age) {
+            return {
+                name: name,
+                age: age,
+                sayName:function(){
+                    console.log(this.name);
+                }
+            };
+
+        }
+        // 生成真正的对象
+        var person1 = fun("bob", 18)
+        var person2 = fun("Mike", 19)
+        person1.sayName();
+
+        var arr = [1,2,3];
+        console.log(arr instanceof Array);
+        console.log(person1 instanceof Object);
+
+
+
+
+    </script>
+</body>
+
+</html>
