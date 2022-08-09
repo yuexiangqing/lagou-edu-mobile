@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person (name ,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 更优的解决办法：将所有实例共享的属性和方法，都添加给原型对象
+        Person.prototype.type = "human";
+        Person.prototype.sayName = function(){
+            // 方法调用时，哪个对象调用，this指向的就是谁
+            console.log(this,name);
+        };
+        Person.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+
+        // 生成实例对象
+        var person1 = new Person("bob", 18);
+        var person2 = new Person("Mike", 20);
+
+        // 调用原型对象上公用的属性和方法
+        console.log(person1.type);
+        console.log(person1.name);
+        person1.sayAge();
+        console.log(person1.sayAge === person1.sayAge);   //true访问的是同一个地址
+    </script>
+</body>
+</html>

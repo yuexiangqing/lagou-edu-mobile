@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        // 获取构造函数的prototype属性
+        console.log(Person.prototype);
+        // 属性值是一个对象，通常叫做原型对象
+        //对象内部可以添加一些属性和方法
+        Person.prototype.type = "human";
+        Person.prototype.sayHi = function(){
+            console.log("hello");
+        };
+        Person.prototype.constrouctor = Array;
+
+        // 构造含糊的原型对象都默认有一个constructor属性
+        // console.log(Person.prototype.constrouctor);
+
+
+        // 创建实例对象
+        var p1 = new Person ("Mike",18);
+        // 所有的对象都有一个__proto__的属性,是一个指针，指向的是生成实例对象的 构造函数的原型对象
+        console.log(p1.__proto__);
+        console.log(p1.__proto__ === Person.prototype);
+
+        // __proto__并不是一个标准的属性，是浏览器自己根据语法自动生成的
+        p1.__proto__.sayHi();
+        // 在真正的开发的过程中是不会书写__proto__属性的
+        p1.sayHi();
+        console.log(p1.constrouctor); //constructor 是原型对象的构造器，而不是实例对象的，不要随便使用，因为可以后期进行更改
+        console.log(p1 instanceof Person);
+
+
+    </script>
+</body>
+</html>
