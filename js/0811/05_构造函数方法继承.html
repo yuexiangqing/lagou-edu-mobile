@@ -40,14 +40,7 @@
         // 方法2：原型继承
         Student.prototype = new Person();
         Student.prototype.constructor = Student;   //一定不能丢****
-        
-
-
-        // 老师类型
-        function Teacher(name,age,sex,salary) {
-            Person.call(this.name,age,sex);
-            this.salary = salary;
-        }
+     
         // 创建一个学生的实例对象
         var s1 = new Student("ZS",18,"男",89);
         var s2 = new Student("LS",19,"男",92);
