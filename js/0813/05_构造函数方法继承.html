@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 人类类型
+        function Person(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // 父类型的原型对象中有方法也需要继承
+        Person.prototype.sayHi = function(){
+            console.log("你好");
+        };
+
+
+        // 学生类型
+        function Student(name,age,sex,score){
+            Person.call(this,name,age,sex);
+            this.score = score;
+        }
+        // 子类型的原型对象上，需要继承父类型原型对象的方法
+
+        //方法 1 ： 对象拷贝继承
+        // for(var k in Person.prototype){
+        //     if(k === "constructor"){
+        //         continue;
+        //     }
+        //     Student.prototype[k] = Person.prototype[k];
+        // }
+
+        // 方法2：原型继承
+        Student.prototype = new Person();
+        Student.prototype.constructor = Student;  //一定不能丢
+
+        // 创建一个学生的实例对象
+        var s1 = new Student("zs",18,"nan",89);
+        var s2 = new Student("ls",9,"nan",89);
+
+        console.dir(s1);
+        console.dir(s2);
+        s1.sayHi();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function(a,b){
+        //     var a = 1;
+        //     console.log(a + b);
+        // }
+        // 通过构造函数方法去定义函数
+        // 函数本身也是一种对象，可以调用属性和方法
+        // 要把内部的结构体当成一个完整的字符串
+        // 参数：结构体字符串之前
+        var fun = new Function('a','b','var a = 1;console.log(a +b)');
+        fun(2,3);
+        
+    </script>
+</body>
+</html>
