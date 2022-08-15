@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 两侧
+        // ｛n｝硬性量词，对应前面的内容必须在字符串出现 n 次连续
+        // var reg = /^\d{5}$/;  //有五个数字开始的 不一定要一样  必须5个
+        // console.log(reg.test("1234"));  //false
+        // console.log(reg.test("12345"));  //true
+        // console.log(reg.test("123456"));  //false
+
+        // ｛n,m｝ 软性量词，对应前面的内容必须在字符串出现 n- m次 不能出现空格
+        // var reg = /^\d{5,7}$/;  
+        // console.log(reg.test("1234"));  //false
+        // console.log(reg.test("12345"));  //true
+        // console.log(reg.test("123456"));  //true
+        // console.log(reg.test("1234567"));  //true
+        // console.log(reg.test("12345678"));  //false
+
+        // {n,}  软性量词，对应前面的内容必须在字符串出现至少 n次
+        // var reg = /^\d{5,}$/;  
+        // console.log(reg.test("1234"));  //false
+        // console.log(reg.test("12345"));  //true
+        // console.log(reg.test("123456"));  //true
+        // console.log(reg.test("1234567"));  //true
+        // console.log(reg.test("12345678"));  //true
+
+
+        // ？ 软性量词，{0,1}表示前面的内容出现0次或 1次
+        // var reg = /^\d{0,1}$/;
+        // var reg = /^\d?$/;
+        // console.log(reg.test(" "));  //true
+        // console.log(reg.test("1"));  //true
+        // console.log(reg.test("123456")); //false
+        // console.log(reg.test("1234567"));   //false
+
+        // * 软性量词，{0,}表示前面的内容出现0次或 任意次
+        // var reg = /^\d*$/;
+        // console.log(reg.test(" "));  //true
+        // console.log(reg.test("1"));  //true
+        // console.log(reg.test("123456")); 
+        // console.log(reg.test("1234567"));  
+
+
+
+        // + 软性量词，{1,}表示前面的内容出现1次或 任意次
+        // var reg = /^\d+$/;
+        // console.log(reg.test(" "));  //false
+        // console.log(reg.test("1"));  //true
+        // console.log(reg.test("123456"));  //true
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 非回车非换行字符 .
+        // console.log(/^.+$/.test(`fd234967ff`));  //true
+        // console.log(/^.+$/.test(`fd23
+        // 4967ff`));  //false
+
+        // \d数字字符  \D 非数字字符
+        // console.log(/^\d+$/.test(`01278322738`));  //true
+        // console.log(/^\d+$/.test(`01278z322738`));  //false
+        // console.log(/^\D+$/.test(`dfdsftt *`));  //true
+        // console.log(/^\D+$/.test(`dfdsftt 0*`));  //false
+
+        // \s空白字符  \S非空白字符
+        // console.log(/^\s+$/.test(`  
+        // `));    //true
+        // console.log(/^\s+$/.test(`  33
+        // `));     //false
+        // console.log(/^\S+$/.test(`0127832 2738`));  //false
+        // console.log(/^\S+$/.test(`01278322738`));  //true
+
+        // \w单词字符（所有的字母/数字/下划线）  \W非单词字符
+        console.log(/^\w+$/.test(`0abc78322_`));  //true
+        console.log(/^\w+$/.test(`0abc78322_*`));  //false
+        console.log(/^\W+$/.test(`^%$$  **`));  //true
+        console.log(/^\W+$/.test(`^%$$  *a*`));  //false
+
+
+
+
+    </script>
+</body>
+</html>

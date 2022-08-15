@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 普通字符组成的正则
+        // var reg = /abc/; 
+        // 表示正则匹配时，需要进行精确匹配：必须包含abc三个字符，并且顺序不能颠倒，而且要连续书写
+        // console.log(reg.test("adfjkabcdjf"));
+
+
+        // 特殊字符：匹配字符串中对应的普通的符号字符时，需要进行转义
+        // var reg = /\*/ //匹配星号
+        // console.log(reg.test("jfkjk*kfk"));
+
+        // var reg1 = /a*/ //匹配一个或多个a
+        // var reg2 = /a\*/ //匹配一个a 紧挨着*
+        // console.log(reg1.test("ajfk*jdk"));
+
+
+        // 预定义特殊字符
+        // 一些特殊的字符串不能在正则中书写相同的符号，所有正则提供了一些替换写法
+        // var reg = /\t/;
+        // console.log(reg.test(" "));  //false
+
+        // \n表示的是回车符
+        var str = `jkdsjdk
+        `;  // 换一个反引号 ` 就能换行，而且不报错
+        console.log(/\n/.test(str));
+
+
+    </script>
+</body>
+</html>

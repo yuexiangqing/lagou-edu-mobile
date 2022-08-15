@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // split方法:分割字符串成为一个数组
+        // var str = "aa bbb    c dd eeeeee";
+        // 使用一个空格字符进行的精确分割
+        // var arr = str.split(" ");  //8个
+        // console.log(arr);
+        // 使用正则表达式可以进行模糊匹配分割
+        // var arr1 = str.split(/\s+/)    //  \s空白 
+        // console.log(arr1);   //5个
+
+        // var str2 = "bbaacaaaadddaeeeeeaaf";
+        // var arr2 = str2.split(/a+/);   //a+  一个或多个a当成一个一个整体
+        // console.log(arr2);
+
+
+        // search方法：查询在子串在父字符串中出现的位置
+        // var str = "abcdefg";
+        // console.log(str.search("cd"));  //2
+        // console.log(str.search("cdf"));  //-1
+        // console.log(str.search(/ef/));  //4
+        // console.log(str.search(/eff/));  //-1
+
+
+        // match方法：在父字符串中匹配符合的子字符串，将结果输出到====数组中
+        // var str ="abbcccbbbbbddbbbdabbb";
+        // var arr = str.match(/b+/); //在匹配到第一个后就结束
+        // var arr = str.match(/b+/g); //如果有全局修饰符g，不会在第一次结束，而是在找到所有的匹配符才结束
+        // console.log(arr);
+
+        // var str1 ="aaaa o o bbb o o aaa";
+        // var arr1 = str1.match(/o\s+o/g)
+        // console.log(arr1);
+
+
+
+        // replace方法：替换字符串的指定部分，返回值是===一个新得替换后的字符串，原始字符串不受影响
+        // var str = "www.hello.com";
+        // var str1 = str.replace(/hello/,"byebye");
+        // console.log(str);
+        // console.log(str1);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
