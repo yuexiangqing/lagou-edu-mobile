@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = [100,200,300]
+        // const foo = arr[0]
+        // const bar = arr[1]
+        // const baz = arr[2]
+        // console.log(foo,bar,baz)
+
+
+        // const arr = [100,200,300]
+        // const [foo,bar,baz] = arr;
+        // console.log(foo,bar,baz)
+
+
+        // const arr = [100,200,300]
+        // const [,,baz] = arr;  //如果没有逗号 会得到第一个值
+        // console.log(baz) 
+
+        // ...  
+        // const arr = [100,200,300]
+        // const [foo,...rest] = arr;  //从foo后面当前位置开始进行提取，从它往后的所有成员，会以数组的方式的进行存储
+        // console.log(rest)  [200,300]   //注意：...只能出现在最后一个变量的前面，而且只能用一次
+
+        // 少于值
+        // const arr = [100,200,300]
+        // const [foo] = arr;
+        // console.log(foo) //100  从前往后解构
+
+
+        // 多余值
+        // const arr = [100,200,300]
+        // const [foo,bar,baz,more] = arr;  
+        // console.log(more)  //undefined  类似于arguments
+
+
+        // 默认值的设置,通过等号进行赋值
+        // const arr = [100, 200, 300]
+        // const [foo, bar, baz = 400, more = 123] = arr;
+        // console.log(baz,more) //如果能接收到值，就会用接收值，如果没有接收值，就会用默认值
+
+
+        // 拆分字符串
+        const path = "foo/bar/baz"
+        // const temp = path.split("/")
+        // const a = temp[1];
+        const[,,a]=path.split("/")
+        console.log(a);
+
+
+
+
+    </script>
+</body>
+
+</html>
