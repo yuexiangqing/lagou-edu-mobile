@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Symbol数据类型:最主要的作用就是为对象添加独一无二的属性标志符
+
+        // shared.js============================================================
+        // const cache = {}
+        // a.js=================================================================
+        // cache['foo'] = Math.random()
+        // b.js=================================================================
+        // cache['foo'] = 123
+        // console.log(cache);  //覆盖了
+
+        // symbol符号，作用就是表示一个独一无二的值
+        // const s = Symbol()
+        // console.log(s);
+        // console.log(typeof s);  //是一个新的原始的数据类型，所以通过symbol函数创建的数据都是独一无二的
+        // console.log(Symbol()===Symbol());  //false  允许往里面传入参数
+        // console.log(Symbol('bar'));
+        // console.log(Symbol('baz'));
+        // console.log(Symbol('foo'));   //里面的数据是描述性的，
+
+        // 之前的对象只能以字符串当做属性名，现在可以使用symbol的类型数据当作属性名
+        // 创建一个对象，然后用symbol的值作为键，给对象来添加成员
+        // const obj={}
+        // obj[Symbol()]= 123
+        // obj[Symbol()]= 456
+        // console.log(obj); 
+
+
+        // 也可以使用计算属性名的方式
+        const obj={
+            [Symbol()]:789,
+            name:"zs"
+        }
+        obj[Symbol()]= 123
+        obj[Symbol()]= 456
+        console.log(obj); 
+
+        // 除了避免对象的属性名重复之外，还可以借助它去模拟实现对象的私有成员 不能在外面应用 因为通过Symbol指向的是window
+        console.log(obj[Symbol()]);  //undefined
+        console.log(obj.name);
+
+
+
+
+    </script>
+</body>
+</html>

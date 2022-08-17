@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for -of循环
+        const arr = [100,200,300,400]
+
+        // for (const item of arr){
+        //     console.log(item);
+        // }
+
+        // 也可以取代foreach
+        // arr.forEach(item =>{    //没有办法被打断遍历的
+        //     console.log(item);
+        // })
+
+        
+        // 可以自定义打断
+        // for(const item of arr){
+        //     console.log(item);
+        //     if(item>=200){
+        //         break
+        //     }
+        // }
+        // 除了数组，一些伪数组也可以通过for of
+
+
+        // const s = new Set(["foo","bar","baz"])
+        // for(const item of s){
+        //     console.log(item);
+        // }
+
+        // const m = new Map()
+        // m.set("foo",1)
+        // m.set("bar",2)
+        // // for(const item of m){
+        // //     console.log(item);  //得到键值的结构
+        // // }
+        // for(const [key,value] of m){    //可以利用数组的结构方式，直接拿到数组中的键和值 key接收键， value接收值
+        //     console.log(key,value);
+        // }
+
+
+        // 目前用它遍历普通的对象，会有一点问题
+        const obj = {
+            name:"zs",
+            age:18
+        }
+        for(const item of obj){
+            console.log(item);
+        }
+
+
+    </script>
+</body>
+</html>

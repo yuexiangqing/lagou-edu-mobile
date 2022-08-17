@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Map数据结构 :可以使用任意类型的数据当作键  而对象里面只能使用字符串当作键
+        // const obj= {}
+        // obj[true] = "boolean"
+        // obj[123] = "number"
+        // obj[{a:1}] = "object"
+        // console.log(Object.keys(obj));          //Object.keys可以输出一个对象的所有的键
+        //                                         // 内部的键都被转成了字符串
+        // console.log(obj[{}]);  //这样也会拿到里面的值
+        // console.log(obj['[object Object]']);  //这样也会拿到里面的值
+
+        const map = new Map()
+        const a = {a:1}
+        map.set(a,100)
+        console.log(map);    //{a: 1} => 100
+        console.log(map.get(a));  //不会转成字符串
+
+        // has方法
+        // map.has()
+
+        // delete方法
+        // map.delete()
+
+        // clear方法
+        // map.clear()
+
+        // 遍历
+        map.forEach((value,key)=>{
+            console.log(key,value)
+        })
+
+
+
+    </script>
+</body>
+</html>

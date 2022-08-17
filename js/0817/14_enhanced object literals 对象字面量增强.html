@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // 对象字面量增强
+    const bar ="bar"
+    const age = "age" //动态属性名
+    const obj = {
+        name:"tom",
+        // bar:bar
+        bar, //当属性名和变量名相同的时候只写一个就行
+        // sayHi:function(){
+        //     console.log('hi');
+        // }
+        sayHi (){
+            console.log('hi'); //可以省略 : function
+            console.log(this); //内部如果使用this，那么this指向调用方法的对象
+        },
+        //计算属性名
+        // [1+2]:18
+        [age]:18 //中括号内部可以是任意表达式，可以是变量，也可以是1+2的表达式
+    }
+    obj[age] = 18 
+    console.log(obj)
+    // obj.sayHi()
+
+
+
+
+    </script>
+</body>
+</html>
