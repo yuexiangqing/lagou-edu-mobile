@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(Symbol(1)===Symbol(1));
+
+        // 如果需要在全局重复使用一个symbol的值，也是有方法的 用全局变量
+        // const a = Symbol() //对变量的重复使用也是对symbol的复用
+
+        // 还可以通过symbol提供的静态方法：for方法
+        //for方法可以接受一个字符串作为参数，如果有另外一个也是foo
+        // const a = Symbol.for()
+        // const b = Symbol.for()
+        // console.log(a===b);
+
+        // symbol里面还提供了一些内置的symbol的常量，可以用来作为内部方法的标识，通过这些标识符可以让自定义的对象实现一些内置的接口
+        // const obj ={}
+        // console.log(obj.toString()); //都会得到[object Object] 把它称之为一个对象的toString标签
+        // 如果想自定义这个toString标签，可以在对象上添加一个特定的成员来进行标识
+
+        // const obj ={
+        //     [Symbol.toStringTag]:"XObject"       //toStringTag 可以自定义toString的值到底是什么
+        // }
+        // console.log(obj.toString());  //[object XObject]
+
+        const obj={
+            [Symbol()]:"Symbol value",
+            foo:"value"
+        }
+        // for (var k in obj){
+        //     console.log(k);       //for in是无法拿到symbol的属性值的
+        // }
+        // console.log(Object.keys(obj));  //也无法得到symbol的属性值
+        // console.log(JSON.stringify(obj));  //也无法得到symbol的属性值
+        // 在外经常被忽略，所以很适合作为私有属性名
+
+        // 如果非要获取，也是有方法的
+        console.log(Object.getOwnPropertySymbols(obj));   //可以得到属性 只能获取symbol的属性名，不能获取普通字符串的属性名
+
+    </script>
+</body>
+</html>
