@@ -9,6 +9,41 @@
 <body>
     <script>
         // Symbol数据类型：最主要的作用就是为对象添加独一无二等属性标志符
+        // const cache = {}
+        // cache['foo']= Math.random()
+        // cache['foo']= 123
+        // console.log(cache);  //覆盖了
+
+        // symbol符号，作用就是表示一个独一无二的值
+        // const s = Symbol()
+        // console.log(s);
+        // console.log(typeof s);
+        // console.log(Symbol()===Symbol());
+        // console.log(Symbol("bar"));
+        // console.log(Symbol("baz"));
+        // console.log(Symbol("foo"));
+
+
+        // 之前的对象只能以字符串当作属性名，现在可以使用symbol的类型数据当作属性名
+        // 创建一个对象，然后用symbol的值作为键，给对象来添加成员
+        // const obj ={}
+        // obj[Symbol()]= 123
+        // obj[Symbol()] = 456
+        // console.log(obj);
+
+        // 也可以使用计算属性名的方式
+        const obj = {
+            [Symbol()]:789,
+            name:"zs"
+        }
+        obj[Symbol()]= 123
+        obj[Symbol()] = 456
+        console.log(obj);
+
+        // 除了避免对象的属性名重复之外，还可以借助它去模拟实现对象的私有成员
+        // 但是不能在外面应用，因为通过symbol指向的是window
+        console.log(obj[Symbol()]);
+        console.log(obj.name);
 
         
     </script>
