@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .demo{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="添加" id="btn1">
+    <input type="button" value="删除" id="btn2">
+    <input type="button" value="切换" id="btn3">
+    <div id="box" class="box"></div>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script>
+        var $box = $("#box")
+        var $btn1 = $("#btn1")
+        var $btn2 = $("#btn2")
+        var $btn3 = $("#btn3")
+
+        $btn1.click(function(){
+            $box.addClass("demo")
+        })
+        $btn2.click(function(){
+            $box.removeClass('demo')
+        })
+        $btn3.click(function(){
+            $box.toggleClass("demo")
+        })
+
+    </script>
+</body>
+</html>

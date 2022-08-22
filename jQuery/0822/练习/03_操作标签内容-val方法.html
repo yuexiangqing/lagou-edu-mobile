@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">这是原始的 div1 <span>span1</span></div>
+    <input type="text" value="请输入用户名1"><br>
+    <input type="text" value="请输入用户名2"><br>
+    <textarea cols="30" rows="10">请输入自我介绍</textarea><br>
+    <select>
+        <option value="tianjin">天津</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script>
+        var $box = $(".box")
+        var $input = $("input")
+        var $ta = $("textarea")
+        var $se = $("select")
+        var $opt = $("option")
+
+        // 设置内容
+        $input.val("haha")
+        $ta.val("你好")
+        $se.val("beijing")
+        $opt.val("guangzhou")
+
+    </script>
+</body>
+</html>

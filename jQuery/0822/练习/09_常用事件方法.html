@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parents {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .demo {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="切换" id="btn1">
+    <div id="parents">
+        <div id="box" class="box"></div>
+    </div>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 给box切换demo的类名，从而改变背景颜色
+        var $box = $("#box");
+        var $btn1 = $("#btn1");
+        var $parents = $("#parents");
+
+        // 添加事件 ，使用子级对象的方法
+        // $btn1.click(function(){
+        //     $box.toggleClass("demo")
+        // })
+
+
+        // mouseenter 和mouseleave
+        // 没有事件冒泡
+        // $box.mouseenter(function(){
+        //     console.log("box-mouse-in");
+        // })
+        // $box.mouseleave(function(){
+        //     console.log("box-mouse-out");
+        // })
+        // $parents.mouseenter(function(){
+        //     console.log("parents-mouse-in");
+        // })
+        // $parents.mouseleave(function(){
+        //     console.log("parents-mouse-out");
+        // })
+
+
+
+        // $box.mouseover(function(){
+        //     console.log("box-mouse-in");
+        // })
+        // $box.mouseout(function(){
+        //     console.log("box-mouse-out");
+        // })
+        // $parents.mouseover(function(){
+        //     console.log("parents-mouse-in");
+        // })
+        // $parents.mouseout(function(){
+        //     console.log("parents-mouse-out");
+        // })
+
+
+        $box.hover(function(){
+            $box.addClass("demo")
+        },function(){
+            $box.removeClass("demo")
+        })
+
+
+
+    </script>
+</body>
+
+</html>
