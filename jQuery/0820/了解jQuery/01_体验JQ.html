@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 获取元素
+        // var box = document.getElementById("box")
+        // var box = document.getElementsByTagName("div")[0]
+
+        // JQ中获取元素
+        // $(".box")  //里面是字符串格式
+        // $("#box")
+
+        // 获取css样式，并设置
+        // console.log($("#box").css("width"));  //css可以传1-2个参数
+        // $(".box").css("width",200)  //设置两个值就是进行更改
+
+        //事件简化
+        // $(".box").click(function(){
+        //     $(this).css("background-color","skyblue")
+        // })
+
+        // 运动方法
+        $(".box").animate({"width":500},1000)  //结束位置
+
+
+    </script>
+</body>
+</html>

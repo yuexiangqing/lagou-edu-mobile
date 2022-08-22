@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">这是原始的 div1 <span>span1</span></div>
+    <input type="text" value="请输入用户名1"><br>
+    <input type="text" value="请输入用户名2"><br>
+    <textarea cols="30" rows="10">请输入自我介绍</textarea><br>
+    <select>
+        <option value="tianjin">天津</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+
+        // 获取元素
+        var $box = $(".box")
+        var $input = $("input")
+        var $ta = $("textarea")
+        var $se = $("select")
+        var $opt = $("option")
+
+        // html方法
+        // console.log($input.html());  //单标签不能调用html方法
+        // console.log($input.text());  //单标签不能调用text方法
+        // console.log($ta.text());  //双标签可以使用
+        // console.log($ta.html());
+        // console.log($se.html());
+        // console.log($se.text());
+        // console.log($opt.text());
+        // console.log($opt.html());
+        
+        // 通过val()方法进行获取
+        // console.log($box.val());  //不能
+        // console.log($input.val()); //第一个
+        // console.log($ta.val()); //任何方法都可以
+        // console.log($se.val());   //当前选中的
+        // console.log($opt.val());  //第一个value属性值 而不是内部文案
+
+
+        // 设置内容
+        $input.val("haha")  //所有的都变化
+        $ta.val("haha") 
+        $se.val("beijing")   //让选中项：变成北京
+        $opt.val("guangzhou")  
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
