@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="old">这是原有的标签</li>
+    </ul>
+    <div class="box">
+        <p>段落</p>
+        <h2>标题</h2>
+    </div>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 创建新的元素
+        var $newli=$('<li>这是新的li标签</li>')
+        // console.log($newli);
+        // 获取ul元素
+        var $ul = $("ul")
+        var $oldli = $(".old")
+
+        // 向父元素最后添加新的子元素
+        // $ul.append($newli)
+        // $newli.appendTo($ul)
+        // $newli.appendTo("ul")  
+
+        // 向父元素的最前面添加新的子元素
+        // $ul.prepend($newli)
+        // $newli.prependTo($ul)
+        // $newli.prependTo("ul")
+
+
+        // 向一个元素的后面添加一个新的兄弟元素
+        // $oldli.after($newli)
+        // $newli.insertAfter($oldli)
+
+        // 向一个元素的前面添加一个新的兄弟元素
+        // $oldli.before($newli)
+        $newli.insertBefore($oldli)
+
+
+
+
+
+
+    </script>
+</body>
+</html>
