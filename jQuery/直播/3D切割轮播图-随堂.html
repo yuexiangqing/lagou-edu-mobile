@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*清除默认样式*/
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+    .carousel {
+      position: relative;
+      width: 700px;
+      height: 360px;
+      border: 1px solid #000;
+      margin: 100px auto;
+    }
+		
+    /* 设置li 的样式 */
+    .carousel ul li {
+      position: absolute;
+      top: 0;
+      width: 175px;
+      height: 360px;
+      /* 设置透视属性，出现 z 轴 */
+      perspective: 50000px;
+      /* 保留子元素自己的 3D 空间 */
+      transform-style: preserve-3d;
+      /* transform: rotateY(60deg); */
+      /* 让 属性变化时进行动画过渡 */
+      transition: all 1s ease 0s;
+    }
+    /* 给每个 li 设置不同的定位 */
+    .carousel ul li:nth-child(1) {
+      left: 0;
+    }
+    .carousel ul li:nth-child(2) {
+      left: 175px;
+    }
+    .carousel ul li:nth-child(3) {
+      left: 350px;
+    }
+    .carousel ul li:nth-child(4) {
+      left: 525px;
+    }
+
+    .carousel ul li div {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 360px;
+      background-size: 700px 360px;
+    }
+    /* 给每一个 li 中相同位置的 div 要设置相同的背景图 */
+    .carousel ul li div:nth-child(1) {
+      background-image: url(images/pic1.jpg);
+      transform: translateZ(180px);
+    }
+    .carousel ul li div:nth-child(2) {
+      background-image: url(images/pic2.jpg);
+      transform: rotateX(90deg) translateZ(180px);
+    }
+    .carousel ul li div:nth-child(3) {
+      background-image: url(images/pic3.jpg);
+      transform: rotateX(180deg) translateZ(180px);
+    }
+    .carousel ul li div:nth-child(4) {
+      background-image: url(images/pic4.jpg);
+      transform: rotateX(270deg) translateZ(180px);
+    }
+
+    /* 给每一个 li 中所有的 div 设置相同的背景定位位置 */
+    .carousel ul li:nth-child(1) div {
+      background-position: 0 0;
+    }
+    .carousel ul li:nth-child(2) div {
+      background-position: -175px 0;
+    }
+    .carousel ul li:nth-child(3) div {
+      background-position: -350px 0;
+    }
+    .carousel ul li:nth-child(4) div {
+      background-position: -525px 0;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 50px;
+      border: 1px solid #666;
+    }
+	</style>
+</head>
+
+<body>
+  <!-- 1.搭建结构 -->
+  <!-- 在li标签内部出现的图片 -->
+  <!-- 一种：用插入图，需要使用ps等软件提前切图，不方便 -->
+  <!-- 二种：用背景图，可以利用背景定位的技术 -->
+  <div class="carousel">
+    <ul>
+      <!-- 每次轮播，是在四张图片中轮播，给li设置多个背景图不合适 -->
+      <!-- 可以再每一个li中添加4个子标签，用来存放轮播的四张图 -->
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+    </ul>
+  </div>
+  <input type="button" value="下一张" class="btn">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script>
+    // 选中所有的 li 标签，将来会发生旋转
+    var $lis = $(".carousel ul li");
+    // 信号量编程
+    var sam = 0;
+    // 函数节流
+    var lock = false;
+    // 注册事件
+    $(".btn").click(function () {
+      // 如果是运动的，就不要执行后面的内容
+      if (lock) return;
+      lock = true;
+      // 每次沿着 X 轴旋转 逆时针 90 度
+      sam -= 90;
+      // 设置给所有的 li 标签
+      $lis.each(function (i) {
+        $(this).css({
+          "transform": "rotateX("+sam+"deg)",
+          // 让每一个图片 根据自己的 位置 进行延时
+          "transition-delay": 0.1 * i + "s"
+        })
+      })
+      // 计算一下延时的时间
+      var time = 1000 + 100 * ($lis.length - 1);
+      // 定义一个延时器
+      setTimeout(function () {
+        lock = false;
+      },time)
+    })
+  </script>
+</body>
+
+</html>
