@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:3000/posts");
+        xhr.onload = function () {
+            console.log("load", this.readyState);  //等于4的时候触发  请求完成后
+        }
+        xhr.onprogress=function(e){
+            console.log("progress",this.readyState);  //等于3的时候触发  请求进行中
+            // 在周期性请求过程中，接收到的数据的个数
+            console.log(e.loaded);
+            // 接收到的总个数
+            console.log(e.total);
+        }
+        xhr.send(null);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // axios方法
+        axios({
+            url:"/comments",
+            // method:"get",
+            method:"post",
+            baseURL:"http://localhost:3000",  //公共的前缀
+            headers:{
+                // "Content-Type":"application/x-www-form-encoded"
+                "Content-Type":"application/json"
+            },
+            // timeout:1000,
+            timeout:1, //请求时间
+            data:{  //如果data是以对象格式传递的，那么在headers中要以json格式，当然也可以不传入headers，因为它的默认值是json
+                "postId":3,
+                "content":"better"
+            }
+            // params:{
+            //     id:1
+            // }
+        }).then(function(res){
+            console.log(res.data);
+        }).catch(function(error){
+            console.log(error);
+        })
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

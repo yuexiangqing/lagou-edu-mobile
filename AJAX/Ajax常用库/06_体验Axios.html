@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // 体会get请求
+        axios.get("http://localhost:3000/posts?id=1")  //直接传参
+        // 请求成功
+        .then(function(response){   //调用promise里面的方法
+            console.log(response.data)
+        })
+        // 请求失败
+        .catch(function(error){
+            console.log(error)
+        })
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
