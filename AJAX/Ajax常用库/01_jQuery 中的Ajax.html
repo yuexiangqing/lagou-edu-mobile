@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        // $.ajax()
+        // 参数：是一个配置的对象
+        $.ajax({
+            url:"http://localhost:3000/posts",
+            // url:"http://localhost:3000/post",
+
+            type:"get",
+            dataType:"json",
+            data:{"id":1},  //如果不设置，就会获取所有的数据
+            // data:{"id":5},  //如果不设置，就会获取所有的数据
+
+            beforeSend:function(xhr){
+                console.log("before send");
+            },
+            success:function(data){
+                console.log(data);
+            },
+            error:function(xhr){
+                console.log(xhr);
+            },
+            complete:function(xhr){
+            url:"http://localhost:3000/posts",
+                console.log(xhr);
+            }
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

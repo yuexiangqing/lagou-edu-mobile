@@ -11,6 +11,11 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "postId": "3",
+      "content": "bad",
+      "id": 2
     }
   ],
   "profile": {
