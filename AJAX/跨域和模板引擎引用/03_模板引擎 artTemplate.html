@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <!-- 1.引入模板的文件 -->
+    <script src="../js/template-native.js"></script>
+    <!-- 2.创建模板 -->
+    <!-- 创建的过程中有两个属性需要设置 一个是id一个是type -->
+    <script type="text/html" id="tem">
+        <!-- 3.添加模板中的结构 -->
+    <!-- 如果是html中的结构，以前怎么写现在还是怎么写 -->
+    <% for(var i=0;i < 5;i++){ %>
+        <!-- <div>这是一个模板中的div1</div> -->
+
+        <!-- 引入一个变量 -->
+        <div>这是一个模板中的div <%=i%></div>  
+        <!-- <div>这是一个模板中的div2</div> -->
+        <div>这是一个模板中的div<%= name%></div>
+        <% } %>
+
+            <!-- 4.在模板中，编写一些JS代码，解析数据 -->
+            <!--JS代码可以是一些语句，也可以是一些表达式的引用-->
+
+
+    </script>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <!-- 如果script要往前面写 ，要写上入口函数，避免函数找不到 -->
+    <script>
+        // 将模板内的内容，添加到box里面
+        // template（）方法可以调用模板内容 ，里面有两个参数
+        // 参数1：调用的模板的ID
+        // $(".box").html(template("tem"))   //得到的是一个字符串内容
+        // 参数2：是一个对象型的数据，数据会传给模板，对象中的每个属性的属性名在模板中可以直接当变量名使用
+        $(".box").html(template("tem",{name:"tom"})) 
+    </script>
+</body>
+
+</html>
