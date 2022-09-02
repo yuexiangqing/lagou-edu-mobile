@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        // post请求
+        xhr.open("POST", "http://localhost:3000/users");
+        // xhr.setRequestHeader("Content-Type","applaction/x-www-form-urlencoded");
+        xhr.setRequestHeader("Content-Type", "applaction/json");
+        // xhr.send("name=lily&age=19&class=2");
+        xhr.send(JSON.stringify({
+            "name":"xiaogou",
+            "age":18,
+            "class":1
+        }))
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);  //得到的是新增的数据
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
