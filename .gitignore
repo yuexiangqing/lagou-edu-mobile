@@ -9,3 +9,5 @@ gen
 
 # VSCode
 .vscode
+node_modules
+dist
