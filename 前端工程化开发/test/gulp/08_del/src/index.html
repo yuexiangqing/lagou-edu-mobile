@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            padding: 20px;
+            background: #dfb;
+        }
+        .code{
+            user-select:none;
+            -ms-user-select: none;  
+            /* IE浏览器的兼容  自己写不方便，可以交给 Autoprefixer 插件*/
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <p class="code">
+        console.log("不能选中")
+    </p>
+    <p>
+        console.log("能够选中")
+    </p>
+    
+        <!-- 
+             gulp-htmlmin 插件
+             npm i gulp-htmlmin -D
+             在gulpfile.js中引入
+         -->
+</body>
+</html>
