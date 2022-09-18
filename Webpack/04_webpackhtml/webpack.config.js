@@ -1,38 +1,38 @@
 // webpack的配置文件 
 
-const {resolve}=require('path')
-const MiniCssExtractPlugin= require('mini-css-extract-plugin')
-const StylelintPlugin = require('stylelint-webpack-plugin')
+const { resolve } = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const StylelintPlugin = require('stylelint-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
-module.exports={
+module.exports = {
     // 打包模式
-    mode:'development',
+    mode: 'development',
     // mode:'production',
 
     // 入口文件
-    entry:'./src/index.js',
+    entry: './src/index.js',
 
     // 出口配置
-    output:{
+    output: {
         // 指定输出目录（输出目录必须是绝对路径）
         // path:resolve(__dirname,'dist'),//不想打包到’dist'下了
-        path:resolve(__dirname,'output'),
+        path: resolve(__dirname, 'output'),
         // 输出文件名称
         // filename:'main.js'  //输出文件名也更改
-        filename:'bundle.js'
+        filename: 'bundle.js'
     },
 
     // module模块配置
-    module:{
-        rules:[
+    module: {
+        rules: [
             //指定多个配置规则
             {
-                test: /.css$/i,
+                test: /\.css$/i,
                 // use中loader的加载顺序：先下后上
-                use:[
+                use: [
                     // 2.将js中的样式，挂载到<style>标签中
                     // 'style-loader',
 
@@ -49,7 +49,7 @@ module.exports={
             {
                 test: /\.less$/i,
                 // use中loader的加载顺序：先下后上
-                use:[
+                use: [
                     // 3.将js中的样式，挂载到<style>标签中
                     // 'style-loader',
 
@@ -72,30 +72,53 @@ module.exports={
     },
 
     // 开发服务器
-    devServer:{
+    devServer: {
 
     },
 
     // 插件配置
-    plugins:[
+    plugins: [
         new MiniCssExtractPlugin({
-            filename:'css/[name].css' //原来叫什么现在就叫什么
+            filename: 'css/[name].css' //原来叫什么现在就叫什么
         }),
-        new StylelintPlugin({
-            // 指定需要进行格式校验的文件
-            files: ['src/css/*.{css,less,sass,scss}']
-          }),
+        // new StylelintPlugin({
+        //     // 指定需要进行格式校验的文件
+        //     files: ['src/css/*.{css,less,sass,scss}']
+        //   }),
         //压缩css
         new OptimizeCssAssetsPlugin(),
 
 
         // Html的配置
         new HtmlWebpackPlugin({
-            // 用来指定生成 html 的模版
-            template:'./src/index.html',
-            // 指定 Html 中使用的变量 
-            title:"Webpack Demo"
+            // 指定打包后的文件名称
+            filename: 'index.html',
+            // template 用来指定生成html的模版 ,模板的名称
+            template: './src/index.html',
+            // 指定HTML中使用的变量
+            title: "Webpack Demo"
+        }),
+
+        // 可以打包多个html文件
+
+        new HtmlWebpackPlugin({
+            // 指定打包后的文件名称
+            filename: 'about.html',
+            // template 用来指定生成html的模版 ,模板的名称
+            template: './src/index.html',
+            // 指定HTML中使用的变量
+            title: "关于我们",
+            minify: {
+                collapseWhitespace: true,
+                keepClosingSlash: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            }
+
         })
     ]
-    
+
 }
