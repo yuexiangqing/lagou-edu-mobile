@@ -10,9 +10,12 @@ const { __esModule } = require('mini-css-extract-plugin/dist')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+// 引入插件
+const MyPlugin=require('./plugin/MyPlugin')
+
 
 module.exports = (env, argv) => {
-    const config = {
+     const config = {
         // 打包模式
         mode: 'development',
         // mode:'production',
@@ -131,6 +134,22 @@ module.exports = (env, argv) => {
 
                 // }
                 // },
+
+                // 自定义loader
+                {
+                    test:/\.md$/i,
+                    // use:'./loader/markdown-loader'
+                    use:[
+                        'html-loader',
+                        // './loader/markdown-loader',
+                        {
+                                loader:  './loader/markdown-loader',
+                                options: {
+                                    size: 20
+                                }
+                            }
+                    ]
+                },
 
                 // 配置字体文件
                 {
@@ -285,7 +304,13 @@ module.exports = (env, argv) => {
             }),
 
             // 打包之前先清除历史文件
-            new CleanWebpackPlugin()
+            new CleanWebpackPlugin(),
+
+
+            // 引入自定义插件
+            new MyPlugin({
+                target:'.css'
+            })
 
         ]
     }

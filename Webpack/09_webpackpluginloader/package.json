@@ -1,16 +1,14 @@
 {
-  "name": "08_webpackenv",
+  "name": "09_webpackpluginloader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev":"webpack --config ./config/webpack.dev.conf.js",
-    "build:prod":"webpack --config ./config/webpack.prod.conf.js",
-    "dev":"webpack serve --config ./config/webpack.dev.conf.js",
-    "start":"webpack serve --config ./config/webpack.prod.conf.js"
-
-
+    "build:dev": "webpack --config ./config/webpack.dev.conf.js",
+    "build:prod": "webpack --config ./config/webpack.prod.conf.js",
+    "dev": "webpack serve --config ./config/webpack.dev.conf.js",
+    "start": "webpack serve --config ./config/webpack.prod.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +32,8 @@
     "html-webpack-plugin": "^5.3.1",
     "less": "^4.1.1",
     "less-loader": "^9.0.0",
+    "loader-utils": "^2.0.0",
+    "marked": "^2.0.5",
     "mini-css-extract-plugin": "^1.6.0",
     "optimize-css-assets-webpack-plugin": "^6.0.0",
     "postcss-loader": "^5.3.0",

@@ -10,6 +10,9 @@ import './css/main.css';
 // 引入less文件
 import './css/main.less';
 
+// 引入markdown文件
+import about from './about.md';
+
 // 以模块的方式引入图片
 import boy from './image/xph.gif';
 
@@ -53,5 +56,8 @@ img1.src = homeIcon;
 // eslint-disable-next-line
 document.body.append(img1);
 // console.log("Hello webpack")
-
+// eslint-disable-next-line
 console.log('接口地址', API_BASE_URL);
+
+// eslint-disable-next-line
+console.log(about);
