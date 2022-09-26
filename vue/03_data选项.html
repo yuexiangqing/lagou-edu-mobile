@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <p>{{title}}</p>    -->
+        <!-- 数据可以直接绑定到视图中 -->
+        <ul>
+            <li>{{arr[0]}}</li>
+            <li>{{arr[1]}}</li>
+            <li>{{arr[2]}}</li>
+        </ul>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                // title:'标题文本'
+                arr:['内容1','内容2','内容3']
+            }
+        })
+// 查看方式:两种
+// console.log(vm.$data.title);
+// console.log(vm.title);  //更常用
+
+
+        Vue.set(vm.arr,0,'yuexiaogou')
+        console.log(vm.arr);
+
+    </script>
+</body>
+</html>

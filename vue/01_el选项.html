@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 挂载元素 -->
+    <div id="app">
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        // 第一种方式
+        // var vm = new Vue({
+        //     el:'#app'
+        // })
+        // console.log(vm.$el);
+
+        // 第二种方式
+        // var app = document.querySelector('#app')
+        // var vm = new Vue({
+        //     el:app
+        // })
+        // console.log(vm.$el);
+
+        // 第三种方式，没有进项挂载处理
+        // var vm = new Vue({})
+        // vm.$mount('#app')
+        // console.log(vm.$el);
+
+        
+        var app = document.getElementById('app')
+        var vm = new Vue({})
+        vm.$mount(app)
+        console.log(vm.$el);
+
+
+    </script>
+</body>
+</html>
