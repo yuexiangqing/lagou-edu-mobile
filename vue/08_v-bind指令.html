@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:title='mytitle'>p标签的内容</p>
+        <p :title="mytitle">p标签的内容</p>
+
+        <p :class="'num'+1+2+3">p标签的内容</p>
+        <p :class="prefix+num"></p>
+
+        <!-- <p :class="var a = 1"></p>  -->
+        <!-- 不能使用语句 -->
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                mytitle:'这是title属性内容',
+                prefix:'demo',
+                num:10
+            }
+        }) 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 行内，对象格式 -->
+        <!-- <p v-bind:style="{width:'100px',height:'100px'}"></p> -->
+
+        <!-- v-bind 方式 -->
+        <!-- <p :style="styleObj">标签内容</p> -->
+
+        <!-- 普通style和v-bind方式并存 -->
+        <!-- 当普通和绑定相冲突，则会以绑定为准 -->
+        <!-- <p style="width:100px" :style="styleObj"></p> -->
+
+        <!-- 数组方式 -->
+        
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                styleObj:{
+                    width:'200px',
+                    height:'200px',
+                    backgroundColor:'red',
+                    'font-size':'30px'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

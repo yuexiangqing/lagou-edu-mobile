@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind="attrObj">这是p标签的内容</p>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                attrObj:{
+                    id:'box',
+                    title:'示例内容',
+                    class:'clearFix',
+                    // 还可以绑定自定属性，因为js中不能在属性中识别属性，需要用引号进行包裹
+                    'data-title':'这是data-title的内容'
+                }
+            }
+        }) 
+
+    </script>
+</body>
+</html>

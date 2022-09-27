@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- key里面的值应该是唯一值，可以是index，可以是元素，索引值是不被推荐使用的 因为如果数组元素的顺序变了，索引也就变了。-->
+            <!-- <li v-for="(item,index) in arr" :key="item">
+                输入框{{item}}: <input type="text">
+            </li> -->
+
+            <!-- 如果数组中元素的内容一样的话，最好使用  对象数组 的方式，使用数组中对象的 id 进行绑定-->
+            <li v-for="(item,index) in itemList" :key="item.id">
+                输入框{{item.value}}: <input type="text">
+            </li>
+        </ul>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                // arr:[1,2,3],
+                // itemList:[2,3,3]
+                itemList:[
+                    {
+                        id:1,
+                        value:2
+                    },
+                    {
+                        id:2,
+                        value:3
+                    },
+                    {
+                        id:3,
+                        value:3
+                    }
+                ]
+            }
+        })
+
+    </script>
+</body>
+
+</html>

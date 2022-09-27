@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 数组方式 -->
+        <!-- <p :style="styleObj1">第一个P标签</p>
+        <p :style="styleObj2">第二个P标签</p> -->
+        
+        <!-- 给多个元素设置公用样式 -->
+        <p :style="[baseStyle,styleObj1]">第一个P标签</p>
+        <p :style="[baseStyle,styleObj2]">第二个P标签</p>
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                // 公共样式
+                baseStyle:{
+                    width:'100px',
+                    height:'100px'
+                },
+                styleObj1: {
+                    backgroundColor: 'red'
+                },
+                styleObj2: {
+                    backgroundColor: 'blue'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

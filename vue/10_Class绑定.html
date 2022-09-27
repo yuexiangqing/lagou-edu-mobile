@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 单个绑定 -->
+        <!-- <p v-bind:class="cls1">标签内容</p> -->
+
+        <!-- class与绑定class一起使用  不冲突-->
+        <!-- <p class="a" :class="cls1">标签内容</p> -->
+
+        <!-- 注意事项 -->
+        <!-- 1.通过v-bind class绑定方式的class，是不能像普通的class一样直接并排以空格连接书写多个值 -->
+        <!-- <p class="a b c" :class="cls1 cls2 cls3"></p>   错误写法 要注意 -->
+        <!-- <p :class="cls"></p> -->
+
+        <!-- 2.如果在进行类名设置的时候，需要进行条件判断，我们可以在：class内部进行三元运算符的处理 -->
+        <!-- <p :class="bool ? cls1:cls2"></p> -->
+
+        <!-- 对象写法：键代表的是类名，值代表的是当前这个是否显示-->
+        <!-- <p :class="{x:true,y:true,z:true}"></p>  -->
+        <!-- <p :class="{x:true,y:false,z:true}"></p> -->
+
+        <!-- <p :class="{x:isX,y:false,z:true}"></p> -->
+
+        <!-- 数组结构 -->
+        <p :class="['a',classB,{c:isC}]"></p>
+    </div>
+
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                classB:'b',
+                isC:true
+                // isX:true
+                // bool: true,
+                // cls: 'q w e',
+                // cls1: 'x',
+                // cls2: 'y',
+                // cls3: 'z'
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
