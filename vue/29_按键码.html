@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <!-- <input type="text" @keyup="fn"> -->
+       <!-- 触发事件 49是1对应keyCode的码 当前这个事件只能由数字1来进行触发 -->
+       <input type="text" @keyup.49="fn">
+       <!-- <input type="text" @keyup.65="fn"> -->
+       <!-- 字母按键时，不仅可以通过Keycode来控制，也可以通过字母本身来触发 -->
+       <!-- <input type="text" @keyup.a="fn"> -->
+
+       <!-- 特殊按键 -->
+       <!-- <input type="text" @keyup.esc="fn"> -->
+
+       <!-- 连写 -->
+       <!-- <input type="text" @keyup.a.b.c="fn"> -->
+
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                fn(event){
+                    console.log(event);
+                    console.log('输入了对应内容');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

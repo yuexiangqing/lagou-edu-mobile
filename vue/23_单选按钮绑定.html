@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>radio 的内容为：{{value3}}</p>
+        
+        <!-- 获取的是value的值 -->
+        <!-- 最终选中哪个元素，那个元素的 value 就会传入 v-model 绑定的值当中 -->
+        
+        <input type="radio" id="one" value="1" v-model="value3">
+        <label for="one">选项1</label>
+
+        <input type="radio" id="two" value="2" v-model="value3">
+        <label for="two">选项2</label>
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                value3:''
+            }
+        })
+    </script>
+</body>
+</html>
