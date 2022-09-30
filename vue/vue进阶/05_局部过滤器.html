@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <!-- <p>{{content | filterA}}</p>
+      <p>{{content2 | filterA}}</p> -->
+
+      <!-- 通过多个过滤器处理 -->
+      <p>{{content | filterA |filterB}}</p>
+
+      <!-- 给一个过滤器多个参数 -->
+      <p>{{content | filterC('lagou-')}}</p>
+      
+      <p>{{content | filterA | filterC('lagou-')}}</p>
+
+
+    </div>
+
+    <!-- 局部过滤器不能被其他实例使用 -->
+    <!-- <div id="app2">
+        <p>{{content | filterA}}</p>
+    </div> -->
+
+    <script src="lib/vue.js"></script>
+    <script>
+        
+        new Vue({
+            el:'#app',
+            data:{
+                content:'a-b-c',
+                content2:'x-y-z'
+            },
+            filters:{
+                // 在这里书写有两种方式
+                filterA:function(value){
+                    // console.log(value);
+                    return value.split('-').join('')
+                },
+                filterB:function(value){
+                    return value.split('').reverse().join('')
+                },
+                filterC(value,prefix){
+                    return prefix + value
+                }
+            }
+        })
+
+        // new Vue({
+        //     el:'#app2',
+        //     data:{
+        //         content:'q-w-e'
+        //     }
+        // })
+    </script>
+</body>
+</html>

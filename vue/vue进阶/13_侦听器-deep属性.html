@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <input type="text" v-model="value"> -->
+    </div>
+
+
+    <script src="lib/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                title:'这是内容',
+               obj:{
+                content1:'内容1',
+                content2:'内容2',
+               },
+               arr:[1,2,3,4,5]
+            },
+            watch:{
+                // 基本类型 的监听
+                title(val,oldVal){
+                    console.log('title被修改了',val,oldVal);
+                },
+                // obj(){
+                //     console.log('obj被修改了');
+                // }
+
+                // 对象类型的监听
+                obj:{
+                    deep:true,
+                    handler(val,oldVal){
+                        console.log('obj被修改了',val,oldVal);
+                        console.log(val===oldVal);  //true
+                    }
+                },
+
+                // 数组的监听
+                // arr(val,oldVal){
+                //     console.log('arr修改了',val,oldVal);
+                // }
+
+                arr:{
+                    deep:true,
+                    handler(val,oldVal){
+                        console.log('arr被修改了',val,oldVal);
+                    }
+                }
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

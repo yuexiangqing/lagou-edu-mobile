@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 给数据使用多个过滤器 -->
+        <!-- <p>{{value | filterA | filterB}}</p> -->
+
+
+        <!-- 一个过滤器可以传入多个参数 -->
+        <p>{{value | filterC('lagou-',200)}}</p>
+        <p>{{value | filterC('qqq-',200)}}</p>
+
+    </div>
+
+    <script src="lib/vue.js"></script>
+    <script>
+        // 设置全局过滤器
+        // Vue.filter('filterA',function(value){
+        //     console.log(value,'filterA');
+        //     return value.split('-').join('');  
+        // })
+        // Vue.filter('filterB',function(value){
+        //     console.log(value,'filterB');
+        //     return value[0].toUpperCase()+value.slice(1)
+        // })
+
+
+        // 给过滤器传入多个参数
+        Vue.filter('filterC',function(par1,par2,par3){
+            // console.log(par1,par2,par3);
+            return par2 + par1.split('-').join('')
+        })
+
+
+
+        new Vue({
+            el:'#app',
+            data:{
+                value:'a-b-c',
+                value2:'x-y-z'
+            },
+        })
+    </script>
+</body>
+</html>
