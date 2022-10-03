@@ -77,6 +77,15 @@
 					})
 				}
 			}
+		},
+		directives:{
+			// 用于设置正在编辑的事项输入框获取焦点
+			'todo-focus'(el,binding){
+				// console.log(binding.value);
+				if(binding.value){
+					el.focus()
+				}
+			}
 		}
 	})
 	

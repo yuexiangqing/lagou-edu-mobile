@@ -35,7 +35,8 @@
 							<!-- 删除按钮 -->
 							<button class="destroy" @click="removeTodo(todo)"></button>
 						</div>
-						<input class="edit" v-model="todo.title">
+						<!-- 编辑的输入框 -->
+						<input class="edit" v-model="todo.title" v-todo-focus="todo === editingTodo">
 					</li>
 				</ul>
 			</section>
