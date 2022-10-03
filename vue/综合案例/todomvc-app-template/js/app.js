@@ -34,10 +34,16 @@
 			removeTodo(todo){
 				var index = this.todos.indexOf(todo)
 				this.todos.splice(index,1)
+			},
+			// 用于删除已完成事项
+			removeCompleted:function(){
+				this.todos=this.todos.filter(todo=>{
+					return !todo.completed
+				})
 			}
 		},
 		computed:{
-			// 用于获取待办事项个数
+			// 用于获取待办事项个数 未完成的事项个数
 			remaining(){
 				// return this.todos.filter(todo=>!todo.completed).length;
 				return this.todos.filter(function(todo){
