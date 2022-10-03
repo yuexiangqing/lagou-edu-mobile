@@ -29,8 +29,22 @@
 					return !todo.completed
 				}).length
 			},
-			allDone(){
-				return this.remaining===0
+			// 用于设置全部切换选框状态
+			// - 原始写法
+			// allDone(){
+			// 	return this.remaining===0
+			// }
+			// - 最新功能书写方式 点击上面的 全选下面的
+			allDone:{
+				get(){
+					return this.remaining === 0
+				},
+				set(value){
+					// value代表全部切换选框的状态
+					this.todos.forEach(todo=>{
+						todo.completed=value
+					})
+				}
 			}
 		}
 	})
