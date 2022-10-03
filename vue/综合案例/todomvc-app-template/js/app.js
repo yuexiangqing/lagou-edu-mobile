@@ -29,6 +29,11 @@
 				this.todos.push({id:this.todos.length+1,title:value,completed:false})
 				// 清空输入框
 				this.newTodo=''
+			},
+			// 用于删除单个事项
+			removeTodo(todo){
+				var index = this.todos.indexOf(todo)
+				this.todos.splice(index,1)
 			}
 		},
 		computed:{

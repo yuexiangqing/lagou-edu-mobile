@@ -25,31 +25,14 @@
 				<input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
-					<!-- 已完成事项的 li -->
-					<!-- <li class="completed">
-						<div class="view">
-							<input class="toggle" type="checkbox" checked>
-							<label>Taste JavaScript</label>
-							<button class="destroy"></button>
-						</div>
-						<input class="edit" value="Create a TodoMVC template">
-					</li> -->
-					<!-- 待办事项的 li -->
-					<!-- <li>
-						<div class="view">
-							<input class="toggle" type="checkbox">
-							<label>Buy a unicorn</label>
-							<button class="destroy"></button>
-						</div>
-						<input class="edit" value="Rule the web">
-					</li> -->
-
+					
 					<!-- 事项Li -->
 					<li v-for="todo in todos" :key="todo.id" :class="{completed:todo.completed}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="todo.completed">
 							<label>{{todo.title}}</label>
-							<button class="destroy"></button>
+							<!-- 删除按钮 -->
+							<button class="destroy" @click="removeTodo(todo)"></button>
 						</div>
 						<input class="edit" value="Rule the web">
 					</li>
