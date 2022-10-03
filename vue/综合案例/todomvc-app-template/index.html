@@ -19,7 +19,8 @@
 			</header>
 			<!-- 事项列表区域 -->
 			<section class="main" v-show="todos.length">
-				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<!-- 全部状态切换复选框 -->
+				<input id="toggle-all" class="toggle-all" type="checkbox" v-model="allDone">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
 					<!-- 已完成事项的 li -->
@@ -41,6 +42,7 @@
 						<input class="edit" value="Rule the web">
 					</li> -->
 
+					<!-- 事项Li -->
 					<li v-for="todo in todos" :key="todo.id" :class="{completed:todo.completed}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="todo.completed">

@@ -28,6 +28,9 @@
 				return this.todos.filter(function(todo){
 					return !todo.completed
 				}).length
+			},
+			allDone(){
+				return this.remaining===0
 			}
 		}
 	})
