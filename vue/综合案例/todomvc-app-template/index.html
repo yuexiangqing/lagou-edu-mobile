@@ -27,7 +27,7 @@
 				<ul class="todo-list">
 					
 					<!-- 事项Li -->
-					<li v-for="todo in todos" :key="todo.id" :class="{completed:todo.completed,editing:todo===editingTodo}">
+					<li v-for="todo in filteredTodo" :key="todo.id" :class="{completed:todo.completed,editing:todo===editingTodo}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="todo.completed">
 							<!-- 触发编辑 -->
@@ -49,16 +49,25 @@
 				<!-- 用于设置状态栏的个数统计功能 -->
 				<!-- <span class="todo-count"><strong>{{remaining}}</strong> {{pluralize()}} left</span> -->
 				<span class="todo-count"><strong>{{remaining}}</strong> {{pluralize('item')}} left</span>
-				<!-- Remove this if you don't implement routing -->
+				<!-- 用于进行事项筛选功能 -->
 				<ul class="filters">
 					<li>
-						<a class="selected" href="#/">All</a>
+						<a href="javascript:;"
+						 :class="{selected:todoType==='all'}"
+						 @click="todoType='all'"
+						>All</a>
 					</li>
 					<li>
-						<a href="#/active">Active</a>
+						<a href="javascript:;"
+						:class="{selected:todoType==='active'}"
+						 @click="todoType='active'"
+						 >Active</a>
 					</li>
 					<li>
-						<a href="#/completed">Completed</a>
+						<a href="javascript:;"
+						:class="{selected:todoType==='completed'}"
+						 @click="todoType='completed'"
+						 >Completed</a>
 					</li>
 				</ul>
 				<!-- 清除已完成的按钮 -->
