@@ -50,7 +50,13 @@
 			editTodo(todo){
 				this.editingTodo= todo;
 				this.titleBeforeEdit= todo.title;
+			},
+			// 用于取消编辑，还原状态与内容
+			cancelEdit(todo){
+				this.editingTodo=null;
+				todo.title=this.titleBeforeEdit;
 			}
+
 		},
 		computed:{
 			// 用于获取待办事项个数 未完成的事项个数
