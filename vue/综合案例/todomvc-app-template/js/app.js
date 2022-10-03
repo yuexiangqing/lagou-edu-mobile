@@ -14,15 +14,28 @@
 		}
 	};
 
+	// 声明常量用于存储本地存储中保存事项的键
+	const TODOS_KEY = 'todos_vue'
+	// 声明对象统一保存本地存储的处理功能
+	let todoStorage={
+		// 用于读取本地存储数据
+		get(){
+			return JSON.parse(localStorage.getItem(TODOS_KEY)) || []
+		}
+	}
+
+
 	new Vue({
 		el: '#app',
 		data: {
 			// todos 用于存储所有事项信息
-			todos: [
-				{ id: 1, title: '示例内容1', completed: true },
-				{ id: 2, title: '示例内容2', completed: false },
-				{ id: 3, title: '示例内容3', completed: true },
-			],
+			// todos: [
+			// 	{ id: 1, title: '示例内容1', completed: true },
+			// 	{ id: 2, title: '示例内容2', completed: false },
+			// 	{ id: 3, title: '示例内容3', completed: true },
+			// ],
+			todos:todoStorage.get(),
+
 			// 存储新增输入框的数据
 			newTodo: '',
 			// 存储正在编辑的todo
@@ -55,10 +68,13 @@
 				this.todos.splice(index, 1)
 			},
 			// 用于删除已完成事项
-			removeCompleted: function () {
-				this.todos = this.todos.filter(todo => {
-					return !todo.completed
-				})
+			// removeCompleted: function () {
+			// 	this.todos = this.todos.filter(todo => {
+			// 		return !todo.completed
+			// 	})
+			// },
+			removeCompleted(){
+				this.todos=filters.active(this.todos)
 			},
 			// 用于触发编辑，保存相关信息
 			editTodo(todo) {
@@ -91,9 +107,11 @@
 			// 用于获取待办事项个数 未完成的事项个数
 			remaining() {
 				// return this.todos.filter(todo=>!todo.completed).length;
-				return this.todos.filter(function (todo) {
-					return !todo.completed
-				}).length
+				// return this.todos.filter(function (todo) {
+				// 	return !todo.completed
+				// }).length
+
+				return filters.active(this.todos).length; //filters['active'](this.todos)
 			},
 			// 用于设置全部切换选框状态
 			// - 原始写法
