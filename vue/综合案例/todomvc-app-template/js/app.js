@@ -10,7 +10,9 @@
 				{id:1,title:'示例内容1',completed:true},
 				{id:2,title:'示例内容2',completed:false},
 				{id:3,title:'示例内容3',completed:true},
-			]
+			],
+			// 存储新增输入框的数据
+			newTodo:''
 		},
 		methods:{
 			//进行单位复数化处理
@@ -19,6 +21,14 @@
 			// }
 			pluralize(word){
 				return word + (this.remaining===1?'':'s')
+			},
+			// 用于新增事项
+			addTodo(){
+				var value = this.newTodo.trim()
+				if(!value){return};
+				this.todos.push({id:this.todos.length+1,title:value,completed:false})
+				// 清空输入框
+				this.newTodo=''
 			}
 		},
 		computed:{
