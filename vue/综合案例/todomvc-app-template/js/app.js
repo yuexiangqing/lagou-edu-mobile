@@ -21,6 +21,10 @@
 		// 用于读取本地存储数据
 		get(){
 			return JSON.parse(localStorage.getItem(TODOS_KEY)) || []
+		},
+		// 用于更新本地存储数据
+		set(todos){
+			localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
 		}
 	}
 
@@ -45,6 +49,13 @@
 			// 存储要显示的事项类别
 			todoType: 'all'
 
+		},
+		// 侦听器侦听
+		watch:{
+			todos:{
+				deep:true,
+				handler:todoStorage.set
+			}
 		},
 		methods: {
 			//进行单位复数化处理
