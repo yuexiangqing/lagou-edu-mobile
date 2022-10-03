@@ -38,6 +38,8 @@
 						<!-- 编辑的输入框 -->
 						<input class="edit" v-model="todo.title" v-todo-focus="todo === editingTodo"
 						@keyup.esc="cancelEdit(todo)"
+						@keyup.enter="editDone(todo)"
+						@blur="editDone(todo)"
 						>
 					</li>
 				</ul>

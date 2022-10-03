@@ -55,6 +55,11 @@
 			cancelEdit(todo){
 				this.editingTodo=null;
 				todo.title=this.titleBeforeEdit;
+			},
+			// 用于保存编辑
+			editDone(todo){
+				this.editingTodo=null;
+				todo.title= todo.title.trim()
 			}
 
 		},
