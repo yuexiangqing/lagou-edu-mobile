@@ -12,7 +12,12 @@
 				{id:3,title:'示例内容3',completed:true},
 			],
 			// 存储新增输入框的数据
-			newTodo:''
+			newTodo:'',
+			// 存储正在编辑的todo
+			editingTodo:null,
+			// 存储正在编辑todo的原始内容
+			titleBeforeEdit:''
+
 		},
 		methods:{
 			//进行单位复数化处理
@@ -40,6 +45,11 @@
 				this.todos=this.todos.filter(todo=>{
 					return !todo.completed
 				})
+			},
+			// 用于触发编辑，保存相关信息
+			editTodo(todo){
+				this.editingTodo= todo;
+				this.titleBeforeEdit= todo.title;
 			}
 		},
 		computed:{

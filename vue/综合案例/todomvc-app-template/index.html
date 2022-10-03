@@ -27,14 +27,15 @@
 				<ul class="todo-list">
 					
 					<!-- 事项Li -->
-					<li v-for="todo in todos" :key="todo.id" :class="{completed:todo.completed}">
+					<li v-for="todo in todos" :key="todo.id" :class="{completed:todo.completed,editing:todo===editingTodo}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="todo.completed">
-							<label>{{todo.title}}</label>
+							<!-- 触发编辑 -->
+							<label @dblclick="editTodo(todo)">{{todo.title}}</label>
 							<!-- 删除按钮 -->
 							<button class="destroy" @click="removeTodo(todo)"></button>
 						</div>
-						<input class="edit" value="Rule the web">
+						<input class="edit" v-model="todo.title">
 					</li>
 				</ul>
 			</section>
