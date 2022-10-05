@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //========promise 的基本使用方式演示 ===============
+        //1. 创建Promise实例
+        // const promise = new Promise(function(resolve,reject){
+        //     // resolve(100)  //成功时调用
+        //     reject(new Error('error message'))       //失败时调用
+        //     //状态是恒定的，是无法修改的：在同一套逻辑下，只能执行一个
+        // })
+
+        // promise.then(function(value){  //value是指在调用resolve时，传递的数据
+        //     console.log('成功了，数据是：',value)
+        // },function(error){  //一种方法：在then里面设置两个参数，一个是成功了，一个是失败了
+        //     console.log('失败了，错误信息是：',error)
+        // })
+
+        // promise
+        // .then(function(value){
+        //     console.log('成功了，数据是：',value)
+        // })
+        // .catch(function(error){
+        //     console.log('失败了，错误信息是：',error);
+        // })
+
+
+        //========Promise 封装 Ajax函数 ===============
+
+        const successUrl = 'http://edufront.lagou.com/front/course/getPurchaseCourse'
+        const failUrl = 'http://eduboss.lagou.com/boss/course/changeState'
+
+        function ajax (url){
+            return new Promise(function(resolve,reject){
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET',url)
+                xhr.responseType= 'json'
+                xhr.onload=function(){
+                    if(this.status===200){
+                        resolve(this.response)
+                    } else{
+                        reject(new Error(this.statusText))
+                    }
+                }
+                xhr.send()
+            })
+        }
+        // ajax(successUrl)
+        // .then(function(res){
+        //     console.log(res);
+        // })
+        // .catch(function(error){
+        //     console.log(error);
+        // })
+
+        // ajax(failUrl)
+        // .then(function(res){
+        //     console.log(res);
+        // })
+        // .catch(function(error){
+        //     console.log(error);
+        // })
+        
+
+        // ====利用Promise 的链式调用，解决异步操作的回调地狱问题
+
+        // then()的返回值是一个新的promise对象
+        // 利用这个新的promise对象进行 链式的then()调用
+        ajax(successUrl)
+        .then(function(res){
+            console.log(1,res);
+            // 如果then 内部手动return 返回了一个promise 对象，这个promise会替换默认返回值,那么后面的then的调用，就会成为当前这个promise成功后的调用
+            return ajax(successUrl) 
+        })
+        .then(function(res){
+            console.log(2,res);
+            // return ajax(successUrl) 
+            return 200  //如果then内返回的是 非promise对象，那么返回的值会成为下一个then的参数 被接收
+        })
+        .then(function(res){
+            console.log(3,res);
+        })
+        // 通过给.then 返回一个promise 对象 这样就不会出现回调地狱了
+
+        // 如果要.catch ,接在所有的.then 后面
+    </script>
+</body>
+
+</html>

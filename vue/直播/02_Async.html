@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const successUrl = 'http://edufront.lagou.com/front/course/getPurchaseCourse'
+        const failUrl = 'http://eduboss.lagou.com/boss/course/changeState'
+
+        function ajax (url){
+            return new Promise(function(resolve,reject){
+                const xhr = new XMLHttpRequest()
+                xhr.open('GET',url)
+                xhr.responseType= 'json'
+                xhr.onload=function(){
+                    if(this.status===200){
+                        resolve(this.response)
+                    } else{
+                        reject(new Error(this.statusText))
+                    }
+                }
+                xhr.send()
+            })
+        }
+        // async也是一个函数：异步函数
+        async function fn(){
+            const data1 = await ajax(successUrl)  //得到的是成功时候的值，然后给data1
+            console.log(data1)
+            const data2 = await ajax(successUrl)  
+            console.log(data2)
+
+            try{
+                 const data3 = await ajax(failUrl)  
+            console.log(data3)
+            }catch(error){
+                console.log('进行补救处理')
+            }
+           
+            const data4 = await ajax(successUrl)  
+            console.log(data4)
+        }
+        fn()
+
+        // async 可以写在任何函数前面 变成异步函数 ，需要和await搭配使用
+        // btn.onclick = async function(){
+        // }
+
+    </script>
+</body>
+</html>
