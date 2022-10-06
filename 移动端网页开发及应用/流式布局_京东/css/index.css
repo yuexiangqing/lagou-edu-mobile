@@ -21,6 +21,9 @@ img, a { -webkit-touch-callout: none;}
 
 /* 制作顶部提示部分 */
 .top-tips{
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   height:45px;
   background-color: #333;
@@ -54,5 +57,64 @@ img, a { -webkit-touch-callout: none;}
   width: 25%;
   height: 45px;
   background-color:#f63515;
-  
+}
+
+/* 搜索框 */
+.search-box{
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background-color: pink;
+}
+.search-box .search-btn{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 44px;
+}
+.search-box .search-btn span{
+  /* 行内样式，要转块 */
+  display: block;
+  width: 20px;
+  height: 18px;
+  margin: 14px 0 0 15px;
+  background:url(../images/s-btn.png) no-repeat 0 0;
+  background-size: 20px 18px;
+}
+.search-box .login{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  text-align: left;
+}
+.search-box .search{
+  height: 30px;
+  margin: 7px 50px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.search-box .search span{
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 15px;
+  margin: 8px 8px 0 15px;
+  background:url(../images/logo2.png) no-repeat 0 0;
+  background-size: 20px 15px;
+}
+/* 可以用伪元素的方式，来完成 | 的设置 */
+.search-box .search span::after{
+  position: absolute;
+  right: -8px;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background-color: #ccc;
 }
