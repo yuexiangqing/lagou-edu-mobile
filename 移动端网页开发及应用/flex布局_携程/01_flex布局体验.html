@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            /* 该属性可以不用浮动，也能让其横着排列 */
+            display: flex;
+            width: 800px;
+            height: 200px;
+            background-color: pink;
+            /* 可以让里面的元素平均分布 */
+            justify-content: space-around;
+        }
+        span{
+            width: 150px;
+            height: 100px;
+            /* 让子元素自适应，各占1/3 */
+            margin-right: 10px;
+            flex: 1;
+            
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>
