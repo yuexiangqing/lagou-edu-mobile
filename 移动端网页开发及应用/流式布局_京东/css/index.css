@@ -279,3 +279,27 @@ nav .mall-nav a span{
   display: block;
   width: 100%;
 }
+/* 索引部分 */
+.suoyin{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.suoyin a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(137, 134, 134);
+}
+.suoyin a img{
+  display: block;
+  width: 25px;
+  margin: 0 auto 0;
+}
+.suoyin a span{
+  display: block;
+  font-size: 10px;
+}
