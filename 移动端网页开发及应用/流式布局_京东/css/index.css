@@ -1,66 +1,78 @@
 /* 给body进行样式初始化 */
-body{
+body {
   margin: 0 auto;
   min-width: 320px;
   max-width: 540px;
   background-color: #fff;
   font-size: 14px;
   line-height: 1.5;
-  font-family: -apple-system,Helvetica,sans-serif;
+  font-family: -apple-system, Helvetica, sans-serif;
 }
-  
-*{
- /* 点击高亮我们需要清除清除 设置为 transparent 完成透明 */
--webkit-tap-highlight-color: transparent;}
+
+* {
+  /* 点击高亮我们需要清除清除 设置为 transparent 完成透明 */
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* 在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式 */
-input{-webkit-appearance:none;}
+input {
+  -webkit-appearance: none;
+}
 
 /* 禁用长按页面时的弹出菜单 */
-img, a { -webkit-touch-callout: none;}
+img,
+a {
+  -webkit-touch-callout: none;
+}
 
 /* 制作顶部提示部分 */
-.top-tips{
+.top-tips {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height:45px;
+  height: 45px;
   background-color: #333;
   line-height: 45px;
   text-align: center;
   color: #fff;
 }
-.top-tips div:nth-child(1){
+
+.top-tips div:nth-child(1) {
   float: left;
   width: 8%;
 }
-.top-tips div:nth-child(1) img{
+
+.top-tips div:nth-child(1) img {
   width: 10px;
   vertical-align: middle;
 }
-.top-tips div:nth-child(2){
+
+.top-tips div:nth-child(2) {
   float: left;
   width: 10%;
 }
-.top-tips div:nth-child(2) img{
+
+.top-tips div:nth-child(2) img {
   width: 30px;
   /* 垂直方向的对齐 */
   vertical-align: middle;
 }
-.top-tips div:nth-child(3){
+
+.top-tips div:nth-child(3) {
   float: left;
   width: 57%;
 }
-.top-tips div:nth-child(4){
+
+.top-tips div:nth-child(4) {
   float: left;
   width: 25%;
   height: 45px;
-  background-color:#f63515;
+  background-color: #f63515;
 }
 
 /* 搜索框 */
-.search-box{
+.search-box {
   position: fixed;
   top: 45px;
   left: 0;
@@ -68,23 +80,26 @@ img, a { -webkit-touch-callout: none;}
   height: 44px;
   z-index: 1;
 }
-.search-box .search-btn{
+
+.search-box .search-btn {
   position: absolute;
   left: 0;
   top: 0;
   width: 40px;
   height: 44px;
 }
-.search-box .search-btn span{
+
+.search-box .search-btn span {
   /* 行内样式，要转块 */
   display: block;
   width: 20px;
   height: 18px;
   margin: 14px 0 0 15px;
-  background:url(../images/s-btn.png) no-repeat 0 0;
+  background: url(../images/s-btn.png) no-repeat 0 0;
   background-size: 20px 18px;
 }
-.search-box .login{
+
+.search-box .login {
   position: absolute;
   right: 0;
   top: 0;
@@ -94,24 +109,27 @@ img, a { -webkit-touch-callout: none;}
   color: #fff;
   text-align: left;
 }
-.search-box .search{
+
+.search-box .search {
   position: relative;
   height: 30px;
   margin: 7px 50px;
   border-radius: 15px;
   background-color: #fff;
 }
-.search-box .search span{
+
+.search-box .search span {
   position: relative;
   float: left;
   width: 20px;
   height: 15px;
   margin: 8px 8px 0 15px;
-  background:url(../images/logo2.png) no-repeat 0 0;
+  background: url(../images/logo2.png) no-repeat 0 0;
   background-size: 20px 15px;
 }
+
 /* 可以用伪元素的方式，来完成 | 的设置 */
-.search-box .search span::after{
+.search-box .search span::after {
   position: absolute;
   right: -8px;
   content: '';
@@ -119,15 +137,17 @@ img, a { -webkit-touch-callout: none;}
   height: 15px;
   background-color: #ccc;
 }
-.search-box .search i{
+
+.search-box .search i {
   float: left;
   width: 18px;
   height: 15px;
   margin: 8px 0 0 5px;
   background: url(../images/jd-sprites.png) no-repeat -82px 0;
-  background-size:200px 200px;
+  background-size: 200px 200px;
 }
-.search-box .search input{
+
+.search-box .search input {
   position: absolute;
   left: 0;
   top: 0;
@@ -138,27 +158,59 @@ img, a { -webkit-touch-callout: none;}
   border: none;
   font-size: 12px;
 }
+
 /* 主要内容区域 */
-.content{
+.content {
   width: 100%;
   margin-top: 45px;
   background-color: #f6f6f6;
 
 }
+
 /* 焦点图部分 */
-.banner{
+.banner {
   position: relative;
   width: 100%;
   height: 187px;
-  background-color: pink;
+  overflow: hidden;
 }
-.banner .banner-bg{
-position: absolute;
-left: -25%;
-width: 150%;
-height: 145px;
-border-bottom-left-radius: 100%;
-border-bottom-right-radius: 100%;
-/* background-color: #f00; */
-background-image: linear-gradient(0deg,#f1503b,#c82519 50%);
+
+.banner .banner-bg {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 145px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  /* background-color: #f00; */
+  background-image: linear-gradient(0deg, #f1503b, #c82519 50%);
+}
+
+/* 设置滑动轮播图样式 */
+.banner ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+}
+
+.banner ul li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 187px;
+  padding: 44px 3.333% 0;
+  box-sizing: border-box;
+}
+
+.banner ul li a img{
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+.banner ul li:nth-child(2){
+  left: 100%;
+}
+.banner ul li:nth-child(3){
+  left: 200%;
 }
