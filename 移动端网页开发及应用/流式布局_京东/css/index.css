@@ -66,7 +66,6 @@ img, a { -webkit-touch-callout: none;}
   left: 0;
   width: 100%;
   height: 44px;
-  background-color: pink;
 }
 .search-box .search-btn{
   position: absolute;
@@ -95,6 +94,7 @@ img, a { -webkit-touch-callout: none;}
   text-align: left;
 }
 .search-box .search{
+  position: relative;
   height: 30px;
   margin: 7px 50px;
   border-radius: 15px;
@@ -117,4 +117,23 @@ img, a { -webkit-touch-callout: none;}
   width: 1px;
   height: 15px;
   background-color: #ccc;
+}
+.search-box .search i{
+  float: left;
+  width: 18px;
+  height: 15px;
+  margin: 8px 0 0 5px;
+  background: url(../images/jd-sprites.png) no-repeat -82px 0;
+  background-size:200px 200px;
+}
+.search-box .search input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  padding: 0 20px 0 78px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
 }
