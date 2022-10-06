@@ -159,6 +159,6 @@ width: 150%;
 height: 145px;
 border-bottom-left-radius: 100%;
 border-bottom-right-radius: 100%;
-
-background-color: #f00;
+/* background-color: #f00; */
+background-image: linear-gradient(0deg,#f1503b,#c82519 50%);
 }
