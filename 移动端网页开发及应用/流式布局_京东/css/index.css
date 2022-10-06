@@ -214,3 +214,17 @@ a {
 .banner ul li:nth-child(3){
   left: 200%;
 }
+
+/* 优惠活动部分 */
+.youhui{
+  width: 100%;
+  overflow: hidden;
+}
+.youhui a{
+  float: left;
+  width: 33.33%;
+}
+.youhui a img{
+  display: block;
+  width: 100%;
+}
