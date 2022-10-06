@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            display: flex;
+            width: 800px;
+            height: 800px;
+            background-color: pink;
+            /* 一定要先确定主轴在哪里 */
+            /* 默认主轴方向是水平向右的 */
+            /* flex-direction: row; */
+
+            /* ========如果让主轴也居中，那么整个子元素水平垂直都居中了===== */
+            justify-content: center;
+
+            /* 侧轴,默认值就是从上往下加载 */
+            /* align-items: flex-start; */
+
+            /* 侧轴,从下往上加载 */
+            /* align-items: flex-end; */
+
+            /* 侧轴中间加载 */
+            /* align-items: center; */
+
+            /* 拉伸:在元素设置了高度的情况下是显示不出来的 */
+            /* ====让子元素达到父元素的宽度100% */
+            /* 对应的 要让父元素的主轴变为Y轴  同时就不要设置子元素的宽度 */
+            flex-direction: column;
+            align-items: stretch;
+
+
+        }
+
+        span {
+            /* width: 150px; */
+            height: 100px;
+            margin-right: 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>
