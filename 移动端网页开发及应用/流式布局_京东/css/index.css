@@ -228,3 +228,54 @@ a {
   display: block;
   width: 100%;
 }
+
+/* 导航部分 */
+nav{
+  position: relative;
+  width: 100%;
+  height: 162px;
+  overflow: hidden;
+}
+nav .mall-nav{
+  position: absolute;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+nav .mall-nav2{
+  left: 100%;
+}
+
+nav .mall-nav a{
+  float: left;
+  width: 20%;
+  color: #666;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+}
+nav .mall-nav a img{
+  display: block;
+  width: 40px;
+  margin: 10px auto 0;
+}
+nav .mall-nav a span{
+  display: block;
+  height: 18px;
+  line-height: 18px;
+  margin-top: 6px;
+}
+/* 新人专享 */
+.new {
+  margin: 10px;
+  overflow: hidden;
+}
+.new a {
+  float: left;
+  width: 50%;
+}
+.new a img{
+  display: block;
+  width: 100%;
+}
