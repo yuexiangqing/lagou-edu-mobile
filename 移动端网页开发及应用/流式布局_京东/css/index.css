@@ -66,6 +66,7 @@ img, a { -webkit-touch-callout: none;}
   left: 0;
   width: 100%;
   height: 44px;
+  z-index: 1;
 }
 .search-box .search-btn{
   position: absolute;
@@ -136,4 +137,28 @@ img, a { -webkit-touch-callout: none;}
   background-color: transparent;
   border: none;
   font-size: 12px;
+}
+/* 主要内容区域 */
+.content{
+  width: 100%;
+  margin-top: 45px;
+  background-color: #f6f6f6;
+
+}
+/* 焦点图部分 */
+.banner{
+  position: relative;
+  width: 100%;
+  height: 187px;
+  background-color: pink;
+}
+.banner .banner-bg{
+position: absolute;
+left: -25%;
+width: 150%;
+height: 145px;
+border-bottom-left-radius: 100%;
+border-bottom-right-radius: 100%;
+
+background-color: #f00;
 }
