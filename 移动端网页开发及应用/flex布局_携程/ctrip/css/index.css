@@ -316,3 +316,33 @@ a {
   border-right: 2px solid #fff;
   transform: rotate(45deg);
 }
+.sales-box .sales-bd{
+  display: flex;
+  width: 100%;
+}
+.sales-box .sales-bd a{
+  position: relative;
+  flex:1;
+  border-top: 2px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+.sales-box .sales-bd a:nth-child(1){
+  border-right: 1px solid #fafafa;
+}
+.sales-box .sales-bd a img{
+  display: block;
+  width: 100%;
+}
+.sales-box .sales-bd a span{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 26px;
+  height: 14px;
+  border-top-right-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #b3b3b3;
+  line-height: 14px;
+}
+
