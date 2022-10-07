@@ -37,12 +37,6 @@ a {
   /* 让中间的搜索框居中 */
   align-items: center;
 }
-.serach-index .login{
-  width: 51px;
-  height: 44px;
-  padding-right: 4px;
-  background-color: skyblue;
-}
 .serach-index .serach{
   flex: 1;
   height: 28px;
@@ -50,5 +44,32 @@ a {
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
 }
+.serach-index .serach span{
+  position: relative;
+  padding-left: 35px;
+  line-height: 18px;
+  font-size: 15px;
+  color: #666;
+}
+.serach-index .serach span::after{
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  background: url(../images/sprite.png) no-repeat 0px 0px;
+  background-size: 21px auto;
+}
+.serach-index .login{
+  width: 51px;
+  height: 44px;
+  padding-right: 4px;
+  background-color: skyblue;
+}
+
 
