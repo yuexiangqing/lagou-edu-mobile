@@ -18,7 +18,10 @@ a{
   color: #222;
   text-decoration: none;
 }
-
+h1,h2,h3,h44,h5{
+  margin: 0;
+  padding: 0;
+}
 /*点击高亮我们需要清除清除 设置为transparent 完成透明*/
 * {
   -webkit-tap-highlight-color: transparent;
@@ -262,5 +265,54 @@ a {
   background: url(../images/subnav-bg.png) no-repeat 6px -137px;
   background-size: 24px auto;
 }
-
-
+/* 热门活动区域 */
+.sales-box {
+  border-top: 1px solid #dbdbdb;
+}
+.sales-box .sales-hd{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  padding: 0 8px 1px;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
+}
+.sales-box .sales-hd h2{
+  position: relative;
+  width: 79px;
+  height: 15px;
+  background: url(../images/hot.png) no-repeat 0 -20px;
+  background-size: 79px auto;
+}
+.sales-box .sales-hd h2 i{
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 34px;
+  height: 15px;
+  background: url(../images/icon-gg@2x.png) no-repeat;
+  background-size: 36px auto;
+}
+.sales-box .sales-hd .more{
+  position: relative;
+  height: 20px;
+  padding: 0 18px 0 12px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right,#dc5569,#e068c4);
+  color: #fff;
+  font-size: 12px;
+}
+.sales-box .sales-hd .more::after{
+  position: absolute;
+  right: 9px;
+  top: 5px;
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  /* 可以用元素的边框来制作箭头 旋转 */
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+}
