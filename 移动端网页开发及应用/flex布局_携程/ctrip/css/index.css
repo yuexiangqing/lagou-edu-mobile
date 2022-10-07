@@ -237,3 +237,30 @@ a {
   background-size:61px auto ;
 }
 
+/* subnav-entry部分 */
+.subnav-entry {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 12px 12px;
+}
+.subnav-entry li{
+  width: 20%;
+  text-align: center;
+}
+.subnav-entry li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 12px;
+  line-height: 12px;
+}
+.subnav-entry li a i{
+  width: 28px;
+  height: 28px;
+  margin: 10px 0 5px;
+  background: url(../images/subnav-bg.png) no-repeat 6px -137px;
+  background-size: 24px auto;
+}
+
+
