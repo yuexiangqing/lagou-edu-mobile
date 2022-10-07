@@ -9,6 +9,15 @@ body {
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }
+ul,li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  color: #222;
+  text-decoration: none;
+}
 
 /*点击高亮我们需要清除清除 设置为transparent 完成透明*/
 * {
@@ -122,4 +131,44 @@ a {
   height: 60px;
   background-image: linear-gradient(to bottom,rgba(0,0,0,0.4),rgba(0,0,0,0));
 }
-
+/* local-nav部分 */
+.local-nav{
+  display: flex;
+  position: relative;
+  height: 64px;
+  padding: 4px 0 8px;
+  margin: -52px 12px 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.local-nav li{
+  flex: 1;
+}
+.local-nav li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.local-nav li a i {
+  width: 40px;
+  height: 40px;
+  background: url(../images/localnav_bg.png) no-repeat 0 0 ;
+  background-size: 40px auto;
+}
+.local-nav li a span{
+  font-size: 12px;
+}
+.local-nav li:nth-child(2)  a i{
+  background-position: 0 -40px;
+}
+.local-nav li:nth-child(3)  a i{
+  background-position: 0 -80px;
+}
+.local-nav li:nth-child(4)  a i{
+  background-position: 0 -120px;
+}
+.local-nav li:nth-child(5)  a i{
+  background-position: 0 -160px;
+}
