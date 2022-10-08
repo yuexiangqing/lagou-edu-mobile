@@ -1,0 +1,30 @@
+// less嵌套
+.header{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    .logo{
+        width: 100px;
+        height: 100px;
+        background-color: green;
+    }
+}
+.nav{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    a{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        // 内层选择器的前面没有 `＆` 符号，则它被解析为父选择器的后代；
+        // 如果有 `＆` 符号，它就被解析为父元素自身或父元素的伪类。
+        &.box{ 
+            background-color: yellowgreen;
+        }
+        &:hover{
+            background-color: deeppink;
+        }
+    }
+}
