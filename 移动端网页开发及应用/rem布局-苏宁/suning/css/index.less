@@ -12,3 +12,33 @@ body{
     font-family: Arial, Helvetica,sans-serif;
     background: #f2f2f2;
 }
+// 后续的尺寸都需要使用 rem 单位
+@basefont:50px;
+
+// top-banner区域
+.top-banner{
+    position: relative;
+    width: (750rem / @basefont);
+    height: (100rem / @basefont);
+    .top-banner-img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .close{
+        position: absolute;
+        left: 0.1rem;
+        top: 0.5rem;
+        width: (50rem / @basefont);
+        height: (50rem / @basefont);
+        background: url(../images/close.png) no-repeat center center;
+        background-size: (30rem / @basefont) auto;
+
+    }
+}
