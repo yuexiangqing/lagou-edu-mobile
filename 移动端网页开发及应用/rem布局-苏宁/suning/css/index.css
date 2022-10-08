@@ -94,9 +94,28 @@ body {
   background-color: #ffdb47;
 }
 .header .header-top {
+  display: flex;
   width: 13.64rem;
   height: 1.76rem;
   padding: 0 0.68rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-top .classify img {
+  display: block;
+  width: 0.72rem;
+  height: 1.2rem;
+}
+.header .header-top .ad img {
+  display: block;
+  width: 9rem;
+  height: 1.1rem;
+  margin-right: 1rem;
+}
+.header .header-top .login img {
+  display: block;
+  width: 0.72rem;
+  height: 1.2rem;
 }
 .header .serach {
   width: 15rem;
