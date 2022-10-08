@@ -118,8 +118,41 @@ body {
   height: 1.2rem;
 }
 .header .serach {
+  position: relative;
   width: 15rem;
   height: 1.84rem;
   padding: 0 0.48rem;
   box-sizing: border-box;
+}
+.header .serach a {
+  position: absolute;
+  top: 0;
+  left: 0.48rem;
+  width: 14.04rem;
+  height: 1.76rem;
+}
+.header .serach i {
+  position: absolute;
+  left: 0.84rem;
+  top: 0.52rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  background: url(../images/search_btn.png) no-repeat 0 0;
+  background-size: 0.72rem auto;
+}
+.header .serach form {
+  display: flex;
+  width: 14.04rem;
+  height: 1.76rem;
+  align-items: center;
+}
+.header .serach form input {
+  width: 14.04rem;
+  height: 1.28rem;
+  padding: 0.06rem 0.4rem 0 1.3rem;
+  border: 0;
+  border-radius: 0.64rem;
+  box-sizing: border-box;
+  font-size: 0.56rem;
+  line-height: 1.28rem;
 }

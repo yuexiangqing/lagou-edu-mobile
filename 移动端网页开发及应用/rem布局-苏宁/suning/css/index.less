@@ -78,9 +78,43 @@ body{
         }
     }
     .serach{
+        position: relative;
         width: (750rem / @basefont);
         height: (92rem / @basefont);
         padding: 0 (24rem / @basefont);
         box-sizing: border-box;
+        a{
+            position: absolute;
+            top: 0;
+            left: (24rem / @basefont);
+            width: (702rem / @basefont);
+            height: (88rem / @basefont);
+        }
+        i{
+            position: absolute;
+            left:(42rem / @basefont) ;
+            top: (26rem / @basefont);
+            width: (36rem / @basefont);
+            height: (36rem / @basefont);
+            background: url(../images/search_btn.png) no-repeat 0 0;
+            background-size: (36rem / @basefont) auto;
+        }
+        form{
+            display: flex;
+            width: (702rem / @basefont);
+            height: (88rem / @basefont);
+            align-items: center;
+            input{
+                width: (702rem / @basefont);
+                height: (64rem / @basefont);
+                padding: (3rem / @basefont) (20rem / @basefont) 0 (65rem / @basefont) ;
+                border: 0;
+                border-radius: (32rem / @basefont);
+                box-sizing: border-box;
+                font-size: 0.56rem;
+                line-height: (64rem / @basefont);
+
+            }
+        }
     }
 }
