@@ -64,6 +64,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f2f2f2;
 }
+ul,
+ol {
+  list-style: none;
+}
 .top-banner {
   position: relative;
   width: 15rem;
@@ -155,4 +159,38 @@ body {
   box-sizing: border-box;
   font-size: 0.56rem;
   line-height: 1.28rem;
+}
+.banner {
+  width: 15rem;
+  height: 5.2rem;
+  background: url(../images/banner_bg.png) no-repeat 0 0;
+  background-size: 15rem auto;
+}
+.banner .wrapper {
+  width: 14.04rem;
+  height: 5.2rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner .wrapper ul {
+  position: relative;
+  width: 40rem;
+  height: 5.2rem;
+  margin: 0;
+}
+.banner .wrapper ul li {
+  position: absolute;
+  left: 14.04rem;
+  top: 0;
+  width: 14.04rem;
+  height: 5.2rem;
+  border-radius: 0.48rem;
+  overflow: hidden;
+}
+.banner .wrapper ul li.current {
+  left: 0;
+}
+.banner .wrapper ul li img {
+  width: 14.04rem;
+  height: 5.2rem;
 }

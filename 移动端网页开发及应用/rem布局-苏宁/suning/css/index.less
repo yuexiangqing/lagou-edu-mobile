@@ -12,6 +12,9 @@ body{
     font-family: Arial, Helvetica,sans-serif;
     background: #f2f2f2;
 }
+ul,ol{
+    list-style: none;
+}
 // 后续的尺寸都需要使用 rem 单位
 @basefont:50px;
 
@@ -114,6 +117,42 @@ body{
                 font-size: 0.56rem;
                 line-height: (64rem / @basefont);
 
+            }
+        }
+    }
+}
+
+//banner区域 
+.banner{
+    width: (750rem / @basefont);
+    height: (260rem / @basefont);
+    background: url(../images/banner_bg.png) no-repeat 0 0;
+    background-size: (750rem / @basefont) auto;
+    .wrapper{
+        width: (702rem / @basefont);
+        height: (260rem / @basefont);
+        margin: 0 auto;
+        overflow: hidden;
+        ul{
+            position: relative;
+            width: (2000rem / @basefont);
+            height: (260rem / @basefont);
+            margin: 0;
+            li{
+                position: absolute;
+                left: (702rem / @basefont);
+                top: 0;
+                width: (702rem / @basefont);
+                height:(260rem / @basefont);
+                border-radius: (24rem / @basefont);
+                overflow: hidden;
+                &.current{
+                    left: 0;
+                }
+                img{
+                width: (702rem / @basefont);
+                height:(260rem / @basefont);
+                }
             }
         }
     }
