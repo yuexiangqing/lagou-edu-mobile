@@ -1,0 +1,25 @@
+// less 运算
+@basefont:50px;
+html{
+    // font-size: 50px;
+    font-size: @basefont;
+}
+div{
+    // width: 200px + 50px;
+    // height: 200px * 1.5;
+    // rem的单位
+    // width:(200rem / 50px);
+    // height: (300rem / 50);
+    
+    width:(200rem / @basefont);
+    height: (300rem / @basefont);
+
+    // 加空格
+    // width:(200px+2rem);
+    // height: (300rem/@basefont);
+    // 颜色也可以参与运算
+    background-color: #999 - #333;
+}
+// 1.参与运算的两个数字，可以一个有单位，一个没单位，最终单位就是唯一的单位
+// 2.参与运算的两个数字，两个都有单位，最终单位取第一个数字的单位
+// 3.less运算符左右必须加空格
