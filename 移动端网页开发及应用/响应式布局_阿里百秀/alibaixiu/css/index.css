@@ -32,3 +32,27 @@ header .logo a img{
     display: block;
     width: 100%;
 }   
+
+/* nav部分 */
+header nav{
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+header nav a{
+    display: block!important;
+    padding-left: 30px;
+    height: 50px;
+    font-size: 16px;
+    color: #666;
+    line-height: 50px!important;
+}
+header nav a:hover{
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+}
+/* 小图标居中显示 */
+header nav a::before{
+    margin-right: 5px;
+    vertical-align: middle;
+}
