@@ -12,6 +12,7 @@ h1,h2,h3,h4,h5,h6{
     margin: 0;
     padding: 0;
 }
+
 /* 容器样式 */
 /* 要注意：container有默认的 15px 的边距,而要消掉这个内边距，子元素添加row的类名，这个 15px 就会消除掉 */
 .container {
@@ -55,4 +56,48 @@ header nav a:hover{
 header nav a::before{
     margin-right: 5px;
     vertical-align: middle;
+}
+/* news部分样式 */
+main .news{
+    border-bottom: 1px solid #ccc;
+}
+main .news li{
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+main .news li:nth-child(1){
+    width: 50%;
+    height: 266px;
+}
+main .news li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+main .news li a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+main .news li a p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    padding: 5px 10px 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+}
+main .news li:nth-child(1) a p{
+    font-size: 20px;
+    line-height: 41px;
+    padding: 0px 10px;
 }
