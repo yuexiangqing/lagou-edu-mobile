@@ -8,11 +8,6 @@
 body{
     background-color: #f5f5f5;
 }
-h1,h2,h3,h4,h5,h6{
-    margin: 0;
-    padding: 0;
-}
-
 /* 容器样式 */
 /* 要注意：container有默认的 15px 的边距,而要消掉这个内边距，子元素添加row的类名，这个 15px 就会消除掉 */
 .container {
@@ -24,15 +19,12 @@ header{
     padding-left: 0!important;
 }
 header .logo{
+    margin: 0;
     background-color: #6c94d5;
 }
 header .logo a{
     display: block;
 }
-header .logo a img{
-    display: block;
-    width: 100%;
-}   
 
 /* nav部分 */
 header nav{
@@ -101,3 +93,12 @@ main .news li:nth-child(1) a p{
     line-height: 41px;
     padding: 0px 10px;
 }
+
+/* publish部分 */
+ main .publish .publish-box{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+ }
+ main .publish .publish-box img{
+    padding-top: 10px;
+ }
