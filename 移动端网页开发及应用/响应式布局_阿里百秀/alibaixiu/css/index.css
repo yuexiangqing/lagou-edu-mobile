@@ -1,0 +1,6 @@
+/*通过媒体查询，更改最大的容器的尺寸 */
+@media screen and (min-width:1280px){
+    .container{
+        width: 1280px;
+    }
+}
