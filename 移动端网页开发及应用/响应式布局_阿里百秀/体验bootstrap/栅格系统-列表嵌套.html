@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+     <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.cn/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.cn/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .row div{
+        border: 1px solid #000;
+        height: 40px;
+        background-color: skyblue;
+      }
+      p{
+        border: 1px solid rgb(183, 19, 19);
+
+      }
+    </style>
+</head>
+<body>
+    <!-- 响应式布局，给容器添加 .container 的类名就行。 -->
+    <div class="container">
+        <div class="row">
+            <!-- 嵌套一个栅格系统 -->
+            <div class="col-lg-4 row">
+                <p class="col-lg-6">1</p>
+                <p class="col-lg-6">2</p>
+            </div>
+            <div class="col-lg-4">2</div>
+            <div class="col-lg-4">3</div>
+        </div>
+    </div>
+</body>
+</html>
