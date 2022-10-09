@@ -4,3 +4,12 @@
         width: 1280px;
     }
 }
+/* 初始样式 */
+body{
+    background-color: #f5f5f5;
+}
+/* 容器样式 */
+/* 要注意：container有默认的 15px 的边距,而要消掉这个内边距，子元素添加row的类名，这个 15px 就会消除掉 */
+.container {
+    background-color: #fff;
+}
