@@ -132,19 +132,32 @@ main .news li:nth-child(1) a p{
     font-size: 12px;
  }
  /* 进行媒体查询，制作响应式效果 */
+ /* 小屏幕及以上 */
  @media screen and (min-width:768px){
     header .logo img{
         margin: 0 auto;
     }
  }
+ /* 超小屏幕，小屏幕 */
  @media screen and (max-width:991px){
     header nav a {
         float: left;
         width: 20%;
     }
  }
+ /* 超小屏幕 */
  @media screen and (max-width:767px){
     header nav a {
         font-size: 14px;
     }
+    main .news li{
+        width: 50%;
+    }
+    main .news li:nth-child(1){
+        width: 100%;
+    }
+    main .publish .publish-box h3{
+        font-size: 16px;
+    }
  }
+
