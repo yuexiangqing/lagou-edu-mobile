@@ -25,6 +25,14 @@ header .logo{
 header .logo a{
     display: block;
 }
+header .logo a span{
+    display: block;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+}
 
 /* nav部分 */
 header nav{
@@ -122,4 +130,10 @@ main .news li:nth-child(1) a p{
  }
  aside .hot p{
     font-size: 12px;
+ }
+ /* 进行媒体查询，制作响应式效果 */
+ @media screen and (min-width:768px){
+    header .logo img{
+        margin: 0 auto;
+    }
  }
