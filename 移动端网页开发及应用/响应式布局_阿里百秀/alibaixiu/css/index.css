@@ -8,8 +8,27 @@
 body{
     background-color: #f5f5f5;
 }
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
 /* 容器样式 */
 /* 要注意：container有默认的 15px 的边距,而要消掉这个内边距，子元素添加row的类名，这个 15px 就会消除掉 */
 .container {
     background-color: #fff;
 }
+
+/* header区域的样式 */
+header{
+    padding-left: 0!important;
+}
+header .logo{
+    background-color: #6c94d5;
+}
+header .logo a{
+    display: block;
+}
+header .logo a img{
+    display: block;
+    width: 100%;
+}   
