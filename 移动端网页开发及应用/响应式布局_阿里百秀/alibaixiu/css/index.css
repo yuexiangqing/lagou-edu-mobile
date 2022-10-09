@@ -137,3 +137,14 @@ main .news li:nth-child(1) a p{
         margin: 0 auto;
     }
  }
+ @media screen and (max-width:991px){
+    header nav a {
+        float: left;
+        width: 20%;
+    }
+ }
+ @media screen and (max-width:767px){
+    header nav a {
+        font-size: 14px;
+    }
+ }
