@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 想要复用，多次引入就可以了 -->
+        <my-com-a></my-com-a>
+        <my-com-a></my-com-a>
+        <my-com-a></my-com-a>
+
+        <my-com-b></my-com-b>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        // kebab-case 进行注册
+        Vue.component('my-com-a',{
+            template:'<div>这是a组件的内容</div>'
+        });
+
+        // PascalCase 进行注册
+        Vue.component('MyComB',{
+            template:'<div>这是b组件的内容</div>'
+        })
+       Vue.comp
+        new Vue({
+            el:'#app',
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>
