@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 400px;
+            height: 600px;
+            margin: 100px auto;
+            background-color: skyblue;
+        }
+        .box .cloud{
+            position: absolute;
+            left: 50px;
+            top: 200px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 40px -40px 0 10px #fff,
+            80px -10px 0 2px #fff,
+            40px 20px 0 #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="cloud"></div>
+    </div>
+</body>
+</html>
