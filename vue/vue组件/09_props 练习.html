@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 通过v-for遍历数据 items,创建组件并生成内容 这里要注意讲父组件的内容传入，而这里面的 ：key是进行渲染的并不能实际接受值-->
+        <demo-item 
+        v-for="item in items" 
+        :item-title="item.title"
+        :item-content="item.content"
+        :key="item.title"
+
+        :item="item"
+        ></demo-item>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        // 子组件
+        Vue.component('demoItem',{
+            props:['itemTitle','itemContent','item'],
+            // 也可以绑定item
+            template:`
+            <div>
+                <h3>{{itemTitle}}</h3>
+                <p>{{itemContent}}</p>
+            </div>
+            `
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                // 准备给子组件使用的数据
+                items:[
+                    {
+                        title:'示例标题1',
+                        content:'示例内容1'
+                    },
+                    {
+                        title:'示例标题2',
+                        content:'示例内容2'
+                    },
+                    {
+                        title:'示例标题3',
+                        content:'示例内容3'
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
