@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <my-component 
+      :par-str="str"
+      :par-data="arr"
+      :par-num="num"
+      ></my-component>
+      
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        Vue.component('MyComponent',{
+            props:{
+                parStr:{
+                    type:String
+                },
+                parData:{
+                    type:[Array,Object]
+                },
+                parNum:{
+                    type:Number,
+                    required:true
+                }
+            },
+            template:
+            `
+            <div></div>
+            `
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                str:'示例内容',
+                arr:[1,2,3],
+                obj:{
+                    content:'示例内容1',
+                    content:'示例内容2',
+                },
+                num:100
+
+            }
+        })
+    </script>
+</body>
+</html>
