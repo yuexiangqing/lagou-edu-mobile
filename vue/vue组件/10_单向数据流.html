@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my-component
+        :initital-title="title"
+        ></my-component>
+        
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        Vue.component('my-component',{
+            props:['inititalTitle'],
+            template:`
+            <div>
+                {{title}}
+                <button @click="fn">按钮</button>
+            </div>
+            `,
+            data(){
+                return{
+                    title:this.inititalTitle
+                    // 这里这个title，是组件中的title
+                }
+            },
+            // 如果要修改父组件传递到子组件中的数据，应该将数据放到子组件的 data() 中或者 computed 中
+            methods:{
+                fn(){
+                    // console.log(this);
+                    this.title='这是新的标题'
+                    this.inititalTitle='这是新的标题'
+                }
+            }
+        })
+
+        new Vue({
+            el:'#app',
+            data:{
+                title:'这是示例标题'
+            },
+        })
+
+    </script>
+</body>
+</html>
