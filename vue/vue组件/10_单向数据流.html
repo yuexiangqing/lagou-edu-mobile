@@ -10,13 +10,14 @@
     <div id="app">
         <my-component
         :initital-title="title"
+        :obj="obj"
         ></my-component>
         
     </div>
     <script src="lib/vue.js"></script>
     <script>
         Vue.component('my-component',{
-            props:['inititalTitle'],
+            props:['inititalTitle','obj'],
             template:`
             <div>
                 {{title}}
@@ -33,8 +34,9 @@
             methods:{
                 fn(){
                     // console.log(this);
-                    this.title='这是新的标题'
-                    this.inititalTitle='这是新的标题'
+                    // this.title='这是新的标题'
+                    // this.inititalTitle='这是新的标题'  //不会影响父组件
+                    this.obj.name='jack'
                 }
             }
         })
@@ -42,7 +44,11 @@
         new Vue({
             el:'#app',
             data:{
-                title:'这是示例标题'
+                title:'这是示例标题',
+                obj:{
+                    name:'william',
+                    age:18
+                }
             },
         })
 
