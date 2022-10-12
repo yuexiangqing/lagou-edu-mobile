@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" ref="inp">
+        <button @click="fn">按钮</button>
+        <com-a ref="comA"></com-a>
+    </div>
+   
+    <script src="lib/vue.js"></script>
+    <script>
+        var ComA = {
+            template:`
+             <div>组件A的内容:{{value}}</div>
+            `,
+            data(){
+                return {
+                    value:'示例内容'
+                }
+            }
+        }
+        var vm = new Vue({
+            el:'#app',
+            methods:{
+                fn(){
+                    //按钮点击后修改html标签焦点状态
+                    this.$refs.inp.focus()
+                    
+                    this.$refs.comA.value="新的内容"
+                }
+            },
+
+            components:{
+                ComA
+            },
+            mounted(){
+                console.log(this.$refs);
+                this.$refs.comA.value="修改后的内容";
+            }
+        })
+    </script>
+</body>
+</html>
