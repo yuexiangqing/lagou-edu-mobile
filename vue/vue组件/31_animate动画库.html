@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <!-- 不需要添加 animate_animated 的兼容版本，但是官方建议使用完整版本 -->
+  <!-- <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  /> -->
+  <!-- 引入动画 -->
+</head>
+<body>
+    <div id="app">
+       <button @click="show=!show">按钮</button>
+
+
+       <!-- 通过自定义过渡类名设置，给组件添加第三方动画库的类名效果 -->
+        <transition
+        enter-active-class="animate__hinge"
+        leave-active-class="animate__bounceOutDown"
+        >
+            <!-- 必须要给使用动画的元素设置基础类名 animate_animated -->
+            <p 
+            v-if="show"
+            class="animate_animated"
+            >hello world</p>
+        </transition>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+       
+        new Vue({
+            el:'#app',
+            data:{
+                show:true
+            }
+        })
+    </script>
+</body>
+</html>
