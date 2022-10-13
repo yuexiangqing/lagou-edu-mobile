@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 第一组过渡效果设置 */
+        .v-enter,.v-leave-to{
+            opacity: 0;
+        }
+
+        .v-enter-active,.v-leave-active{
+            transition: opacity 0.5s;
+        }
+
+        /* 第二组过渡效果设置 */
+        .demo-enter,.demo-leave-to{
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .demo-enter-active,.demo-leave-active{
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show=!show">切换1</button>
+        <!-- 没有设置 name 命名的 transition 组件，类名采用v- 前缀 -->
+        <transition appear>
+            <p v-if="show">这是要切换的元素 1</p>
+        </transition>
+        
+        <br>
+
+        <button @click="showDome=!showDome">切换2</button>
+        <!-- 设置了name的 transition 的组件，类名需要将v- 修改为 demo- -->
+        <transition name="demo" appear>
+            <p v-if="showDome">这是要切换的元素 2</p>
+        </transition>
+        
+
+    </div>
+    <script src="lib/vue.js"></script>
+    <script>
+        
+        new Vue({
+            el:'#app',
+            data:{
+                show:true,
+                showDome:true
+            }
+        })
+    </script>
+</body>
+</html>
