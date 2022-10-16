@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="#/">首页</a>
+        <a href="#/category">分类页</a>
+        <a href="#/user">用户页</a>
+    </div>
+    <div id="container">
+        这是首页功能
+    </div>
+
+
+    <script>
+        var container = document.getElementById('container');
+        window.onhashchange = function () {
+            // 获取 url 中的hash
+            // console.log(location.hash);//这里会打印出hash值
+            var hash = location.hash.replace('#', '')
+            // 根据不同 hash 值，更改网页内容（功能）
+            switch (hash) {
+                case '/':
+                    str = '这是首页的功能';
+                    break;
+                case '/category':
+                    str = '这是分类页的功能';
+                    break;
+                case '/user':
+                    str = '这是用户的功能';
+                    break;
+            }
+            container.innerHTML = str;
+        }
+
+    </script>
+</body>
+
+</html>
