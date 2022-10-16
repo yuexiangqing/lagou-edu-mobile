@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 设置用于进行路由操作的组件 -->
+        <router-link to="/">首页</router-link>
+        <router-link to="/user">用户</router-link>
+        <router-link to="/catgory">分类</router-link>
+
+        <router-view></router-view>
+    </div>
+    <script src="lib/vue.js"></script>
+    <script src="lib/vue-router.js"></script>
+    <script>
+        // 路由对应的三个组件信息
+        var Index = {
+            template:`<div>首页功能</div>`
+        };
+        var User = {
+            template:`<div>用户功能</div>`
+        };
+        var Catgory = {
+            template:`<div>分类功能</div>`
+        };
+
+        // 定义路由规则
+        // 因为上面是三个路由信息，现在对应的需要写三个对象
+        // path 对应的是当前的路由的路径
+        var routes = [
+            {path:'/',component:Index},
+            {path:'/user',component:User},
+            {path:'/catgory',component:Catgory}
+        ];
+
+        
+        // 创建Vue Router 实例
+        var router = new VueRouter({
+            routes:routes
+        });
+
+
+        // 创建 Vue 实例,注入 router
+        var vm = new Vue({
+            el:'#app',
+            router:router
+        })
+
+        console.log(vm);
+    </script>
+</body>
+</html>
