@@ -11,7 +11,7 @@
         <!-- 设置用于进行路由操作的组件 -->
         <router-link to="/">首页</router-link>
         <router-link to="/user">用户</router-link>
-        <router-link to="/catgory">分类</router-link>
+        <router-link to="/category">分类</router-link>
 
         <router-view></router-view>
     </div>
@@ -25,7 +25,7 @@
         var User = {
             template:`<div>用户功能</div>`
         };
-        var Catgory = {
+        var Category = {
             template:`<div>分类功能</div>`
         };
 
@@ -35,7 +35,7 @@
         var routes = [
             {path:'/',component:Index},
             {path:'/user',component:User},
-            {path:'/catgory',component:Catgory}
+            {path:'/category',component:Category}
         ];
 
         
