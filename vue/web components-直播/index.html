@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <template id="myTemplate">
+        <style>
+            p{
+                font-size: 20px;
+                color: blue;
+            }
+        </style>
+
+        <slot name="header"></slot>
+        <img src="https://s21.lgstatic.com/growth/activity/20210128/1611825307111.png" width="200">
+        <h2>组件标题</h2>
+        <p>组件内容</p>
+        <ul>
+            <li>列表项1</li>
+            <li>列表项2</li>
+            <li>列表项3</li>
+        </ul>
+        <slot name="footer"></slot>
+    </template>
+
+    <!-- 适用于独立元素 -->
+    <demo-element>
+        <span slot="header">内容1</span>
+        <span slot="footer">内容2</span>
+    </demo-element>
+    <demo-element>
+        <span slot="header">内容3</span>
+        <span slot="footer">内容4</span>
+    </demo-element>
+
+    <!-- 继承自内置元素的写法 -->
+    <!-- <ul is="demo-element"></ul> -->
+
+    <p>组件外的p元素</p>
+
+    <!-- <script src="01_define.js"></script> -->
+    <!-- <script src="02_Custonmized built-in elements.js"></script> -->
+    <!-- <script src="03_Shadow.js"></script> -->
+    <script src="04_template.js"></script>
+</body>
+</html>
