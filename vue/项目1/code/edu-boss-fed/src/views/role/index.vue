@@ -1,10 +1,16 @@
 <template>
-  <div class="role">角色管理</div>
+  <div class="role">
+    <role-list></role-list>
+  </div>
 </template>
 
 <script>
+import RoleList from './components/list'
 export default {
-  name: 'LoginIndex'
+  name: 'LoginIndex',
+  components: {
+    RoleList
+  }
 }
 </script>
 
