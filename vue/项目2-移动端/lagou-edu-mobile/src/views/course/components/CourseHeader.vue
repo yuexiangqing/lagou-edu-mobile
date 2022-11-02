@@ -1,6 +1,8 @@
 <template>
   <div class="course-header">
-头部
+    <van-image
+    :src="require('@/assets/logo.png')"
+    ></van-image>
   </div>
 </template>
 
@@ -11,5 +13,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.course-header {
+   height: 50px;
+}
+.van-image{
+    width: 180px;
+    margin-left: -20px;
+}
 </style>
