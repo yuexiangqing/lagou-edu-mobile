@@ -1,12 +1,16 @@
 <template>
   <div class="course">
-选课页面
+    <layout-footer></layout-footer>
   </div>
 </template>
 
 <script>
+import layoutFooter from '@/components/LayoutFooter'
 export default {
-  name: 'CourseIndex'
+  name: 'CourseIndex',
+  components: {
+    layoutFooter
+  }
 }
 </script>
 
