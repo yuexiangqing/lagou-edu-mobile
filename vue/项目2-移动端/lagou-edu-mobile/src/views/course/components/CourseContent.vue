@@ -6,13 +6,19 @@
         <img :src="item.img" alt="">
       </van-swipe-item>
     </van-swipe>
+    <!-- 底部课程列表 -->
+    <course-content-list></course-content-list>
   </div>
 </template>
 
 <script>
 import { getAllAds } from '@/services/course'
+import CourseContentList from './CourseContentList'
 export default {
   name: 'CourseContent',
+  components: {
+    CourseContentList
+  },
   data () {
     return {
       // 轮播图图片列表
