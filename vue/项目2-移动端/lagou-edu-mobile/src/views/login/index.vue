@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import { login } from '@/services/user'
 export default {
   name: 'LoginIndex',
   data () {
@@ -62,14 +63,19 @@ export default {
     }
   },
   methods: {
+    async onSubmit () {
+      const { data } = await login(this.form)
+      if (data.state === 1) {
+        this.$toast.success('登录成功')
+      } else {
+        this.$toast.fail('登录失败')
+      }
+    },
     phoneCheck (value) {
       return /^1\d{10}$/.test(value)
     },
     onClickLeft () {
       this.$router.go(-1)
-    },
-    onSubmit () {
-      console.log('Submit!')
     }
   }
 }
