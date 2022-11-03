@@ -44,7 +44,13 @@
           ]"
      />
      <div style="margin: 16px;">
-       <van-button round block type="info" native-type="submit">提交</van-button>
+       <van-button
+       round
+       block
+       type="info"
+       native-type="submit"
+       :loading="isLoading"
+       >登录</van-button>
      </div>
     </van-form>
   </div>
@@ -59,17 +65,22 @@ export default {
       form: {
         phone: '',
         password: ''
-      }
+      },
+      // 登录按钮加载状态
+      isLoading: false
     }
   },
   methods: {
     async onSubmit () {
+      this.isLoading = true
       const { data } = await login(this.form)
       if (data.state === 1) {
         this.$toast.success('登录成功')
       } else {
         this.$toast.fail('登录失败')
       }
+      // 取消加载状态
+      this.isLoading = false
     },
     phoneCheck (value) {
       return /^1\d{10}$/.test(value)
