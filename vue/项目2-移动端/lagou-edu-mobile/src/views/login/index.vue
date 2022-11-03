@@ -76,6 +76,8 @@ export default {
       const { data } = await login(this.form)
       if (data.state === 1) {
         this.$toast.success('登录成功')
+        // 将用户信息存储到 state 中
+        this.$store.commit('setUser', data.content)
       } else {
         this.$toast.fail('登录失败')
       }
