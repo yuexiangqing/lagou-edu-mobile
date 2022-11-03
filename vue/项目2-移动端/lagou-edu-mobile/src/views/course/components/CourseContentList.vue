@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       // 用于存储数据
-      list: [1, 2, 3, 4, 5],
+      list: [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5],
       // 是否处于加载中
       loading: false,
       // 是否加载完毕
@@ -33,5 +33,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.course-content-list {
+  position: fixed;
+  overflow-y: auto;
+  // top: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 </style>

@@ -58,4 +58,8 @@ export default {
 .my-swipe img {
     height: 170px;
 }
+.course-content-list {
+  top: 220px;
+  bottom: 50px;
+}
 </style>
