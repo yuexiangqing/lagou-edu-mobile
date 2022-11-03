@@ -65,7 +65,7 @@ request.interceptors.response.use(response => {
       if (data.state !== 1) {
         // 刷新 token 失败
         store.commit('setUser', null)
-        redirectLogin ()
+        redirectLogin()
         return Promise.reject(error)
       }
       // 刷新 token 成功
