@@ -6,7 +6,23 @@
       finished-text="没有更多了"
       @load="onLoad"
     >
-  <van-cell v-for="item in list" :key="item" :title="item" />
+  <van-cell
+  v-for="item in list"
+  :key="item.id">
+    <!-- 课程左侧图片 -->
+    <div>
+      <img :src="item.courseImgUrl" alt="">
+    </div>
+    <!-- 课程右侧信息 -->
+    <div class="course-info">
+      <h3 v-text="item.courseName"></h3>
+      <p class="course-preview" v-html="item.previewFirstFiled"></p>
+      <p class="course-container">
+        <span class="course-discounts">￥{{ item.discounts }}</span>
+        <s class="course-price">￥{{ item.price }}</s>
+      </p>
+    </div>
+  </van-cell>
 </van-list>
   </div>
 </template>
@@ -36,6 +52,8 @@ export default {
         status: 1
       })
       console.log(data)
+      // 通过 ... 运算符，将元素作为参数传入
+      this.list.push(...data.data.records)
       // 下次请求下一页
       this.currentPage++
       // 加载状态结束
@@ -50,6 +68,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// 列表组件的固定滚动设置
 .course-content-list {
   position: fixed;
   overflow-y: auto;
@@ -58,5 +77,32 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+}
+// 课程列表项目的样式
+.van-cell__value {
+  display: flex;
+  height: 100px;
+  padding: 10px 0;
+}
+.van-cell__value img {
+  height: 100%;
+  width: 75px;
+  border-radius: 5px;
+}
+.course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.course-info .course-preview {
+  flex-grow: 1;
+}
+.course-info .course-discounts {
+  color: #ff7452;
+  margin-right: 10px;
+}
+p,h3 {
+  margin: 0;
 }
 </style>
