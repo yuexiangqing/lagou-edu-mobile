@@ -1,5 +1,11 @@
 <template>
   <div class="course-content-list">
+    <!-- 下拉刷新组件 -->
+    <van-pull-refresh
+    v-model="isRefreshing"
+    @refresh="onRefresh"
+    >
+    <!-- 列表组件 -->
     <van-list
       v-model="loading"
       :finished="finished"
@@ -23,7 +29,8 @@
       </p>
     </div>
   </van-cell>
-</van-list>
+    </van-list>
+  </van-pull-refresh>
   </div>
 </template>
 
@@ -40,10 +47,32 @@ export default {
       // 是否加载完毕
       finished: false,
       // 数据页数
-      currentPage: 1
+      currentPage: 1,
+      // 下拉刷新状态
+      isRefreshing: false
     }
   },
   methods: {
+    async onRefresh () {
+      // 还原数据页数为 1
+      this.currentPage = 1
+      // 重新请求数据
+      const { data } = await getQueryCourse({
+        currentPage: this.currentPage,
+        pageSize: 10,
+        // 代表上架课程
+        status: 1
+      })
+      // 下拉刷新需要清除所有数据，直接赋值给 this.list
+      // this.list = data.data.records
+      if (data.data && data.data.records && data.data.records.length !== 0) {
+        this.list = data.data.records
+      }
+      // 提示
+      this.$toast('刷新成功')
+      // 关闭下拉提示框
+      this.isRefreshing = false
+    },
     async onLoad () {
       const { data } = await getQueryCourse({
         currentPage: this.currentPage,
@@ -51,9 +80,12 @@ export default {
         // 代表上架课程
         status: 1
       })
-      console.log(data)
+      // console.log(data)
       // 通过 ... 运算符，将元素作为参数传入
-      this.list.push(...data.data.records)
+      // this.list.push(...data.data.records)
+      if (data.data && data.data.records && data.data.records.length !== 0) {
+        this.list.push(...data.data.records)
+      }
       // 下次请求下一页
       this.currentPage++
       // 加载状态结束
