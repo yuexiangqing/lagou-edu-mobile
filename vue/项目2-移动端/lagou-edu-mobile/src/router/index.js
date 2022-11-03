@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 
 import Course from '@/views/course'
 
@@ -40,6 +41,27 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+// 设置导航守卫，进行登录检测与跳转
+router.beforeEach((to, from, next) => {
+  // 验证 to 的路由是否需要身份认证
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // 验证 Vuex 的 store 中是否存储了用户登录信息
+    if (!store.state.user) {
+      // 如果没有，就是未登录，跳转到登录页面
+      return next({
+        name: 'login',
+        query: {
+          redirect: to.fullPath
+        }
+      })
+    }
+    // 已经登录，允许通过
+    next()
+  } else {
+    next()
+  }
 })
 
 export default router

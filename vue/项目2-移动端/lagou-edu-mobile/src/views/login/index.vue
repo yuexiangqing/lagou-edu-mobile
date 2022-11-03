@@ -78,6 +78,8 @@ export default {
         this.$toast.success('登录成功')
         // 将用户信息存储到 state 中
         this.$store.commit('setUser', data.content)
+        // 跳转
+        this.$router.push(this.$route.query.redirect || '/')
       } else {
         this.$toast.fail('登录失败')
       }
