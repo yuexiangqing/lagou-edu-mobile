@@ -5,15 +5,8 @@
 </template>
 
 <script>
-import request from '@/utils/request'
 export default {
-  name: 'UserIndex',
-  created () {
-    request({
-      method: 'GET',
-      url: '/front/user/getInfo'
-    })
-  }
+  name: 'UserIndex'
 }
 </script>
 
