@@ -14,7 +14,13 @@
     >
   <van-cell
   v-for="item in list"
-  :key="item.id">
+  :key="item.id"
+  @click="$router.push({
+    name: 'course-info',
+    params: {
+      courseId: item.id
+    }
+  })">
     <!-- 课程左侧图片 -->
     <div>
       <!-- 所有课程与已购课程的图片数据属性名不同，检测后使用 -->
