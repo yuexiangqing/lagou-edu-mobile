@@ -1,6 +1,6 @@
 <template>
   <div class="course-info">
-    <van-cell-group>
+    <van-cell-group :style="styleOptions">
       <!-- 课程图片 -->
       <van-cell class="course-img">
         <img :src="course.courseImgUrl" alt="">
@@ -38,6 +38,15 @@
         </van-tabs>
       </van-cell>
     </van-cell-group>
+    <!-- 底部支付功能 -->
+    <van-tabbar v-if="!course.isBuy">
+      <div class="price">
+        <span v-text="course.discountsTag"></span>
+        <span class="discounts">￥{{course.discounts}}</span>
+        <span>￥{{course.price}}</span>
+      </div>
+      <van-button type="primary">立即购买</van-button>
+    </van-tabbar>
   </div>
 </template>
 
@@ -60,7 +69,9 @@ export default {
       // 课程信息
       course: {},
       // 课程章节信息
-      sections: {}
+      sections: {},
+      // 样式信息
+      styleOptions: {}
     }
   },
   created () {
@@ -80,6 +91,9 @@ export default {
         courseId: this.courseId
       })
       this.course = data.content
+      if (data.content.isBuy) {
+        this.styleOptions.bottom = 0
+      }
     }
   }
 }
@@ -105,9 +119,9 @@ export default {
     flex: 1;
     margin: 0;
 }
-.course-price .discounts {
+.discounts{
     color: #ff7452;
-    font-size: 24px;
+    font-size: 24px !important;
     font-weight: 700;
 }
 .course-sale-info .tag {
@@ -119,5 +133,29 @@ export default {
     padding: 7px;
     line-height: 15px;
     border-radius: 2px;
+}
+// 添加底部导航后设置
+.van-cell-group {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 50px;
+  overflow-y: auto;
+}
+
+// 底部样式处理
+.van-tabbar {
+  line-height: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price span {
+  font-size: 14px;
+}
+.van-button {
+  height: 80%;
 }
 </style>
