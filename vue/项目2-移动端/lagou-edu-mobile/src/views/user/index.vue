@@ -41,6 +41,12 @@
           </van-grid-item>
         </van-grid>
       </van-cell>
+      <!-- 菜单列表 -->
+      <van-cell icon="user-o" title="分销中心" is-link value="收益 200元"></van-cell>
+      <van-cell icon="setting-o" title="个性化设置" is-link></van-cell>
+      <van-cell icon="down" title="我的下载" is-link ></van-cell>
+      <van-cell icon="comment-circle-o" title="帮助与反馈" is-link></van-cell>
+      <van-cell icon="question-o" title="关于拉钩教育" is-link value="v 2.0.0"></van-cell>
     </van-cell-group>
     <!-- 底部导航 -->
     <layout-footer></layout-footer>
