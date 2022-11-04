@@ -9,11 +9,11 @@
         width="50"
         height="50"
         round
-        src="https://s0.lgstatic.com/common/image/pc/default_boy_headpic1.png"
+        :src="userInfo.portrait || 'https://s0.lgstatic.com/common/image/pc/default_boy_headpic1.png'"
         ></van-image>
         <!-- 用户信息内容 -->
         <div class="user-info-content">
-          <h3>昵称</h3>
+          <h3>{{userInfo.userName}}</h3>
           <span>
             <van-icon name="edit"/>
             编辑个人资料
@@ -55,10 +55,25 @@
 
 <script>
 import LayoutFooter from '@/components/LayoutFooter'
+import { getInfo } from '@/services/user'
 export default {
   name: 'UserIndex',
   components: {
     LayoutFooter
+  },
+  data () {
+    return {
+      userInfo: {}
+    }
+  },
+  created () {
+    this.loadUserInfo()
+  },
+  methods: {
+    async loadUserInfo () {
+      const { data } = await getInfo()
+      this.userInfo = data.content
+    }
   }
 }
 </script>
