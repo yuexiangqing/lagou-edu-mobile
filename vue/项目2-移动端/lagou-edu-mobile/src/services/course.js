@@ -23,3 +23,11 @@ export const getPurchaseCourse = () => {
     url: '/front/course/getPurchaseCourse'
   })
 }
+// 获取课程详情
+export const getCourseById = params => {
+  return request({
+    method: 'GET',
+    url: '/front/course/getCourseById',
+    params
+  })
+}
