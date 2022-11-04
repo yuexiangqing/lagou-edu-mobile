@@ -9,10 +9,17 @@ export const getAllAds = params => {
   })
 }
 // 分页查询课程内容
-export const getQueryCourse = data => {
+export const getQueryCourses = data => {
   return request({
     method: 'POST',
     url: '/boss/course/getQueryCourses',
     data
+  })
+}
+// 获取已购课程
+export const getPurchaseCourse = () => {
+  return request({
+    method: 'GET',
+    url: '/front/course/getPurchaseCourse'
   })
 }

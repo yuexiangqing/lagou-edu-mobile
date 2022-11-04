@@ -17,13 +17,18 @@
   :key="item.id">
     <!-- 课程左侧图片 -->
     <div>
-      <img :src="item.courseImgUrl" alt="">
+      <!-- 所有课程与已购课程的图片数据属性名不同，检测后使用 -->
+      <img :src="item.courseImgUrl || item.image" alt="">
     </div>
     <!-- 课程右侧信息 -->
     <div class="course-info">
-      <h3 v-text="item.courseName"></h3>
+      <!-- 名称检测 -->
+      <h3 v-text="item.courseName || item.name"></h3>
       <p class="course-preview" v-html="item.previewFirstFiled"></p>
-      <p class="course-container">
+      <!-- 如果为已购课程无需显示价格区域 -->
+      <p
+      v-if="item.price"
+      class="course-container">
         <span class="course-discounts">￥{{ item.discounts }}</span>
         <s class="course-price">￥{{ item.price }}</s>
       </p>
@@ -74,6 +79,8 @@ export default {
       // this.list = data.data.records
       if (data.data && data.data.records && data.data.records.length !== 0) {
         this.list = data.data.records
+      } else if (data.content && data.content !== 0) {
+        this.list.push(...data.content)
       }
       // 提示
       this.$toast('刷新成功')
@@ -92,13 +99,17 @@ export default {
       // this.list.push(...data.data.records)
       if (data.data && data.data.records && data.data.records.length !== 0) {
         this.list.push(...data.data.records)
+      } else if (data.content && data.content.length !== 0) {
+        this.list.push(...data.content)
       }
       // 下次请求下一页
       this.currentPage++
       // 加载状态结束
       this.loading = false
       // 数据全部加载完成
-      if (data.data.records.length < 10) {
+      if (data.data && data.data.records && data.data.records.length < 10) {
+        this.finished = true
+      } else if (data.content && data.content.length < 10) {
         this.finished = true
       }
     }
