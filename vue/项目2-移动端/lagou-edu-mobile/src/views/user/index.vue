@@ -3,7 +3,7 @@
     <!-- 顶部功能 -->
     <van-cell-group>
       <!-- 用户信息区域 -->
-      <van-cell class="user-info">
+      <van-cell class="user-info" :border="false">
         <!-- 头像 -->
         <van-image
         width="50"
@@ -19,6 +19,27 @@
             编辑个人资料
           </span>
         </div>
+      </van-cell>
+      <!-- 账户信息 -->
+      <van-cell class="account-info">
+        <van-grid :border="false">
+          <van-grid-item>
+            <span class="grid-item-value">14.05</span>
+            <span>学习时长</span>
+          </van-grid-item>
+          <van-grid-item>
+            <span class="grid-item-value">200</span>
+            <span>钱包/勾豆</span>
+          </van-grid-item>
+          <van-grid-item>
+            <span class="grid-item-value">1</span>
+            <span>优惠券</span>
+          </van-grid-item>
+          <van-grid-item>
+            <span class="grid-item-value">213</span>
+            <span>学分</span>
+          </van-grid-item>
+        </van-grid>
       </van-cell>
     </van-cell-group>
     <!-- 底部导航 -->
@@ -37,11 +58,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// 用户信息
 .user-info {
-  padding: 30px 20px;
+  padding: 30px 20px 0;
   background-color: rgb(248, 150, 3);
 }
-.van-cell__value {
+.user-info .van-cell__value {
   display: flex;
 }
 .user-info-content {
@@ -50,5 +72,18 @@ export default {
 .user-info-content h3{
   margin: 5px;
   font-size: 18px;
+}
+
+// 账户信息
+.account-info {
+  background-color: rgb(248, 150, 3);
+}
+.account-info .van-grid {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.account-info .grid-item-value {
+  font-size: 22px;
+  font-weight: 700;
 }
 </style>
