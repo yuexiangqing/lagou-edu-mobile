@@ -22,7 +22,15 @@
         </div>
       </van-cell>
       <!-- 课程详细内容 -->
-      <van-cell class="course-detail"></van-cell>
+      <van-cell class="course-detail">
+        <van-tabs sticky title-active-color="red" scrollspy>
+          <van-tab title="详情">
+            <!-- 课程详情信息在后台是通过富文本编辑器设置的，内容为 HTML 文本 -->
+            <div v-html="course.courseDescription"></div>
+          </van-tab>
+          <van-tab title="内容">内容</van-tab>
+        </van-tabs>
+      </van-cell>
     </van-cell-group>
   </div>
 </template>
