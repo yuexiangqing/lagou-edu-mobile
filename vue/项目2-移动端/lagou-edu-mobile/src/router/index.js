@@ -17,6 +17,7 @@ const routes = [
     path: '/',
     name: 'course',
     component: Course
+    // component: () => import(/* webpackChunkName: 'course' */'@/views/course/index')
   },
   // 学习页
   {
