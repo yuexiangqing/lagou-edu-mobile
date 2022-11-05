@@ -40,6 +40,13 @@ const routes = [
     component: () => import(/* webpackChunkName: 'course-info' */'@/views/course-info'),
     props: true
   },
+  // 课程视频
+  {
+    path: '/lesson-video/:lessonId',
+    name: 'lesson-video',
+    component: () => import(/* webpackChunkName: 'lesson-video' */'@/views/course-info/video'),
+    props: true
+  },
   {
     path: '*',
     name: 'error-page',
