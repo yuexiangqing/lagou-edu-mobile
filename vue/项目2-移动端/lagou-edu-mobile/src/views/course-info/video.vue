@@ -7,6 +7,8 @@
       left-arrow
       @click-left="$router.go(-1)"
     ></van-nav-bar>
+    <!-- 设置视频容器 id -->
+    <div id="video-container"></div>
   </div>
 </template>
 
@@ -20,12 +22,12 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      // 视频信息
-      videoInfo: {}
-    }
-  },
+  // data () {
+  //   return {
+  //     // 视频信息
+  //     videoInfo: {}
+  //   }
+  // },
   created () {
     this.loadVideo()
   },
@@ -35,11 +37,38 @@ export default {
         lessonId: this.lessonId
       })
       console.log(data)
+      // 初始化播放器
+      /* eslint-disable */
+      const player = new window.Aliplayer({
+        // 视频容器 id
+        id: 'video-container',
+        // 视频 id, 接口里面给的fileId
+        vid: data.content.fileId,
+        // 播放凭证
+        playauth: data.content.playAuth,
+        qualitySort: 'asc',
+        format: 'mp4',
+        mediaType: 'video',
+        width: '100%',
+        height: '100%',
+        autoplay: true,
+        isLive: false,
+        rePlay: false,
+        playsinline: true,
+        preload: true,
+        controlBarVisibility: 'hover',
+        useH5Prism: true
+      }, function (player) {
+        console.log('The player is created')
+      })
+      console.log(player)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-
+.course-video {
+  height: 210px;
+}
 </style>
