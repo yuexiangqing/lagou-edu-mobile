@@ -63,8 +63,8 @@ export default {
   data () {
     return {
       form: {
-        phone: '',
-        password: ''
+        phone: '18201288771',
+        password: '111111'
       },
       // 登录按钮加载状态
       isLoading: false
