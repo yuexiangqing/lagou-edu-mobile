@@ -50,6 +50,7 @@
 
 <script>
 import { getCourseById } from '@/services/course'
+import { createOrder } from '@/services/pay'
 export default {
   name: 'PayIndex',
   props: {
@@ -62,13 +63,29 @@ export default {
     return {
       // 课程信息
       course: {},
-      radio: '1'
+      radio: '1',
+      // 订单号
+      orderNo: null
     }
   },
   created () {
     this.loadCourse()
+    this.loadOrder()
   },
   methods: {
+    async loadOrder () {
+      // 创建订单，获取订单号
+      const { data } = await createOrder({
+        goodsId: this.courseId
+      })
+      console.log(data)
+      this.orderNo = data.content.orderNo
+      //  获取支付方式
+    //   const { data: payInfo } = await getPayInfo({
+    //     shopOrderNo: this.orderNo
+    //   })
+    //   console.log(payInfo)
+    },
     async loadCourse () {
       const { data } = await getCourseById({
         courseId: this.courseId
