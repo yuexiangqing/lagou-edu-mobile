@@ -45,7 +45,10 @@
         <span class="discounts">￥{{course.discounts}}</span>
         <span>￥{{course.price}}</span>
       </div>
-      <van-button type="primary">立即购买</van-button>
+      <van-button
+      type="primary"
+      @click="handlePay"
+      >立即购买</van-button>
     </van-tabbar>
   </div>
 </template>
@@ -79,6 +82,25 @@ export default {
     this.loadSections()
   },
   methods: {
+    handlePay () {
+      // 检测是否登录
+      if (this.$store.state.user) {
+        // 如果已登录，跳转到支付页
+        this.$router.push({
+          name: 'pay',
+          params: {
+            courseId: this.courseId
+          }
+        })
+      } else {
+        this.$router.push({
+          name: 'login',
+          query: {
+            redirect: this.$route.fullPath
+          }
+        })
+      }
+    },
     async loadSections () {
       const { data } = await getSectionAndLesson({
         courseId: this.courseId
