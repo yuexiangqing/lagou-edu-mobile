@@ -3,17 +3,17 @@
     <van-cell-group>
         <!-- 课程信息 -->
       <van-cell class="course-info">
-        <img src="xxx.png" alt="">
+        <img :src="course.courseImgUrl" alt="">
         <div class="price-info">
-            <div class="course-name">示例课程名称</div>
-            <div class="discounts">￥ 666</div>
+            <div class="course-name" v-text="course.courseName"></div>
+            <div class="discounts">￥ {{course.discounts}}</div>
         </div>
       </van-cell>
       <!-- 账户信息 -->
       <van-cell class="account-info">
         <div>购买信息</div>
         <div>购买课程后使用此账号登录【拉勾教育】学习课程</div>
-        <div class="username">当前账号:6666</div>
+        <div class="username">当前账号:{{username}}</div>
       </van-cell>
       <!-- 支付方式 -->
       <van-cell class="pay-channel">
@@ -24,8 +24,37 @@
 </template>
 
 <script>
+import { getCourseById } from '@/services/course'
 export default {
-  name: 'PayIndex'
+  name: 'PayIndex',
+  props: {
+    courseId: {
+      type: [String, Number],
+      required: true
+    }
+  },
+  data () {
+    return {
+      // 课程信息
+      course: {}
+    }
+  },
+  created () {
+    this.loadCourse()
+  },
+  methods: {
+    async loadCourse () {
+      const { data } = await getCourseById({
+        courseId: this.courseId
+      })
+      this.course = data.content
+    }
+  },
+  computed: {
+    username () {
+      return this.$store.state.user.organization.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+    }
+  }
 }
 </script>
 
