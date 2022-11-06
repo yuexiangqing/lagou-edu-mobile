@@ -17,7 +17,32 @@
       </van-cell>
       <!-- 支付方式 -->
       <van-cell class="pay-channel">
-        <div class="title">支付方式</div>
+        <div class="title">
+            <p>支付方式</p>
+        <van-radio-group v-model="radio">
+         <van-cell-group>
+           <van-cell @click="radio = '1'">
+            <template #title>
+                <img src="http://www.lgstatic.com/lg-app-fed/pay/images/wechat_b787e2f4.png" alt="">
+                <span>微信支付</span>
+            </template>
+             <template #right-icon>
+               <van-radio name="1" />
+             </template>
+           </van-cell>
+           <van-cell @click="radio = '2'">
+            <template #title>
+                <img src="http://www.lgstatic.com/lg-app-fed/pay/images/ali_ed78fdae.png" alt="">
+                <span>支付宝支付</span>
+            </template>
+             <template #right-icon>
+               <van-radio name="2" />
+             </template>
+           </van-cell>
+         </van-cell-group>
+        </van-radio-group>
+        </div>
+        <van-button>￥ {{course.discounts}} 立即支付</van-button>
       </van-cell>
     </van-cell-group>
   </div>
@@ -36,7 +61,8 @@ export default {
   data () {
     return {
       // 课程信息
-      course: {}
+      course: {},
+      radio: '1'
     }
   },
   created () {
@@ -110,5 +136,40 @@ export default {
 .account-info .username{
     margin-top: 20px 0 10px;
     font-size: 16px;
+}
+.pay-channel {
+    flex: 1;
+}
+.pay-channel .van-cell {
+    padding: 20px 10px;
+}
+.pay-channel .van-cell__value {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pay-channel .van-cell__title {
+    display: flex;
+    align-items: center;
+}
+.pay-channel .van-cell img{
+    width: 28px;
+    height: 28px;
+}
+.pay-channel .van-cell span {
+    font-size: 16px;
+    margin-left: 10px;
+}
+// 右侧radio选中的颜色
+::v-deep .van-radio__icon--checked .van-icon {
+background-color: #fbc546;
+border-color: #fbc546;
+}
+// 底部按钮样式
+.pay-channel .van-button {
+    background: linear-gradient(270deg,#faa83e,#fbc546);
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 </style>
