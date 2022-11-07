@@ -57,9 +57,16 @@
 </template>
 
 <script>
+import { NavBar, Form, Button, Field, Toast } from 'vant'
 import { login } from '@/services/user'
 export default {
   name: 'LoginIndex',
+  components: {
+    VanNavBar: NavBar,
+    VanForm: Form,
+    VanButton: Button,
+    VanField: Field
+  },
   data () {
     return {
       form: {
@@ -75,13 +82,15 @@ export default {
       this.isLoading = true
       const { data } = await login(this.form)
       if (data.state === 1) {
-        this.$toast.success('登录成功')
+        // this.$toast.success('登录成功')
+        Toast.success('登录成功')
         // 将用户信息存储到 state 中
         this.$store.commit('setUser', data.content)
         // 跳转
         this.$router.push(this.$route.query.redirect || '/')
       } else {
-        this.$toast.fail('登录失败')
+        // this.$toast.fail('登录失败')
+        Toast.fail('登录失败')
       }
       // 取消加载状态
       this.isLoading = false

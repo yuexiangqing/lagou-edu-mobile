@@ -54,12 +54,19 @@
 </template>
 
 <script>
+import { Cell, CellGroup, Image, Icon, Grid, GridItem } from 'vant'
 import LayoutFooter from '@/components/LayoutFooter'
 import { getInfo } from '@/services/user'
 export default {
   name: 'UserIndex',
   components: {
-    LayoutFooter
+    LayoutFooter,
+    VanCell: Cell,
+    VanCellGroup: CellGroup,
+    VanImage: Image,
+    VanIcon: Icon,
+    VanGrid: Grid,
+    VanGridItem: GridItem
   },
   data () {
     return {

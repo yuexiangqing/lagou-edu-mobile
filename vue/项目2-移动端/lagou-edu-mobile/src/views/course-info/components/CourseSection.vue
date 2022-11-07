@@ -16,8 +16,12 @@
 </template>
 
 <script>
+import { Icon } from 'vant'
 export default {
   name: 'CourseSection',
+  components: {
+    VanIcon: Icon
+  },
   props: {
     sectionData: {
       type: Object,

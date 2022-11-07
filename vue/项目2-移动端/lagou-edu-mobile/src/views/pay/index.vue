@@ -49,10 +49,18 @@
 </template>
 
 <script>
+import { CellGroup, Cell, Radio, RadioGroup, Button, Toast } from 'vant'
 import { getCourseById } from '@/services/course'
 import { createOrder, initPayment, getPayResult } from '@/services/pay'
 export default {
   name: 'PayIndex',
+  components: {
+    VanCellGroup: CellGroup,
+    VanCell: Cell,
+    VanRadio: Radio,
+    VanRadioGroup: RadioGroup,
+    VanButton: Button
+  },
   props: {
     courseId: {
       type: [String, Number],
@@ -88,7 +96,8 @@ export default {
         })
         if (payResult.content && payResult.content.status === 2) {
           clearInterval(timer)
-          this.$toast.success('购买成功')
+          // this.$toast.success('购买成功')
+          Toast.success('购买成功！')
           this.$route.push({
             name: 'learn'
           })
