@@ -128,7 +128,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<!-- <style scoped lang="scss"> -->
+<style scoped lang="less">
+// @import 'vant/lib/index.less';
+h2 {
+  // background: @black;
+  // background: color1;
+  background: color2;
+}
 // 课程图片区域
 .van-cell{
     padding: 0;
