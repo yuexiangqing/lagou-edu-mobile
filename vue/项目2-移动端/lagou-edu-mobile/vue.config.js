@@ -15,5 +15,11 @@ module.exports = defineConfig({
         bypassOnDebug: true
       })
       .end()
+  },
+  configureWebpack: {
+    externals: {
+      vue: 'Vue',
+      vant: 'vant'
+    }
   }
 })
