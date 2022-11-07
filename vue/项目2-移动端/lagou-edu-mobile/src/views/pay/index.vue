@@ -42,7 +42,7 @@
          </van-cell-group>
         </van-radio-group>
         </div>
-        <van-button>￥ {{course.discounts}} 立即支付</van-button>
+        <van-button @click="handlePay">￥ {{course.discounts}} 立即支付</van-button>
       </van-cell>
     </van-cell-group>
   </div>
@@ -50,7 +50,7 @@
 
 <script>
 import { getCourseById } from '@/services/course'
-import { createOrder } from '@/services/pay'
+import { createOrder, initPayment, getPayResult } from '@/services/pay'
 export default {
   name: 'PayIndex',
   props: {
@@ -73,12 +73,34 @@ export default {
     this.loadOrder()
   },
   methods: {
+    async handlePay () {
+      const { data } = await initPayment({
+        goodsOrderNo: this.orderNo,
+        channel: this.radio === '1' ? 'weChat' : 'aliPay',
+        returnUrl: 'http://edufront.lagounews.com'
+      })
+      // 接收响应地址，并进行跳转
+      window.location.href = data.content.payUrl
+      const timer = setInterval(async () => {
+        // 发起查询支付结果的请求
+        const { data: payResult } = await getPayResult({
+          orderNo: data.content.orderNo
+        })
+        if (payResult.content && payResult.content.status === 2) {
+          clearInterval(timer)
+          this.$toast.success('购买成功')
+          this.$route.push({
+            name: 'learn'
+          })
+        }
+      }, 1000)
+    },
     async loadOrder () {
       // 创建订单，获取订单号
       const { data } = await createOrder({
         goodsId: this.courseId
       })
-      console.log(data)
+      // console.log(data)
       this.orderNo = data.content.orderNo
       //  获取支付方式
     //   const { data: payInfo } = await getPayInfo({
