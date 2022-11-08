@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.defineProperty() 这个方法主要用来给对象进行属性定义
+        var obj = {
+            name: 'William',
+            age: 18
+        }
+        // obj.gender = '男'
+        // Object.defineProperty() 操作演示与回顾, 参数1： 要进行属性操作的对象; 参数2：要进行属性操作的名称； 参数3：对属性的详细的配置；
+        // Object.defineProperty(obj, 'gender', {
+        //     value: '男',
+        //     // 是否可写
+        //     writable: true,
+        //     // 是否可枚举
+        //     enumerable: true,
+        //     // 配置项是否可以重新设置
+        //     configurable: true
+            
+        // })
+        // Object.defineProperty(obj, 'gender', {
+        //     enumerable: false
+        // })
+        // for(var k in obj) {
+        //     console.log(k, obj[k]);
+        // }
+        // console.log(obj)
+
+        // 如果想在访问属性的过程中，能够做一些额外的自定义操作，例如 DOM 里面的事件
+        // 可以通过 get 和 set 来监控对对象属性的访问和设置操作，并在访问和设置的时候进行相应的功能处理
+        // 注意： 使用 get 和 set 时，不能再书写 writable 、value 因为它们是数据描述符，而set，get时存取描述符，不能共存
+        
+        var genderValue = '男'
+        Object.defineProperty(obj, 'gender', {
+            get () {
+                console.log('任意获取时需要的自定义操作')
+                return genderValue
+            },
+            // set 是当我们对 gender 进行复制的时候触发
+            set (newValue) {
+                console.log('任意设置时需要的自定义操作')
+                genderValue = newValue
+            }
+        })
+
+        // Object.defineProperty() 只能监听对象的单个属性的获取与设置，如果想要对对象所有属性的监听的话，就需要遍历，同时，它无法进行数组的操作
+        
+    </script>
+</body>
+</html>
