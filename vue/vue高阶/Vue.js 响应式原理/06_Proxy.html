@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = {
+            msg1: '内容',
+            arr: [1, 2, 3],
+            obj: {
+                name: 'William',
+                age: 18
+            }
+        }
+
+        // 参数1：要代理的对象  参数2：配置对象
+        // target 是 data, property是访问的属性， receiver 是当前这个实例 p
+        const p = new Proxy (data, {
+            get (target, property, receiver) {
+                console.log(target, property, receiver)
+                return target[property]
+            },
+            // 设置的时候要比获取的时候多一个 value
+            set (target, property, value, receiver) {
+                console.log(target, property, value, receiver)
+                target[property] = value
+            }
+        })
+    </script>
+</body>
+</html>
