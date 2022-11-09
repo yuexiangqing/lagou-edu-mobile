@@ -7,9 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app"></div>
-    <script src="./js/Vue.js"></script>
+    <div id="app">
+        这是msg1:{{msg1}}  这是msg2:{{msg2}}  
+        <p>{{msg1}}</p>
+        <p>{{msg2}}</p>
+    </div>
+    <script src="./js/Watcher.js"></script>
+    <script src="./js/Dep.js"></script>
+    <script src="./js/Compiler.js"></script>
     <script src="./js/Observe.js"></script>
+    <script src="./js/Vue.js"></script>
     <script>
         const vm = new Vue({
             el: '#app',

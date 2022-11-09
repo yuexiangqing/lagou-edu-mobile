@@ -1,5 +1,5 @@
 class Watcher {
-    constructor (vm, key, callback){
+    constructor (vm, key, cb){
         // 当前 Vue 实例
         this.vm = vm
         // 订阅的属性名

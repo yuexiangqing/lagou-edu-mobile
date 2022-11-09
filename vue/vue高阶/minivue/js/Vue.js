@@ -13,6 +13,9 @@ class Vue {
 
         // 3. 创建 Observer 实例监视 data 的属性变化
         new Observer(this.$data)
+
+        // * 4.调用 Compiler，进行模版编译
+        new Compiler(this)
     }
 }
 
