@@ -8,9 +8,11 @@
 </head>
 <body>
     <div id="app">
-        这是msg1:{{msg1}}  这是msg2:{{msg2}}  
+        这是msg1:{{msg1}}  这是msg2:{{msg2}} 
+        <p v-text="msg1" class="text"></p> 
         <p>{{msg1}}</p>
         <p>{{msg2}}</p>
+        <input type="text" v-model="msg2">
     </div>
     <script src="./js/Watcher.js"></script>
     <script src="./js/Dep.js"></script>
