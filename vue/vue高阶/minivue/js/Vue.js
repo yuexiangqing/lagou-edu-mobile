@@ -8,8 +8,11 @@ class Vue {
         const { el } = options
         this.$el  = typeof el === 'string' ? document.querySelector(el) : el
         
-        // 将 data 属性注入到 vue 实例中, _ 表示通过标记的功能来使用
+        //2. 将 data 属性注入到 vue 实例中, _ 表示通过标记的功能来使用
         _proxyData(this, this.$data)
+
+        // 3. 创建 Observer 实例监视 data 的属性变化
+        new Observer(this.$data)
     }
 }
 
