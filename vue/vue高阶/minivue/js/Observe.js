@@ -31,6 +31,8 @@ class Observer {
         configurable: true,
         get () {
             console.log('获取了属性')
+            // * 在触发 Getter 时添加订阅者
+            Dep.target && dep.addSub(Dep.target)
             return value
         },
         set (newValue) {
